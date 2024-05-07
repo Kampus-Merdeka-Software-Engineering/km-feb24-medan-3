@@ -2,103 +2,186 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vending Machine Sales</title>
     <link rel="stylesheet" href="styles.css">  
-
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Dashboard</title> 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="sidebar-header">
-          <h3 class="brand">
-            <span>Vending Machine Sales</span>
-          </h3>
+    <!-- ini awal sidebar -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="assets/images.jpeg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Vending Machine</span>
+                    <span class="profession">Sales</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                  <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-data icon'></i>
+                            <span class="text nav-text">About Dataset</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-user icon' ></i>
+                            <span class="text nav-text">About Us</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
         </div>
-  
-        <div class="sidebar-menu">
-          <ul>
-            <li>
-              <a href="#">
-                <span>Home</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>About Dataset</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>DA Report</span>
-              </a>
-            </li>
-            <li>
-                <a href="#">
-                  <span>Recommendations</span>
-                </a>
-              </li>
-            <li>
-              <a href="#">
-                <span>Database</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    <header>
-        <input type="text" name="search" placeholder="Search..." />
-        <nav>
-            <ul>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Settings</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    </nav>
+    <!-- ini akhir sidebar  -->
+
     <main>
-        <section id="location">
-            <h2>Location</h2>
-            <select>
-                <option value="location1">Brunswick Sq Mall</option>
-                <option value="location2">Earle Asphalt</option>
-                <option value="location3">GuttenPlans</option>
-                <option value="location3">EB Public Library</option>
-            </select>
-        </section>
+      <div class="main">
+          <div class="text">Dashboard</div>
 
-        <section id="machine">
-            <h2>Machine</h2>
-            <select>
-                <option value="machine1">BSQ Mall x1366 - ATT</option>
-                <option value="machine2">BSQ Mall x1364 - Zales</option>
-                <option value="machine3">Earle Asphalt x1371</option>
-                <option value="machine3">GuttenPlans x1367</option>
-                <option value="machine3">EB Public Library x1380</option>
-            </select>
-        </section>
+          <div class="filters">
+              <section id="month">
+                  <select>
+                      <option value="januari">January</option>
+                      <option value="februari">February</option>
+                      <option value="maret">March</option>
+                      <option value="april">April</option>
+                  </select>
+              </section>
+              <section id="location">
+                  <select>
+                      <option value="location1">Brunswick Sq Mall</option>
+                      <option value="location2">Earle Asphalt</option>
+                      <option value="location3">GuttenPlans</option>
+                      <option value="location3">EB Public Library</option>
+                  </select>
+              </section>
+              <section id="machine">
+              <select>
+                  <option value="machine1">BSQ Mall x1366 - ATT</option>
+                  <option value="machine2">BSQ Mall x1364 - Zales</option>
+                  <option value="machine3">Earle Asphalt x1371</option>
+                  <option value="machine3">GuttenPlans x1367</option>
+                  <option value="machine3">EB Public Library x1380</option>
+              </select>
+              </section>
+              <section id="category">
+                  <select>
+                      <option value="category1">Carbonated</option>
+                      <option value="category2">Food</option>
+                      <option value="category3">Non Carbonated</option>
+                      <option value="category3">Water</option>
+                  </select>
+              </section>
+          </div>
 
-        <section id="category">
-            <h2>Category</h2>
-            <select>
-                <option value="category1">Carbonated</option>
-                <option value="category2">Food</option>
-                <option value="category3">Non Carbonated</option>
-                <option value="category3">Water</option>
-            </select>
-        </section>
+          <div class="cards">
+              <div class="card">
+                  <div class="cards-content">
+                      <div class="card-name">Revenue</div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="cards-content">
+                      <div class="card-name">Location</div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="cards-content">
+                      <div class="card-name">Machine</div>
+                  </div>
+              </div>
+              <div class="card">
+                  <div class="cards-content">
+                      <div class="card-name">Category</div>
+                  </div>
+              </div>
+          </div>
 
-        <aside>
-            <h2>Menu</h2>
-            <ul>
-                <li><a href="#">Monthly Report</a></li>
-                <li><a href="#">Top Product</a></li>
-                <li><a href="#">Top Category</a></li>
-                <li><a href="#">Top Product and Category</a></li>
-            </ul>
-        </aside>
-    </main>
+          <div class="charts1">
+              <div class="chart1">
+                  <div class="chards-content">
+                      <div class="chart-name">Pie Chart Location</div>
+                  </div>
+              </div>
+              <div class="chart1">
+                  <div class="chards-content">
+                      <div class="chart-name">chart revenue bulanan</div>
+                  </div>
+              </div>
+          </div>
 
-    <footer>
-        <p>&copy; Team 3 Section Medan</p> 
-    </footer>
+          <div class="charts2">
+              <div class="chart2">
+                  <div class="chards-content">
+                      <div class="chart-name">chart top category</div>
+                  </div>
+              </div>
+              <div class="chart2">
+                  <div class="chards-content">
+                      <div class="chart-name">chart top category and product</div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
+<footer>
+  
+</footer>
 </html>
