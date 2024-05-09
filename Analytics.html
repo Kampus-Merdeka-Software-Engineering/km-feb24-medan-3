@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">  
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Analytics</title> 
+</head>
+<body>
+    <!-- ini awal sidebar -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="assets/images.jpeg" alt="">
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Vending Machine</span>
+                    <span class="profession">Sales</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                  <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="Dashboard.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Analytics.html">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-data icon'></i>
+                            <span class="text nav-text">About Dataset</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bxs-user icon' ></i>
+                            <span class="text nav-text">About Us</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+    <!-- ini akhir sidebar  -->
+
+    <main>
+      <div class="main">
+          <div class="text">Analytics</div>
+        <section class="headtext">
+            <h1>Business Problem:</h1>
+            <p>How to increase our sales to 20% in one year?</p>
+        </section>
+          <div class="cards">
+              <div class="card">
+                  <div class="cards-content">
+                      <div class="card-name">Hypothesis</div>
+                      <ul class="hypo">
+                        <li>If we increase the number of vending machines in locations with the highest sales, then sales will increase</li>
+                        <li>If we accommodate consumer needs and preferences, then sales will increase</li>
+                        <li>If we increase the number of products that are in the most popular categories, then sales will increase</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="cardd">
+                  <div class="cards-content">
+                      <div class="card-name">Metrics</div>
+                      <ul class="metrics">
+                        <li>Sales</li>
+                        <li>Number of product transactions</li>
+                        <li>Popular categories/products</li>
+                      </ul>
+                  </div>
+              </div>
+        </div>
+        
+        <div class="query">
+            <div class="query1">
+                <div class="query-content">
+                    <div class="query-name1">Preview</div>
+                    <button class="action-button1"><i class="bx bx-search"></i></button>
+                </div>
+            </div>
+            <div class="query1_space">
+                <div class="query-content">
+                    <div class="query-name2">Query Data with Structured Query Language</div>
+                </div>
+            </div>
+            <div class="query1">
+                <div class="query-content">
+                    <button class="action-button2"><i class="bx bx-chevron-right"></i></button>
+                    <div class="query-name3">Download</div>
+                </div>
+            </div>
+        </div>
+        <section class="hasil">
+            <h3>REPORT</h3>
+        </section>
+
+          <div class="top">
+              <div class="top1">
+                  <div class="chards-content">
+                      <div class="chart-name">Top 3 Machines with The Highest Sales</div>
+                      <table>
+                        <tr>
+                          <th>Device ID</th>
+                          <th>Quantity Sold</th>
+                          <th>Total Revenue</th>
+                          <th>Total Transactions</th>
+                        </tr>
+                        <tr>
+                          <td>VJ300320609</td>
+                          <td>3627</td>
+                          <td>$6904.25</td>
+                          <td>$3598</td>
+                        </tr>
+                        <tr>
+                          <td>VJ300320692</td>
+                          <td>3098</td>
+                          <td>$6347.75</td>
+                          <td>$3056</td>
+                        </tr>
+                        <tr>
+                          <td>VJ300320686</td>
+                          <td>1030</td>
+                          <td>$1808.75</td>
+                          <td>$1024</td>
+                        </tr>
+                      </table>
+                  </div>
+              </div>
+              <div class="top2">
+                  <div class="chards-content">
+                      <div class="chart-name">Top 10 Best Selling Products </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="tops">
+              <div class="tops1">
+                  <div class="chards-content">
+                      <div class="chart-name">Top 5 Best Selling Products Based on Popular Category for Each Location</div>
+                  </div>
+              </div>
+          </div>
+
+          <article class="insight">
+            <div class="insights">Insights</div>
+            <img src="assets/pngtree-cartoon-glowing-yellow-light-bulb-vector-illustration-png-image_8537134.png" alt="">
+          </article>
+
+        <aside class="recom">
+            <div class="recom1">
+                <div class="recom-content">
+                    <div class="recom-name">We Recommend Several Things</div>
+                </div>
+            </div>
+            <div class="recom2">
+                <div class="recom-content">
+                    <div class="recom-name">1</div>
+                </div>
+            </div>
+            <div class="recom3">
+                <div class="recom-content">
+                    <div class="recom-name">Rekomendasi1</div>
+                </div>
+            </div>
+        </aside>
+        <aside class="recomm">
+            <div class="recom4">
+                <div class="recom-content">
+                    <div class="recom-name">Rekomendasi2</div>
+                </div>
+            </div>
+            <div class="recom5">
+                <div class="recom-content">
+                    <div class="recom-name">2</div>
+                </div>
+            </div>
+        </aside>
+        <aside class="recoms">
+            <div class="recom6">
+                <div class="recom-content">
+                    <div class="recom-name">3</div>
+                </div>
+            </div>
+            <div class="recom7">
+                <div class="recom-content">
+                    <div class="recom-name">Rekomendasi3</div>
+                </div>
+            </div>
+        </aside>
+        <aside class="recommend">
+            <div class="recom8">
+                <div class="recom-content">
+                    <div class="recom-name">Rekomendasi4</div>
+                </div>
+            </div>
+            <div class="recom9">
+                <div class="recom-content">
+                    <div class="recom-name">4</div>
+                </div>
+            </div>
+        </aside>
+      </div>
+  </main>
+  <script src="script2.js"></script>
+</body>
+<footer>
+  
+</footer>
+</html>
