@@ -371,3 +371,20 @@ aside .gkaggle{
     gap: 5px;
     background-color: rgb(255, 255, 255);
 }
+
+/* ======atur footernyanya dari sini======= */
+
+footer{
+    background-color: #707070;
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    margin-left: 88px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+
