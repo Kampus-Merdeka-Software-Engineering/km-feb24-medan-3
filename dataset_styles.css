@@ -302,8 +302,8 @@ body.dark .home .text{
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 250px; /* Satu kolom fleksibel dan satu kolom dengan lebar tetap */
-    gap: 20px; /* Jarak antara kolom */
+    grid-template-columns: 1fr 250px; 
+    gap: 20px; 
 }
 
 .main {
