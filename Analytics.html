@@ -45,7 +45,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="Analytics.html">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <span class="text nav-text">Analytics</span>
                         </a>
@@ -120,19 +120,36 @@
         <div class="query">
             <div class="query1">
                 <div class="query-content">
-                    <div class="query-name1">Preview</div>
-                    <button class="action-button1"><i class="bx bx-search"></i></button>
+                    <a href="#previewSection" class="action-button1">Preview<i class="bx bx-search"></i></a>
                 </div>
+                <div id="previewSection">
+                    <p>-- revou-project-sql-416615.Vending_Machine_Cleaned<br>
+                       -- H1 If we increase the number of vending machines in locations with the highest sales, then sales will increase<br>
+                       -- Laporan penjualan bulanan<br>
+                      SELECT<br>
+                        EXTRACT(YEAR FROM TransDate) AS Year,<br>
+                        EXTRACT(MONTH FROM TransDate) AS Month,<br>
+                        SUM(RQty) AS MonthlySales<br>
+                      FROM<br>
+                        revou-project-sql-416615.Vending_Machine_Cleaned.Sales<br>
+                      GROUP BY<br>
+                        Year, Month<br>
+                      ORDER BY Year, Month;<br>
+                      <br>
+                      -- laporan penjualan harian<br>...</p>
+                    <a href="#" class="closeButton">Tutup Preview</a>
+                  </div>
             </div>
             <div class="query1_space">
                 <div class="query-content">
-                    <div class="query-name2">Query Data with Structured Query Language</div>
+                    <div class="query-name">Query Data with Structured Query Language</div>
                 </div>
             </div>
             <div class="query1">
                 <div class="query-content">
-                    <button class="action-button2"><i class="bx bx-chevron-right"></i></button>
-                    <div class="query-name3">Download</div>
+                    <a href="assets\Query Data With SQL.pdf" download>
+                        <button class="action-button2">Download<i class="bx bx-chevron-right"></i></button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -188,12 +205,11 @@
               <div class="tops2"></div>
             </div>
           </div>
-
-          <article class="insight">
-            <div class="insights">Insights</div>
-            <img src="assets/pngtree-cartoon-glowing-yellow-light-bulb-vector-illustration-png-image_8537134.png" alt="">
-          </article>
-
+        <article class="insight">
+            <div class="insights">
+                <img src="assets/pngtree-cartoon-glowing-yellow-light-bulb-vector-illustration-png-image_8537134.png" alt="">
+            </div>
+        </article>
         <div class="recom">
             <div class="recom1">
                 <div class="recom-content">
