@@ -1,0 +1,31 @@
+[{
+  "Location": "GuttenPlans",
+  "Device_ID": "VJ300320609",
+  "QuantitySold": "3627",
+  "TotalRevenue": "6904.25",
+  "TotalTransactions": "3598"
+}, {
+  "Location": "EB Public Library",
+  "Device_ID": "VJ300320692",
+  "QuantitySold": "3098",
+  "TotalRevenue": "6347.75",
+  "TotalTransactions": "3056"
+}, {
+  "Location": "Earle Asphalt",
+  "Device_ID": "VJ300320686",
+  "QuantitySold": "1030",
+  "TotalRevenue": "1808.75",
+  "TotalTransactions": "1024"
+}, {
+  "Location": "Brunswick Sq Mall",
+  "Device_ID": "VJ300205292",
+  "QuantitySold": "959",
+  "TotalRevenue": "1731.75",
+  "TotalTransactions": "926"
+}, {
+  "Location": "Brunswick Sq Mall",
+  "Device_ID": "VJ300320611",
+  "QuantitySold": "767",
+  "TotalRevenue": "1538.25",
+  "TotalTransactions": "746"
+}]

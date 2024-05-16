@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="styles.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <title>Dashboard</title> 
+
+    <title>Dashboard</title>
 </head>
+
 <body>
     <!-- ini awal sidebar -->
     <nav class="sidebar close">
@@ -36,36 +38,36 @@
                 </li>
 
                 <ul class="menu-links">
-                  <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-home-alt icon' ></i>
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bx-home-alt icon'></i>
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="Analytics.html">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
-                            <span class="text nav-text">Analytics</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="Analytics.html">
+                                <i class='bx bx-pie-chart-alt icon'></i>
+                                <span class="text nav-text">Analytics</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="dataset.html">
-                            <i class='bx bx-data icon'></i>
-                            <span class="text nav-text">About Dataset</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="dataset.html">
+                                <i class='bx bx-data icon'></i>
+                                <span class="text nav-text">About Dataset</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bxs-user icon' ></i>
-                            <span class="text nav-text">About Us</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="#">
+                                <i class='bx bxs-user icon'></i>
+                                <span class="text nav-text">About Us</span>
+                            </a>
+                        </li>
 
-                </ul>
+                    </ul>
             </div>
 
             <div class="bottom-content">
@@ -80,7 +82,7 @@
                         <span class="switch"></span>
                     </div>
                 </li>
-                
+
             </div>
         </div>
 
@@ -88,100 +90,106 @@
     <!-- ini akhir sidebar  -->
 
     <main class="content">
-      <div class="main">
-          <div class="text">Dashboard</div>
+        <div class="main">
+            <div class="text">Dashboard</div>
 
-          <div class="filters">
-              <section id="month">
-                  <select>
-                      <option value="januari">January</option>
-                      <option value="februari">February</option>
-                      <option value="maret">March</option>
-                      <option value="april">April</option>
-                  </select>
-              </section>
-              <section id="location">
-                  <select>
-                      <option value="location1">Brunswick Sq Mall</option>
-                      <option value="location2">Earle Asphalt</option>
-                      <option value="location3">GuttenPlans</option>
-                      <option value="location3">EB Public Library</option>
-                  </select>
-              </section>
-              <section id="machine">
-              <select>
-                  <option value="machine1">BSQ Mall x1366 - ATT</option>
-                  <option value="machine2">BSQ Mall x1364 - Zales</option>
-                  <option value="machine3">Earle Asphalt x1371</option>
-                  <option value="machine3">GuttenPlans x1367</option>
-                  <option value="machine3">EB Public Library x1380</option>
-              </select>
-              </section>
-              <section id="category">
-                  <select>
-                      <option value="category1">Carbonated</option>
-                      <option value="category2">Food</option>
-                      <option value="category3">Non Carbonated</option>
-                      <option value="category3">Water</option>
-                  </select>
-              </section>
-          </div>
+            <div class="filters">
+                <section id="month">
+                    <select>
+                        <option value="januari">January</option>
+                        <option value="februari">February</option>
+                        <option value="maret">March</option>
+                        <option value="april">April</option>
+                    </select>
+                </section>
+                <section id="location">
+                    <select>
+                        <option value="location1">Brunswick Sq Mall</option>
+                        <option value="location2">Earle Asphalt</option>
+                        <option value="location3">GuttenPlans</option>
+                        <option value="location3">EB Public Library</option>
+                    </select>
+                </section>
+                <section id="machine">
+                    <select>
+                        <option value="machine1">BSQ Mall x1366 - ATT</option>
+                        <option value="machine2">BSQ Mall x1364 - Zales</option>
+                        <option value="machine3">Earle Asphalt x1371</option>
+                        <option value="machine3">GuttenPlans x1367</option>
+                        <option value="machine3">EB Public Library x1380</option>
+                    </select>
+                </section>
+                <section id="category">
+                    <select>
+                        <option value="category1">Carbonated</option>
+                        <option value="category2">Food</option>
+                        <option value="category3">Non Carbonated</option>
+                        <option value="category3">Water</option>
+                    </select>
+                </section>
+            </div>
 
-          <div class="cards">
-              <div class="card">
-                  <div class="cards-content">
-                      <div class="card-name">Revenue</div>
-                  </div>
-              </div>
-              <div class="card">
-                  <div class="cards-content">
-                      <div class="card-name">Location</div>
-                  </div>
-              </div>
-              <div class="card">
-                  <div class="cards-content">
-                      <div class="card-name">Machine</div>
-                  </div>
-              </div>
-              <div class="card">
-                  <div class="cards-content">
-                      <div class="card-name">Category</div>
-                  </div>
-              </div>
-          </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="cards-content">
+                        <div class="card-name">Revenue</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cards-content">
+                        <div class="card-name">Location</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cards-content">
+                        <div class="card-name">Machine</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="cards-content">
+                        <div class="card-name">Category</div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="charts1">
-              <div class="chart1">
-                  <div class="chards-content">
-                      <div class="chart-name">Pie Chart Location</div>
-                  </div>
-              </div>
-              <div class="chart1">
-                  <div class="chards-content">
-                      <div class="chart-name">chart revenue bulanan</div>
-                  </div>
-              </div>
-          </div>
+            <div class="charts1">
+                <div class="chart1">
+                    <div class="chards-content">
+                        <div class="chart-name">Pie Chart Location</div>
+                        <div class="chart">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart1">
+                    <div class="chards-content">
+                        <div class="chart-name">chart revenue bulanan</div>
+                    </div>
+                </div>
+            </div>
 
-          <div class="charts2">
-              <div class="chart2">
-                  <div class="chards-content">
-                      <div class="chart-name">chart top category</div>
-                  </div>
-              </div>
-              <div class="chart2">
-                  <div class="chards-content">
-                      <div class="chart-name">chart top category and product</div>
-                  </div>
-              </div>
-          </div>
+            <div class="charts2">
+                <div class="chart2">
+                    <div class="chards-content">
+                        <div class="chart-name">chart top category</div>
+                    </div>
+                </div>
+                <div class="chart2">
+                    <div class="chards-content">
+                        <div class="chart-name">chart top category and product</div>
+                    </div>
+                </div>
+            </div>
 
-      </div>
-  </main>
+        </div>
+    </main>
+   
 
-  <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </body>
 <footer>
-    <p>&copy; Team 3 Section Medan</p> 
+    <p>&copy; Team 3 Section Medan</p>
 </footer>
+
 </html>

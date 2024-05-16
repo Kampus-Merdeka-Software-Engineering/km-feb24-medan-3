@@ -24,3 +24,5 @@ modeSwitch.addEventListener("click", () => {
 
     }
 });
+
+fetch('./json/vm_cleaned.json')
