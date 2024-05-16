@@ -287,7 +287,8 @@ body.dark .switch::before{
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
-    padding: 15px 1px;
+    padding: 15px;
+    padding-left: 1px;
 }
 
 main.dark .home .text{
@@ -299,6 +300,7 @@ body.dark .home .text{
 }
 
 /* ======atur mainnya dari sini======= */
+
 
 .container {
     display: grid;
@@ -334,6 +336,11 @@ body.dark .home .text{
     height: auto; 
 }
 
+#table1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .keterangan {
     margin-left: auto; 
 }
@@ -364,7 +371,6 @@ aside .gkaggle{
 
 .dbersih{
     margin-top: 10px;
-    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 30px;
@@ -386,5 +392,3 @@ footer{
     align-items: center;
     color: #fff;
 }
-
-
