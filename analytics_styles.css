@@ -304,6 +304,7 @@ body.dark .home .text{
 .container {
     display: grid;
     gap: 20px; /* Jarak antara kolom */
+    margin-bottom: 90px;
 }
 
 .main {
@@ -378,12 +379,16 @@ body.dark .home .text{
     margin-left: 20px;
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .query .query1{
     width: 310px;
     height: auto;
+    padding: 5px;
     flex: 1;
     background: #92A7DD;
     border-radius: 15px; 
@@ -393,7 +398,6 @@ body.dark .home .text{
 .query .query1 .query-content {
     display: flex;
     justify-content: center;
-    margin-top:5px;
 }
 
 .query .query1 .action-button1, .action-button2 {
@@ -431,7 +435,8 @@ body.dark .home .text{
 
 .query .query1_space{
     font-size: 21px;
-    height: auto;
+    min-height: 60px;
+    padding: 5px;
     flex: 2;
     flex-wrap: wrap;
     align-items: center;
@@ -499,7 +504,7 @@ table {
 }
 
 .tops {
-    margin-top: -343px;
+    margin-top: -350px;
     margin-left: 20px;
     width: 100%;
     display: flex;
@@ -508,7 +513,7 @@ table {
 
 .tops .tops1{
     width: 893px;
-    height: 343px;
+    min-height: 343px;
     flex: 1;
     align-items: center;
     justify-content: center;
@@ -530,19 +535,36 @@ table {
 }
 
 .insight .insights{
-    height: 300px;
+    min-height: 300px;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    display: flex;
     background: #fff;
     border-radius: 16px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.insight img {
-    width: 90px;
+.insights p {
+    text-align: center;
+    font-weight: 600;
+    margin-left: 50px;
+}
+
+.insights img {
+    width: 150px;
     height: min-content;
+    justify-content: center;
+    align-items: center;
   }
+
+.insights .concl {
+    margin-left: 40px;
+    font-size: 24px;
+    flex-wrap: wrap;
+    list-style-type: disc;
+    padding: 20px;
+}
 
 .recom {
     width: 100%;
@@ -553,15 +575,30 @@ table {
     padding-left: 120px;
 }
 
+.recom1 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.recom1 .recom-name {
+    font-size: 30px;
+    font-weight: bolder;
+}
+
 .recom1{
     height: 550px;
     flex: 230;
-    align-items: center;
-    justify-content: space-between;
     background: transparent;
     border-radius: 15px; 
     border: 3px solid #8EB1DC;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .recom2, .recomm2{
@@ -572,6 +609,39 @@ table {
     background: #92A7DD;
     border-radius: 10px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recom2 .recom-content, .recoms3 .recom-content, .recomm2 .recom-content, 
+.recommend3 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: #Fff;
+    font-weight: bold;
+}
+
+.recom3 .recom-content, .recomm3 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+    color: #18191a;
+} 
+
+.recoms2 .recom-content, .recommend2 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+    color: #18191a;
 }
 
 .recom3, .recomm3{
@@ -689,14 +759,259 @@ p{
 }
 
 footer {
-    background-color: #707070;
+    background-color: #92A7DD;
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: fit-content;
+    padding: 5px;
     display: flex;
-    margin-left: 20px;
-    padding-left: 120px;
     justify-content: center;
     align-items: center;
     color: #fff;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
 }
+
+/* Aturan CSS untuk layar lebar (desktop) */
+@media screen and (min-width: 1200px) {
+  }
+  
+  /* Aturan CSS untuk layar menengah (tablet) */
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .cards{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        gap: 10px;
+    }
+    
+    .metrics, .hypo{
+        font-size: 18px;
+    }
+
+    .top {
+        display: grid;
+    }
+    
+    .tops {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .tops .tops2{
+        display: none;
+    }
+
+    .recom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+    
+    .recom1 {
+        flex-basis: 100%; 
+        height: fit-content;
+        padding: 10px;
+    }
+    
+    .recom2 {
+        height: 90px;
+    }
+    
+    .recom3 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+    
+    .recoms {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: 1px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recoms1 {
+        display: none;
+    }
+
+    .recoms3 {
+        height: 90px;
+    }
+    
+    .recoms2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+    .recomm {
+        display: flex;
+        margin-left: 20px;
+        padding-left: 120px;
+        margin-top: -28px;
+    }
+    
+    .recomm1{
+        display: none;
+    }
+
+    .recomm2{
+        height: 90px;
+    }
+    
+    .recomm3{
+        flex-basis: calc(50% - 10px);
+        height: 90px;
+    }
+    
+    .recommend {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: -28px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recommend1 {
+        display: none;
+    }
+
+    .recommend3 {
+        height: 90px;
+    }
+    
+    .recommend2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+  }
+  
+  /* Aturan CSS untuk layar kecil (ponsel) */
+  @media screen and (max-width: 767px) {
+    .cards{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        gap: 10px;
+    }
+    
+    .metrics, .hypo{
+        font-size: 18px;
+    }
+
+    .top {
+        display: grid;
+    }
+    
+    .tops {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .tops .tops2{
+        display: none;
+    }
+
+    .recom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+    
+    .recom1 {
+        flex-basis: 100%; 
+        height: fit-content;
+        padding: 10px;
+    }
+    
+    .recom2 {
+        height: 90px;
+    }
+    
+    .recom3 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+    
+    .recoms {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: 1px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recoms1 {
+        display: none;
+    }
+
+    .recoms3 {
+        height: 90px;
+    }
+    
+    .recoms2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+    .recomm {
+        display: flex;
+        margin-left: 20px;
+        padding-left: 120px;
+        margin-top: -28px;
+    }
+    
+    .recomm1{
+        display: none;
+    }
+
+    .recomm2{
+        height: 90px;
+    }
+    
+    .recomm3{
+        flex-basis: calc(50% - 10px);
+        height: 90px;
+    }
+    
+    .recommend {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: -28px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recommend1 {
+        display: none;
+    }
+
+    .recommend3 {
+        height: 90px;
+    }
+    
+    .recommend2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+  }
+  
+
