@@ -394,17 +394,21 @@ footer {
     justify-content: center;
     align-items: center;
     color: #fff;
-    margin-left: 70px;
 }
 
 /* ======atur responsifnya dari sini======= */
 
 
 @media screen and (max-width: 1200px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
+    .content, .cards{
         grid-template-columns: repeat(4, 1fr);
         margin-right: 0; 
     }
+
+    .charts1, .charts2, .charts3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .filters {
         justify-content: end;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -419,13 +423,12 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
-        grid-template-columns: repeat(2, 1fr); 
-        margin-right: 20px; 
+    .content, .cards{
+        grid-template-columns: repeat(3, 1fr);
     }
-    .filters {
-        flex-direction: column; 
-        justify-content: flex-end; 
+
+    .charts1, .charts2, .charts3 {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     button {
@@ -465,6 +468,11 @@ footer {
     }
 }
 
+@media screen and (max-width: 1200px){
+    main{
+        margin-right: 5%;
+    }
+}
 
 
 @media screen and (max-width: 768px) {
