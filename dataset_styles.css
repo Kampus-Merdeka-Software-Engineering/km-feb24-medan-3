@@ -27,7 +27,6 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
-    padding-right: 20px;
 }
 
 ::selection{
@@ -386,8 +385,10 @@ th {
 
 
 aside {
-    margin-top: 75px;
-    margin-right: 20px;
+    margin-top: 45px;
+    margin-right: 15px;
+    
+    padding-right: 20px;
 }
 
 aside .gkaggle{
@@ -496,5 +497,17 @@ footer {
     }
     td{
         padding: 8px 0;
+    }
+}
+
+@media(max-width: 1600px) {
+    footer {
+        width: 100%;
+    }
+}
+
+@media(max-width: 574px) {
+    footer {
+        width: 100%;
     }
 }
