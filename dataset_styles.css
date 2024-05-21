@@ -27,6 +27,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    padding-right: 20px;
 }
 
 ::selection{
@@ -287,8 +288,7 @@ body.dark .switch::before{
     font-size: 30px;
     font-weight: 500;
     color: var(--text-color);
-    padding: 15px;
-    padding-left: 1px;
+    padding: 15px 1px;
 }
 
 main.dark .home .text{
@@ -304,6 +304,14 @@ body.dark .home .text{
 html, body{
     display: flex;
     flex-direction: column;
+}
+
+.kata{
+    color: #707070;
+    transition: var(--tran-03);
+    display: flex;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 .container {
@@ -409,6 +417,31 @@ aside .gkaggle{
     background-color: rgb(255, 255, 255);
 }
 
+button{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    opacity: 0.8;
+    border-color: #7ea8db;
+    background-color: #E6E6FA;
+
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+a{
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #0056b3; 
+    color: #fff; 
+}
+
 /* ======atur footernyanya dari sini======= */
 
 footer {
@@ -428,7 +461,7 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .content, .text{
+    .content, .kata{
         margin-right: 18px;
         margin-left: 100px;
     }
