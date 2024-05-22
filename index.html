@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">  
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title> 
 </head>
 <body>
@@ -143,16 +143,19 @@
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Revenue</div>
+                        <div id="totalRevenue">0</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Location</div>
+                        <div id="dataLocation">0</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Machine</div>
+                        <div id="dataMachine">0</div>
                     </div>
                 </div>
                 <div class="card">
@@ -166,11 +169,13 @@
                 <div class="chart1">
                     <div class="chards-content">
                         <div class="chart-name">Pie Chart Location</div>
+                        <canvas id="pieChart"width="400" height="150"></canvas>
                     </div>
                 </div>
                 <div class="chart1">
                     <div class="chards-content">
                         <div class="chart-name">chart revenue bulanan</div>
+                        <canvas id="lineChart" width="450" height="300"></canvas>
                     </div>
                 </div>
             </div>

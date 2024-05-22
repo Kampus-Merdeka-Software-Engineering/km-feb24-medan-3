@@ -1,14 +1,14 @@
 [{
-  "Device_ID": "VJ300320609",
-  "Location": "GuttenPlans",
-  "Product": "Oreo Mini",
-  "Category": "Food",
-  "Transaction": "14527060118",
-  "TransDate": "2022-01-04",
-  "RPrice": "1.5",
-  "RQty": "1",
-  "LineTotal": "1.5",
-  "TransTotal": "1.5"
+    "Device_ID": "VJ300320609",
+    "Location": "GuttenPlans",
+    "Product": "Oreo Mini",
+    "Category": "Food",
+    "Transaction": "14527060118",
+    "TransDate": "2022-01-04",
+    "RPrice": "1.5",
+    "RQty": "1",
+    "LineTotal": "1.5",
+    "TransTotal": "1.5"
 }, {
   "Device_ID": "VJ300320609",
   "Location": "GuttenPlans",
