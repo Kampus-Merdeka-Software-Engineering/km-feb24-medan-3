@@ -1,0 +1,286 @@
+[{
+  "Device_ID": "VJ300320609",
+  "Category": "Carbonated",
+  "Product": "Monster Energy Original",
+  "QuantitySold": "420"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Carbonated",
+  "Product": "Coca Cola - Regular",
+  "QuantitySold": "311"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Carbonated",
+  "Product": "Sunkist Soda - Orange",
+  "QuantitySold": "290"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Carbonated",
+  "Product": "Coca Cola - Zero Sugar",
+  "QuantitySold": "287"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Water",
+  "Product": "Poland Springs Water",
+  "QuantitySold": "217"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Food",
+  "Product": "KitKat - Crisp Wafers",
+  "QuantitySold": "186"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Water",
+  "Product": "Poland Springs Water",
+  "QuantitySold": "173"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Non Carbonated",
+  "Product": "Starbucks Doubleshot Energy - Mocha",
+  "QuantitySold": "133"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Food",
+  "Product": "Cheetos - Fleming Hot Crunchy",
+  "QuantitySold": "113"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Food",
+  "Product": "Goldfish Baked - Cheddar",
+  "QuantitySold": "106"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Food",
+  "Product": "CheezIt - Original",
+  "QuantitySold": "105"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Food",
+  "Product": "Funyuns - Flaming Hot",
+  "QuantitySold": "103"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Food",
+  "Product": "Robert Irvine\u0027s - Fit Crunch -  Chocolate Pea",
+  "QuantitySold": "102"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Food",
+  "Product": "SunChips Multigrain - Harvest Cheddar",
+  "QuantitySold": "101"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Carbonated",
+  "Product": "Starbucks Refresher - Real Coconut Water",
+  "QuantitySold": "98"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Raspberry",
+  "QuantitySold": "96"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Food",
+  "Product": "Wonderful Pistachios - Variety",
+  "QuantitySold": "94"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Carbonated",
+  "Product": "Coca Cola - Zero Sugar",
+  "QuantitySold": "77"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Lemon",
+  "QuantitySold": "75"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Non Carbonated",
+  "Product": "Bai Antioxidant - Tanzania Lemon Super Tea",
+  "QuantitySold": "71"
+}, {
+  "Device_ID": "VJ300320609",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Peach",
+  "QuantitySold": "68"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Water",
+  "Product": "Poland Springs Water",
+  "QuantitySold": "67"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Non Carbonated",
+  "Product": "Iberia Coconut Water",
+  "QuantitySold": "63"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Carbonated",
+  "Product": "Monster Energy Original",
+  "QuantitySold": "58"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Food",
+  "Product": "SunChips Multigrain - Harvest Cheddar",
+  "QuantitySold": "47"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Diet Tea - Peach Tea",
+  "QuantitySold": "47"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Water",
+  "Product": "S. Pellegrino Sparkling Mineral Water",
+  "QuantitySold": "44"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Carbonated",
+  "Product": "Coca Cola - Regular",
+  "QuantitySold": "42"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Carbonated",
+  "Product": "Spindrift - Sparkling Water  Lime",
+  "QuantitySold": "42"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Food",
+  "Product": "SunChips Multigrain - Salsa",
+  "QuantitySold": "40"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Food",
+  "Product": "SunChips Multigrain - Original",
+  "QuantitySold": "39"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Carbonated",
+  "Product": "Monster Energy Original",
+  "QuantitySold": "38"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Food",
+  "Product": "KitKat - Crisp Wafers",
+  "QuantitySold": "35"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Non Carbonated",
+  "Product": "Iberia Coconut Water",
+  "QuantitySold": "34"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Water",
+  "Product": "BodyArmor LYTE - Strawberry Lemonade",
+  "QuantitySold": "32"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Food",
+  "Product": "CheezIt - Original",
+  "QuantitySold": "31"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Food",
+  "Product": "Takis - Hot Chilli Pepper \u0026 Lime",
+  "QuantitySold": "30"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Raspberry",
+  "QuantitySold": "29"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Food",
+  "Product": "Oreo Mini",
+  "QuantitySold": "27"
+}, {
+  "Device_ID": "VJ300320692",
+  "Category": "Water",
+  "Product": "S. Pellegrino Sparkling Mineral Water",
+  "QuantitySold": "22"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Diet Tea - Lemon",
+  "QuantitySold": "20"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Diet Tea - Raspberry",
+  "QuantitySold": "19"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Lemon",
+  "QuantitySold": "18"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Carbonated",
+  "Product": "Coca Cola - Zero Sugar",
+  "QuantitySold": "17"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Carbonated",
+  "Product": "Spindrift - Sparkling Water - Pineapple",
+  "QuantitySold": "16"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Carbonated",
+  "Product": "Keto Krisp - Almond Butter",
+  "QuantitySold": "16"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Water",
+  "Product": "BodyArmor LYTE  - Peach Mango",
+  "QuantitySold": "16"
+}, {
+  "Device_ID": "VJ300320611",
+  "Category": "Water",
+  "Product": "Vitamin Water - XXX Acai BB Pomegranate",
+  "QuantitySold": "16"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Carbonated",
+  "Product": "S. Pellegrino Essenza Mineral Water - Blood O",
+  "QuantitySold": "15"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Carbonated",
+  "Product": "Spindrift - Sparkling Water  Lime",
+  "QuantitySold": "13"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Tea - Lemon",
+  "QuantitySold": "13"
+}, {
+  "Device_ID": "VJ300205292",
+  "Category": "Water",
+  "Product": "Vitamin Water - Squeezed Lemonade",
+  "QuantitySold": "11"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Non Carbonated",
+  "Product": "Snapple Diet Tea - Raspberry",
+  "QuantitySold": "7"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Non Carbonated",
+  "Product": "V8 Vegetable Juice - Original",
+  "QuantitySold": "7"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Water",
+  "Product": "BodyArmor LYTE  - Berry Punch",
+  "QuantitySold": "5"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Water",
+  "Product": "BodyArmor LYTE  - Peach Mango",
+  "QuantitySold": "5"
+}, {
+  "Device_ID": "VJ300320686",
+  "Category": "Water",
+  "Product": "Vitamin Water - Squeezed Lemonade",
+  "QuantitySold": "4"
+}]
