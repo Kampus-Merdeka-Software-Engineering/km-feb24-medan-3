@@ -1,3 +1,4 @@
+// load data json
 fetch("./json/vm_cleaned.json")
   .then((response) => response.json())
   .then(function (json) {
