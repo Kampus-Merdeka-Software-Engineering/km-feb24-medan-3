@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     console.log("Filtered Data:", filteredData);
   }
 
-  // event listener untuk tombol
+  // event listener untuk tombol submit
   document
     .querySelector(".button button")
     .addEventListener("click", (event) => {
@@ -110,6 +110,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
+// sidebar
 const body = document.querySelector("body"),
   sidebar = body.querySelector("nav"),
   toggle = body.querySelector(".toggle"),
