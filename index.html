@@ -95,16 +95,18 @@
                 <div class="filters">
                     <section id="month">
                         <select>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
                         </select>
                     </section>
                     <section id="location">
@@ -149,18 +151,19 @@
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Location</div>
-                        <div id="dataLocation">0</div>
+                        <div id="dataloc">0</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Machine</div>
-                        <div id="dataMachine">0</div>
+                        <div id="datamach">0</div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Category</div>
+                        <div id="datacatgry">0</div>
                     </div>
                 </div>
             </div>
@@ -179,11 +182,12 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="charts2">
                 <div class="chart2">
                     <div class="chards-content">
                         <div class="chart-name">chart top machine</div>
+                        <canvas id="barChart" width="450" height="300"></canvas>
                     </div>
                 </div>
                 <div class="chart2">
@@ -202,6 +206,7 @@
             <div class="chart3">
                 <div class="chards-content">
                     <div class="chart-name">chart top product</div>
+                    <canvas id="productRevenueChart" width="450" height="300"></canvas>
                 </div>
             </div>
         </div>
