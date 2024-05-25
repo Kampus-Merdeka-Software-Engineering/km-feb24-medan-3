@@ -27,6 +27,7 @@ body{
     min-height: 100vh;
     background-color: var(--body-color);
     transition: var(--tran-05);
+    padding-right: 20px;
 }
 
 ::selection{
@@ -303,6 +304,7 @@ body.dark .home .text{
 .container {
     display: grid;
     gap: 20px; /* Jarak antara kolom */
+    margin-bottom: 90px;
 }
 
 .main {
@@ -312,9 +314,10 @@ body.dark .home .text{
 }
 
 .cards{
-    margin-top: -15px;
+    margin-top: 20px;
+    margin-left: 20px;
     width: 100%;
-    padding: 30px 20px;
+    height: auto;
     display: flex;
     gap: 10px;
 }
@@ -323,9 +326,8 @@ body.dark .home .text{
     padding: 20px;
     display: flex;
     flex: 2;
-    height: 200px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: #E6E6FA;
     border-radius: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
     border: 2px solid #92A7DD;
@@ -334,7 +336,6 @@ body.dark .home .text{
 .cards .card .card-name{
     font-size: 25px;
     text-align: center;
-    align-items: center;
     margin-top: -1px;
     background: #B5BFD9;
 }
@@ -343,6 +344,7 @@ body.dark .home .text{
     margin-top: 5px;
     font-size: 16px;
     margin-left: 18px;
+    flex-wrap: wrap;
     list-style-type: square;
 }
 
@@ -351,7 +353,7 @@ body.dark .home .text{
     display: flex;
     flex: 1;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: #E6E6FA;
     border-radius: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
     border: 2px solid #92A7DD;
@@ -360,31 +362,34 @@ body.dark .home .text{
 .cards .cardd .card-name{
     font-size: 25px;
     text-align: center;
-    margin-top: -26px;
+    margin-top: -1px;
     background: #B5BFD9;
 }
 
 .metrics{
     list-style-type: circle;
     font-size: 16px;
+    flex-wrap: wrap;
     margin-left: 28px;
     margin-top: 5px;
 }
 
 .query{
-    margin-top: -35px;
+    margin-top: 25px;
+    margin-left: 20px;
     width: 100%;
-    padding: 20px 20px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
 .query .query1{
     width: 310px;
-    height: 70px;
+    height: auto;
+    padding: 5px;
     flex: 1;
-    align-items: center;
-    justify-content: space-between;
     background: #92A7DD;
     border-radius: 15px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -392,8 +397,7 @@ body.dark .home .text{
 
 .query .query1 .query-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between; 
+    justify-content: center;
 }
 
 .query .query1 .action-button1, .action-button2 {
@@ -404,6 +408,7 @@ body.dark .home .text{
     border: 1px solid #92A7DD;
     border-radius: 20px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .query .query1 .action-button1:hover, .action-button2:hover {
@@ -411,52 +416,51 @@ body.dark .home .text{
     color: #fff;
 }
 
-.action-button1 {
-    margin-left: 58px;
+#previewSection {
+    display: none; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    background-color:#8EB1DC; 
+    color: #fff;
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    z-index: 9999; 
+    font-size: 20px;
 }
 
-.action-button2 {
-    margin-left: 22px;
-}
-
-.query-name1{
-    margin-left: 80px;
-    font-size: 25px;
-}
-
-.query-name3{
-    margin-left: 45px;
-    font-size: 25px;
+#previewSection:target {
+    display: block; 
 }
 
 .query .query1_space{
-    width: 450px;
     font-size: 21px;
-    height: 70px;
+    min-height: 60px;
+    padding: 5px;
     flex: 2;
+    flex-wrap: wrap;
     align-items: center;
     text-align: center;
-    justify-content: space-between;
+    justify-content: center;
     background: #E6E6FA;
     border-radius: 15px; 
     box-shadow: 2px 2px 4px #26548b;
 }
 
 .top {
-    margin-top: 4px;
+    margin-top: 20px;
+    margin-left: 20px;
     width: 100%;
-    padding: 15px 20px;
     display: flex;
     gap: 20px;
 }
 
 .top .top1{
-    width: 545px;
     height: 285px;
     flex: 1;
     text-align: center;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     background: transparent;
     border: 3px solid #8EB1DC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -464,14 +468,14 @@ body.dark .home .text{
 
 .chart-name{
     font-size: 22px;
-    margin-top: -20px;
+    margin-top: 25px;
     margin-bottom: 10px;
     color: #473f3f;
 }
 
 table {
     font-family: arial, sans-serif;
-    border-collapse: collapse;
+    border-collapse:separate;
     width: 100%;
     border-color: #26548b;
     color: #473f3f;
@@ -489,30 +493,31 @@ table {
   }
 
 .top .top2{
-    width: 545px;
     height: 650px;
     flex: 1;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
+    justify-content: center;
     background: transparent;
     border: 3px solid #8EB1DC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .tops {
-    margin-top: -378px;
+    margin-top: -350px;
+    margin-left: 20px;
     width: 100%;
-    padding: 20px 20px;
     display: flex;
-    gap: 22px;
+    gap: 20px;
 }
 
 .tops .tops1{
-    width: 545px;
-    height: 343px;
+    width: 893px;
+    min-height: 343px;
     flex: 1;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
     background: transparent;
     border: 3px solid #8EB1DC;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -524,46 +529,76 @@ table {
 
 .insight {
     width: 100%;
-    padding: 0px 20px;
     display: flex;
-    margin-left: 120px;
-    gap: 0;
+    margin-left: 20px;
+    padding-left: 120px; 
 }
 
 .insight .insights{
-    height: 300px;
-    flex: 1.5;
+    min-height: 300px;
+    width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    display: flex;
     background: #fff;
     border-radius: 16px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.insight img {
-    width: 20px;
+.insights p {
+    text-align: center;
+    font-weight: 600;
+    margin-left: 50px;
+}
+
+.insights img {
+    width: 150px;
     height: min-content;
-    flex: 0.2;
+    justify-content: center;
+    align-items: center;
   }
+
+.insights .concl {
+    margin-left: 40px;
+    font-size: 24px;
+    flex-wrap: wrap;
+    list-style-type: disc;
+    padding: 20px;
+}
 
 .recom {
     width: 100%;
-    padding: 0px 20px;
     display: flex;
     gap: 20px;
     margin-top: 0px;
-    margin-left: 120px;
+    margin-left: 20px;
+    padding-left: 120px;
+}
+
+.recom1 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.recom1 .recom-name {
+    font-size: 30px;
+    font-weight: bolder;
 }
 
 .recom1{
     height: 550px;
     flex: 230;
-    align-items: center;
-    justify-content: space-between;
     background: transparent;
     border-radius: 15px; 
     border: 3px solid #8EB1DC;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .recom2, .recomm2{
@@ -574,6 +609,39 @@ table {
     background: #92A7DD;
     border-radius: 10px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recom2 .recom-content, .recoms3 .recom-content, .recomm2 .recom-content, 
+.recommend3 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: #Fff;
+    font-weight: bold;
+}
+
+.recom3 .recom-content, .recomm3 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+    color: #18191a;
+} 
+
+.recoms2 .recom-content, .recommend2 .recom-content {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    width: 100%;
+    font-size: 32px;
+    color: #18191a;
 }
 
 .recom3, .recomm3{
@@ -589,11 +657,11 @@ table {
 .recoms {
     width: 100%;
     height: 120px;
-    padding: 0px 20px;
     display: flex;
     gap: 20px;
     margin-top: -430px;
-    margin-left: 120px;
+    margin-left: 20px;
+    padding-left: 120px;
 }
 
 .recoms1, .recommend1{
@@ -624,11 +692,11 @@ table {
 .recomm {
     width: 100%;
     height: 120px;
-    padding: 0px 20px;
     display: flex;
     gap: 20px;
     margin-top: -310px;
-    margin-left: 120px;
+    margin-left: 20px;
+    padding-left: 120px;
 }
 
 .recomm .recomm1{
@@ -641,11 +709,11 @@ table {
 .recommend {
     width: 100%;
     height: 120px;
-    padding: 0px 20px;
     display: flex;
     gap: 20px;
     margin-top: -185px;
-    margin-left: 120px;
+    margin-left: 20px;
+    padding-left: 120px;
 }
 
 .headtext{
@@ -657,6 +725,7 @@ table {
     margin: 0 20px;
     text-align: center;
     align-items: center;
+    justify-content: center;
     color: #707070;
     border-color: #8eb1dc;
     border-radius: 15px;
@@ -665,9 +734,7 @@ table {
 }
 
 h1{
-    text-align: left;
     font-size: 40px;
-    margin: 5px 20px 5px 35px;
     color: #707070;
 }
 
@@ -681,7 +748,8 @@ p{
     width: 100%;
     border: 3px solid #ccc;
     padding: 20px;
-    margin: 0 20px;
+    margin-top: 20px;
+    margin-left: 20px;
     text-align: center;
     align-items: center;
     color: #707070;
@@ -691,14 +759,259 @@ p{
 }
 
 footer {
-    background-color: #707070;
+    background-color: #812f2f;
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: fit-content;
+    padding: 5px;
     display: flex;
-    margin-left: 88px;
-    margin-top: 50px;
     justify-content: center;
     align-items: center;
     color: #fff;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
 }
+
+/* Aturan CSS untuk layar lebar (desktop) */
+@media screen and (min-width: 1200px) {
+  }
+  
+  /* Aturan CSS untuk layar menengah (tablet) */
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .cards{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        gap: 10px;
+    }
+    
+    .metrics, .hypo{
+        font-size: 18px;
+    }
+
+    .top {
+        display: grid;
+    }
+    
+    .tops {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .tops .tops2{
+        display: none;
+    }
+
+    .recom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+    
+    .recom1 {
+        flex-basis: 100%; 
+        height: fit-content;
+        padding: 10px;
+    }
+    
+    .recom2 {
+        height: 90px;
+    }
+    
+    .recom3 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+    
+    .recoms {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: 1px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recoms1 {
+        display: none;
+    }
+
+    .recoms3 {
+        height: 90px;
+    }
+    
+    .recoms2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+    .recomm {
+        display: flex;
+        margin-left: 20px;
+        padding-left: 120px;
+        margin-top: -28px;
+    }
+    
+    .recomm1{
+        display: none;
+    }
+
+    .recomm2{
+        height: 90px;
+    }
+    
+    .recomm3{
+        flex-basis: calc(50% - 10px);
+        height: 90px;
+    }
+    
+    .recommend {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: -28px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recommend1 {
+        display: none;
+    }
+
+    .recommend3 {
+        height: 90px;
+    }
+    
+    .recommend2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+  }
+  
+  /* Aturan CSS untuk layar kecil (ponsel) */
+  @media screen and (max-width: 767px) {
+    .cards{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        height: auto;
+        display: grid;
+        gap: 10px;
+    }
+    
+    .metrics, .hypo{
+        font-size: 18px;
+    }
+
+    .top {
+        display: grid;
+    }
+    
+    .tops {
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .tops .tops2{
+        display: none;
+    }
+
+    .recom {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px; 
+    }
+    
+    .recom1 {
+        flex-basis: 100%; 
+        height: fit-content;
+        padding: 10px;
+    }
+    
+    .recom2 {
+        height: 90px;
+    }
+    
+    .recom3 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+    
+    .recoms {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: 1px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recoms1 {
+        display: none;
+    }
+
+    .recoms3 {
+        height: 90px;
+    }
+    
+    .recoms2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+    .recomm {
+        display: flex;
+        margin-left: 20px;
+        padding-left: 120px;
+        margin-top: -28px;
+    }
+    
+    .recomm1{
+        display: none;
+    }
+
+    .recomm2{
+        height: 90px;
+    }
+    
+    .recomm3{
+        flex-basis: calc(50% - 10px);
+        height: 90px;
+    }
+    
+    .recommend {
+        width: 100%;
+        height: 120px;
+        display: flex;
+        margin-top: -28px;
+        margin-left: 20px;
+        padding-left: 120px;
+    }
+
+    .recommend1 {
+        display: none;
+    }
+
+    .recommend3 {
+        height: 90px;
+    }
+    
+    .recommend2 {
+        flex-basis: calc(50% - 10px); 
+        height: 90px;
+    }
+
+  }
+  
+
