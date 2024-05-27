@@ -779,7 +779,7 @@ footer {
   }
   
   /* Aturan CSS untuk layar menengah (tablet) */
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
     .sidebar.close {
         width: 0;
         padding: 0;
@@ -856,7 +856,7 @@ footer {
   }
   
   /* Aturan CSS untuk layar kecil (ponsel) */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     .sidebar.close {
         width: 0;
         padding: 0;
