@@ -324,9 +324,9 @@ body.dark .home .text{
 }
 
 .cards .card{
-    padding: 20px;
     display: flex;
     flex: 2;
+    padding-bottom: 5px;
     align-items: center;
     justify-content: center;
     background: #E6E6FA;
@@ -337,24 +337,23 @@ body.dark .home .text{
 .cards .card .card-name{
     font-size: 25px;
     text-align: center;
-    margin-top: -1px;
     background: #B5BFD9;
 }
 
 .hypo {
     margin-top: 5px;
     font-size: 16px;
-    margin-left: 18px;
+    margin-left: 28px;
     flex-wrap: wrap;
     list-style-type: square;
 }
 
 .cards .cardd{
-    padding: 20px;
     display: flex;
     flex: 1;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
     background: #E6E6FA;
     border-radius: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
     border: 2px solid #92A7DD;
@@ -363,7 +362,6 @@ body.dark .home .text{
 .cards .cardd .card-name{
     font-size: 25px;
     text-align: center;
-    margin-top: -1px;
     background: #B5BFD9;
 }
 
@@ -371,8 +369,6 @@ body.dark .home .text{
     list-style-type: circle;
     font-size: 16px;
     flex-wrap: wrap;
-    margin-left: 28px;
-    margin-top: 5px;
 }
 
 .query{
@@ -730,12 +726,12 @@ table {
     
 }
 
-h1{
+.headtext h1{
     font-size: 40px;
     color: #707070;
 }
 
-p{
+.headtext p{
     font-size: 25px;
     margin: 5px 23px;
 }
@@ -802,7 +798,7 @@ footer {
         display: grid;
         gap: 10px;
     }
-    
+
     .metrics, .hypo{
         font-size: 18px;
     }
