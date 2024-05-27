@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dataset_styles.css">  
-    <link rel="stylesheet" href="responsif.css"> 
+    <link rel="stylesheet" href="css/dataset_styles.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
     <title>Dataset</title> 
@@ -91,7 +90,7 @@
     <main class="container">
 
         <div class="main">
-        <div class="text">About Dataset</div>
+        <div class="kata">About Dataset</div>
 
         <div class="content">
             <section>
@@ -107,6 +106,83 @@
                             <br>(3) Brunswick Sq Mall - Pusat perbelanjaan dengan lalu lintas kaki rata-rata 7 hari seminggu. Mesin penjual: BSQ Mall x1364 - Zales & BSQ Mall x1366 - ATT.
                             <br>(4) Earle Asphalt - Perusahaan teknik konstruksi yang beroperasi 5 hari seminggu. Vending machine: Earle Asphalt x1371.
                         </p>
+                        <p class="desc">
+                            Adapun kolom yang berada pada dataset di atas adalah sebagai berikut:
+                        </p>
+                        <table class="vertical-table">
+                            <tr>
+                                <td class="label">Status</td>
+                                <td>Menunjukkan apakah data mesin berhasil diproses</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Device ID</td>
+                                <td>Pengidentifikasi elektronik unik (juga disebut ePort) untuk mesin penjual otomatis. Setiap mesin diberikan perangkat ePrt* yang unik</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Location</td>
+                                <td>Menunjukkan lokasi mesin penjual otomatis</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Machine</td>
+                                <td>Nama mesin yang ramah pengguna</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Product</td>
+                                <td>Produk yang dijual dari mesin</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Category</td>
+                                <td>Karbonasi / Makanan / Non-karbonasi / Air</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Transaction</td>
+                                <td>Pengidentifikasi unik untuk setiap transaksi</td>
+                            </tr>
+                            <tr>
+                                <td class="label">TransDate</td>
+                                <td>Tanggal & waktu transaksi</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Type</td>
+                                <td>Tipe transaksi (Tunai / Kredit)</td>
+                            </tr>
+                            <tr>
+                                <td class="label">RCoil</td>
+                                <td>Nomor #Coil yang digunakan untuk menjual produk</td>
+                            </tr>
+                            <tr>
+                                <td class="label">RPrice</td>
+                                <td>harga produk</td>
+                            </tr>
+                            <tr>
+                                <td class="label">RQty</td>
+                                <td>Jumlah yang terjual. Biasanya satu tapi mesin bisa dikonfigurasi untuk menjual lebih banyak item dalam satu transaksi</td>
+                            </tr>
+                            <tr>
+                                <td class="label">MCoil</td>
+                                <td>Nomor #Coil yang dipetakan digunakan untuk menjual produk</td>
+                            </tr>
+                            <tr>
+                                <td class="label">MPrice</td>
+                                <td>Harga produk yang dipetakan</td>
+                            </tr>
+                            <tr>
+                                <td class="label">MQty</td>
+                                <td>Jumlah yang dipetakan terjual. Biasanya satu tapi mesin bisa dikonfigurasi untuk menjual lebih banyak item dalam satu transaksi</td>
+                            </tr>
+                            <tr>
+                                <td class="label">LineTotal</td>
+                                <td>Total penjualan per transaksi</td>
+                            </tr>
+                            <tr>
+                                <td class="label">TransTotal</td>
+                                <td>Mewakili total dari semua transaksi yang akan muncul di Kartu Kredit. Pengguna bisa membeli minuman seharga Rp30.000 dan snack seharga Rp15.000 sehingga totalnya menjadi Rp45.000</td>
+                            </tr>
+                            <tr>
+                                <td class="label">Prcd Date</td>
+                                <td>Tanggal saat transaksi diproses</td>
+                            </tr>
+                        </table>
                     </div>
                 </article>
             </section>
@@ -118,7 +194,7 @@
                     </div>
                     <div class="keterangan">
                         <p>
-                            Pada dataset di atas, belum dilakukan data cleaning sehingga masih terdapat banyak kolom kosong dan data duplikat. Selain itu, diperlukan penyesuaian data untuk melakukan analisis. 
+                            Dataset Vending Machine Sales ini memiliki data sebanyak 9.618, data tersebut belum dilakukan proses cleaning sehingga masih terdapat banyak kolom kosong dan data duplikat. Selain itu, diperlukan penyesuaian data untuk melakukan analisis. 
                         </p>
                     </div>
                 </div>
@@ -140,19 +216,19 @@
                 <h3>Download Data Kotor</h3>
                 <img class="gkaggle" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="logo Kaggle">
                 <button id="link">
-                <a href="https://www.kaggle.com/datasets/awesomeasingh/vending-machine-sales">Navigate to The Site</a>
+                <a target="_blank" href="https://www.kaggle.com/datasets/awesomeasingh/vending-machine-sales">Navigate to The Site</a>
             </button>
             </section>
             <section class="dbersih">
                 <h3>Download Data Bersih</h3>
                 <button id="link">
-                    <a href="https://docs.google.com/spreadsheets/d/1xnAGVCyDfgVWn8oVGL4kqOsqN334jmdlnH1gpOoahYQ/edit?usp=sharing"> Download!</a>
+                    <a target="_blank" href="https://docs.google.com/spreadsheets/d/1xnAGVCyDfgVWn8oVGL4kqOsqN334jmdlnH1gpOoahYQ/edit?usp=sharing"> Download!</a>
                 </button>
             </section>
         </aside>
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 
