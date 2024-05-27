@@ -304,6 +304,7 @@ body.dark .home .text{
 .container {
     display: grid;
     gap: 20px; /* Jarak antara kolom */
+    margin-right: 50px;
 }
 
 .main {
@@ -481,7 +482,20 @@ footer {
   }
   
   /* Aturan CSS untuk layar menengah (tablet) */
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+    
+    .main {
+        padding-left: 20px;
+    }
+
     .revou{
         font-size: 12px;
         width: 100%;
@@ -532,7 +546,20 @@ footer {
   }
   
   /* Aturan CSS untuk layar kecil (ponsel) */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+
+    .main {
+        padding-left: 20px;
+    }
+    
     .revou{
         font-size: 10px;
         width: 100%; 
