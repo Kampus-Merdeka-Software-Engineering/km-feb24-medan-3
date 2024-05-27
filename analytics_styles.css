@@ -303,8 +303,9 @@ body.dark .home .text{
 
 .container {
     display: grid;
-    gap: 20px; /* Jarak antara kolom */
+    gap: 20px; 
     margin-bottom: 90px;
+    margin-right: 50px;
 }
 
 .main {
@@ -531,7 +532,7 @@ table {
     width: 100%;
     display: flex;
     margin-left: 20px;
-    padding-left: 120px; 
+    margin-top: 20px; 
 }
 
 .insight .insights{
@@ -570,9 +571,8 @@ table {
     width: 100%;
     display: flex;
     gap: 20px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recom1 .recom-content {
@@ -659,9 +659,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -430px;
+    margin-top: -405px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recoms1, .recommend1{
@@ -694,9 +693,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -310px;
+    margin-top: 25px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recomm .recomm1{
@@ -711,9 +709,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -185px;
+    margin-top: 25px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .headtext{
@@ -776,10 +773,27 @@ footer {
 
 /* Aturan CSS untuk layar lebar (desktop) */
 @media screen and (min-width: 1200px) {
+    .main {
+        width: 100%;
+    }
   }
   
   /* Aturan CSS untuk layar menengah (tablet) */
   @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        padding-left: 20px;
+    }
+
     .cards{
         margin-top: 20px;
         margin-left: 20px;
@@ -813,6 +827,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 20px; 
+        height: fit-content;
     }
     
     .recom1 {
@@ -821,83 +836,41 @@ footer {
         padding: 10px;
     }
     
-    .recom2 {
-        height: 90px;
+    .recom2, .recoms3, .recomm2, .recommend3 {
+        min-height: 90px;
     }
     
-    .recom3 {
+    .recom3, .recoms2, .recomm3, .recommend2 {
         flex-basis: calc(50% - 10px); 
-        height: 90px;
+        min-height: 90px;
     }
     
-    .recoms {
+    .recoms, .recomm, .recommend {
         width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: 1px;
-        margin-left: 20px;
-        padding-left: 120px;
+        margin-top: 20px;
     }
 
-    .recoms1 {
+    .recoms1, .recomm1, .recommend1 {
         display: none;
     }
-
-    .recoms3 {
-        height: 90px;
-    }
-    
-    .recoms2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
-    .recomm {
-        display: flex;
-        margin-left: 20px;
-        padding-left: 120px;
-        margin-top: -28px;
-    }
-    
-    .recomm1{
-        display: none;
-    }
-
-    .recomm2{
-        height: 90px;
-    }
-    
-    .recomm3{
-        flex-basis: calc(50% - 10px);
-        height: 90px;
-    }
-    
-    .recommend {
-        width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: -28px;
-        margin-left: 20px;
-        padding-left: 120px;
-    }
-
-    .recommend1 {
-        display: none;
-    }
-
-    .recommend3 {
-        height: 90px;
-    }
-    
-    .recommend2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
   }
   
   /* Aturan CSS untuk layar kecil (ponsel) */
   @media screen and (max-width: 767px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+
+    .main {
+        width: 70%;
+        padding-left: 20px;
+    }
+
     .cards{
         margin-top: 20px;
         margin-left: 20px;
@@ -931,6 +904,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 20px; 
+        height: fit-content;
     }
     
     .recom1 {
@@ -939,79 +913,23 @@ footer {
         padding: 10px;
     }
     
-    .recom2 {
-        height: 90px;
+    .recom2, .recoms3, .recomm2, .recommend3 {
+        min-height: 90px;
     }
     
-    .recom3 {
+    .recom3, .recoms2, .recomm3, .recommend2 {
         flex-basis: calc(50% - 10px); 
-        height: 90px;
+        min-height: 90px;
     }
     
-    .recoms {
+    .recoms, .recomm, .recommend {
         width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: 1px;
-        margin-left: 20px;
-        padding-left: 120px;
+        margin-top: 20px;
     }
 
-    .recoms1 {
+    .recoms1, .recomm1, .recommend1 {
         display: none;
     }
-
-    .recoms3 {
-        height: 90px;
-    }
-    
-    .recoms2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
-    .recomm {
-        display: flex;
-        margin-left: 20px;
-        padding-left: 120px;
-        margin-top: -28px;
-    }
-    
-    .recomm1{
-        display: none;
-    }
-
-    .recomm2{
-        height: 90px;
-    }
-    
-    .recomm3{
-        flex-basis: calc(50% - 10px);
-        height: 90px;
-    }
-    
-    .recommend {
-        width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: -28px;
-        margin-left: 20px;
-        padding-left: 120px;
-    }
-
-    .recommend1 {
-        display: none;
-    }
-
-    .recommend3 {
-        height: 90px;
-    }
-    
-    .recommend2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
   }
   
 
