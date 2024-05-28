@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">  
+    <link rel="stylesheet" href="css/styles.css">  
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title> 
@@ -90,11 +90,12 @@
     <main class="content">
         <div class="main">
             <div class="text">Dashboard</div>
-
+            <form id="formfilter">
             <div class="filters-container">
                 <div class="filters">
                     <section id="month">
                         <select>
+                            <option value="">Select Month</option>
                             <option value="January">January</option>
                             <option value="February">February</option>
                             <option value="March">March</option>
@@ -111,59 +112,63 @@
                     </section>
                     <section id="location">
                         <select>
-                            <option value="location1">Brunswick Sq Mall</option>
-                            <option value="location2">Earle Asphalt</option>
-                            <option value="location3">GuttenPlans</option>
-                            <option value="location3">EB Public Library</option>
+                            <option value="">Select Location</option>
+                            <option value="Brunswick Sq Mall">Brunswick Sq Mall</option>
+                            <option value="Earle Asphalt">Earle Asphalt</option>
+                            <option value="GuttenPlans">GuttenPlans</option>
+                            <option value="EB Public Library">EB Public Library</option>
                         </select>
                     </section>
                     <section id="machine">
                     <select>
-                        <option value="machine1">BSQ Mall x1366 - ATT</option>
-                        <option value="machine2">BSQ Mall x1364 - Zales</option>
-                        <option value="machine3">Earle Asphalt x1371</option>
-                        <option value="machine3">GuttenPlans x1367</option>
-                        <option value="machine3">EB Public Library x1380</option>
+                        <option value="">Select Machine</option>
+                        <option value="VJ300320611">BSQ Mall x1366 - ATT</option>
+                        <option value="VJ300205292">BSQ Mall x1364 - Zales</option>
+                        <option value="VJ300320686">Earle Asphalt x1371</option>
+                        <option value="VJ300320609">GuttenPlans x1367</option>
+                        <option value="VJ300320692">EB Public Library x1380</option>
                     </select>
                     </section>
                     <section id="category">
                         <select>
-                            <option value="category1">Carbonated</option>
-                            <option value="category2">Food</option>
-                            <option value="category3">Non Carbonated</option>
-                            <option value="category3">Water</option>
+                            <option value="">Select Category</option>
+                            <option value="Carbonated">Carbonated</option>
+                            <option value="Food">Food</option>
+                            <option value="Non Carbonated">Non Carbonated</option>
+                            <option value="Water">Water</option>
                         </select>
                     </section>
                 </div>
     
                 <div class="button">
-                    <button type="button">Start</button>
+                    <button type="submit" onclick="return false;">Start</button>
                 </div>
             </div>
+            </form>
             
             <div class="cards">
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Revenue</div>
-                        <div id="totalRevenue">0</div>
+                        <h1 id="totalRevenue">-</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Location</div>
-                        <div id="dataloc">0</div>
+                        <h1 id="dataloc">-</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Machine</div>
-                        <div id="datamach">0</div>
+                        <h1 id="datamach">-</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cards-content">
                         <div class="card-name">Category</div>
-                        <div id="datacatgry">0</div>
+                        <h1 id="datacatgry">-</h1>
                     </div>
                 </div>
             </div>
@@ -214,7 +219,7 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 <footer>
     <p>&copy; Team 3 Section Medan</p> 
