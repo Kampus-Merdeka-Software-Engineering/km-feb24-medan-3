@@ -354,13 +354,13 @@ fetch('./json/vm_cleaned.json')
         const revenueData = topMachines.map(machine => machineTotals[machine]);
 
         // Buat bar chart
-        createBarChart(machineLabels, revenueData);
+        createmachineBarChart(machineLabels, revenueData);
     })
     .catch(error => console.error('Error fetching JSON data:', error));
 
 // Fungsi untuk membuat bar chart
-function createBarChart(labels, data) {
-    new Chart(document.getElementById('barChart').getContext('2d'), {
+function createmachineBarChart(labels, data) {
+    new Chart(document.getElementById('machineBarChart').getContext('2d'), {
         type: 'bar', // Tipe chart
         data: {
             labels: labels,
@@ -392,3 +392,96 @@ function createBarChart(labels, data) {
         }
     });
 }
+
+fetch('./json/vm_cleaned.json')
+    .then(response => response.json())
+    .then(data => {
+        // Menghitung total produk terjual dan revenue per produk
+        const productTotals = data.reduce((acc, item) => {
+            const product = item.Product;
+            const quantity = parseInt(item.RQty);
+            const revenue = parseFloat(item.LineTotal);
+
+            if (!acc[product]) {
+                acc[product] = { quantity: 0, revenue: 0 };
+            }
+            acc[product].quantity += quantity;
+            acc[product].revenue += revenue;
+
+            return acc;
+        }, {});
+
+        // Mengurutkan produk berdasarkan total produk terjual dan memilih 10 produk paling laris
+        const sortedProducts = Object.keys(productTotals)
+            .map(product => ({ product, ...productTotals[product] }))
+            .sort((a, b) => b.quantity - a.quantity)
+            .slice(0, 10);
+
+        const labels = sortedProducts.map(item => item.product);
+        const quantityData = sortedProducts.map(item => item.quantity);
+        const revenueData = sortedProducts.map(item => item.revenue);
+
+        // Membuat bar chart dengan data yang telah diproses
+        createproductRevenueChart(labels, quantityData, revenueData);
+    })
+    .catch(error => console.error('Error fetching JSON data:', error));
+
+    function createproductRevenueChart(labels, quantityData, revenueData) {
+      new Chart(document.getElementById('productRevenueChart').getContext('2d'), {
+          type: 'bar',
+          data: {
+              labels: labels,
+              datasets: [
+                  {
+                      label: 'Total Produk Terjual',
+                      data: quantityData,
+                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                      borderColor: 'rgba(255, 99, 132, 1)',
+                      borderWidth: 1
+                  },
+                  {
+                      label: 'Revenue',
+                      data: revenueData,
+                      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                      borderColor: 'rgba(54, 162, 235, 1)',
+                      borderWidth: 1
+                  }
+              ]
+          },
+          options: {
+            indexAxis: 'y', // Mengubah sumbu index menjadi horizontal
+            responsive: true,
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    stacked: true,
+                    ticks: {
+                        callback: function(value) {
+                            return `$${value.toFixed(2)}`;
+                        }
+                    }
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (context.datasetIndex === 0) {
+                                label += `: ${context.raw}`;
+                            } else if (context.datasetIndex === 1) {
+                                label += `: $${context.raw.toFixed(2)}`;
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+  }
+  
