@@ -303,8 +303,9 @@ body.dark .home .text{
 
 .container {
     display: grid;
-    gap: 20px; /* Jarak antara kolom */
+    gap: 20px; 
     margin-bottom: 90px;
+    margin-right: 50px;
 }
 
 .main {
@@ -323,9 +324,9 @@ body.dark .home .text{
 }
 
 .cards .card{
-    padding: 20px;
     display: flex;
     flex: 2;
+    padding-bottom: 5px;
     align-items: center;
     justify-content: center;
     background: #E6E6FA;
@@ -336,24 +337,23 @@ body.dark .home .text{
 .cards .card .card-name{
     font-size: 25px;
     text-align: center;
-    margin-top: -1px;
     background: #B5BFD9;
 }
 
 .hypo {
     margin-top: 5px;
     font-size: 16px;
-    margin-left: 18px;
+    margin-left: 28px;
     flex-wrap: wrap;
     list-style-type: square;
 }
 
 .cards .cardd{
-    padding: 20px;
     display: flex;
     flex: 1;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    padding: 20px;
     background: #E6E6FA;
     border-radius: 0 7px 25px 0 rgba(0, 0, 0, 0.08);
     border: 2px solid #92A7DD;
@@ -362,7 +362,6 @@ body.dark .home .text{
 .cards .cardd .card-name{
     font-size: 25px;
     text-align: center;
-    margin-top: -1px;
     background: #B5BFD9;
 }
 
@@ -370,8 +369,6 @@ body.dark .home .text{
     list-style-type: circle;
     font-size: 16px;
     flex-wrap: wrap;
-    margin-left: 28px;
-    margin-top: 5px;
 }
 
 .query{
@@ -531,7 +528,7 @@ table {
     width: 100%;
     display: flex;
     margin-left: 20px;
-    padding-left: 120px; 
+    margin-top: 20px; 
 }
 
 .insight .insights{
@@ -570,9 +567,8 @@ table {
     width: 100%;
     display: flex;
     gap: 20px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recom1 .recom-content {
@@ -659,9 +655,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -430px;
+    margin-top: -405px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recoms1, .recommend1{
@@ -694,9 +689,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -310px;
+    margin-top: 25px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .recomm .recomm1{
@@ -711,9 +705,8 @@ table {
     height: 120px;
     display: flex;
     gap: 20px;
-    margin-top: -185px;
+    margin-top: 25px;
     margin-left: 20px;
-    padding-left: 120px;
 }
 
 .headtext{
@@ -733,12 +726,12 @@ table {
     
 }
 
-h1{
+.headtext h1{
     font-size: 40px;
     color: #707070;
 }
 
-p{
+.headtext p{
     font-size: 25px;
     margin: 5px 23px;
 }
@@ -776,10 +769,27 @@ footer {
 
 /* Aturan CSS untuk layar lebar (desktop) */
 @media screen and (min-width: 1200px) {
+    .main {
+        width: 100%;
+    }
   }
   
   /* Aturan CSS untuk layar menengah (tablet) */
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1200px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+        padding-left: 20px;
+    }
+
     .cards{
         margin-top: 20px;
         margin-left: 20px;
@@ -788,7 +798,7 @@ footer {
         display: grid;
         gap: 10px;
     }
-    
+
     .metrics, .hypo{
         font-size: 18px;
     }
@@ -813,6 +823,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 20px; 
+        height: fit-content;
     }
     
     .recom1 {
@@ -821,83 +832,41 @@ footer {
         padding: 10px;
     }
     
-    .recom2 {
-        height: 90px;
+    .recom2, .recoms3, .recomm2, .recommend3 {
+        min-height: 90px;
     }
     
-    .recom3 {
+    .recom3, .recoms2, .recomm3, .recommend2 {
         flex-basis: calc(50% - 10px); 
-        height: 90px;
+        min-height: 90px;
     }
     
-    .recoms {
+    .recoms, .recomm, .recommend {
         width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: 1px;
-        margin-left: 20px;
-        padding-left: 120px;
+        margin-top: 20px;
     }
 
-    .recoms1 {
+    .recoms1, .recomm1, .recommend1 {
         display: none;
     }
-
-    .recoms3 {
-        height: 90px;
-    }
-    
-    .recoms2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
-    .recomm {
-        display: flex;
-        margin-left: 20px;
-        padding-left: 120px;
-        margin-top: -28px;
-    }
-    
-    .recomm1{
-        display: none;
-    }
-
-    .recomm2{
-        height: 90px;
-    }
-    
-    .recomm3{
-        flex-basis: calc(50% - 10px);
-        height: 90px;
-    }
-    
-    .recommend {
-        width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: -28px;
-        margin-left: 20px;
-        padding-left: 120px;
-    }
-
-    .recommend1 {
-        display: none;
-    }
-
-    .recommend3 {
-        height: 90px;
-    }
-    
-    .recommend2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
   }
   
   /* Aturan CSS untuk layar kecil (ponsel) */
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+
+    .sidebar.close .image {
+        display: none;
+    }
+
+    .main {
+        width: 70%;
+        padding-left: 20px;
+    }
+
     .cards{
         margin-top: 20px;
         margin-left: 20px;
@@ -931,6 +900,7 @@ footer {
         display: flex;
         flex-wrap: wrap;
         gap: 20px; 
+        height: fit-content;
     }
     
     .recom1 {
@@ -939,79 +909,23 @@ footer {
         padding: 10px;
     }
     
-    .recom2 {
-        height: 90px;
+    .recom2, .recoms3, .recomm2, .recommend3 {
+        min-height: 90px;
     }
     
-    .recom3 {
+    .recom3, .recoms2, .recomm3, .recommend2 {
         flex-basis: calc(50% - 10px); 
-        height: 90px;
+        min-height: 90px;
     }
     
-    .recoms {
+    .recoms, .recomm, .recommend {
         width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: 1px;
-        margin-left: 20px;
-        padding-left: 120px;
+        margin-top: 20px;
     }
 
-    .recoms1 {
+    .recoms1, .recomm1, .recommend1 {
         display: none;
     }
-
-    .recoms3 {
-        height: 90px;
-    }
-    
-    .recoms2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
-    .recomm {
-        display: flex;
-        margin-left: 20px;
-        padding-left: 120px;
-        margin-top: -28px;
-    }
-    
-    .recomm1{
-        display: none;
-    }
-
-    .recomm2{
-        height: 90px;
-    }
-    
-    .recomm3{
-        flex-basis: calc(50% - 10px);
-        height: 90px;
-    }
-    
-    .recommend {
-        width: 100%;
-        height: 120px;
-        display: flex;
-        margin-top: -28px;
-        margin-left: 20px;
-        padding-left: 120px;
-    }
-
-    .recommend1 {
-        display: none;
-    }
-
-    .recommend3 {
-        height: 90px;
-    }
-    
-    .recommend2 {
-        flex-basis: calc(50% - 10px); 
-        height: 90px;
-    }
-
   }
   
 
