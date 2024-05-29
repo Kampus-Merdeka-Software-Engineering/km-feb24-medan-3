@@ -351,7 +351,7 @@ button{
     justify-content: flex-end;
     margin-right: 2%;
     margin-left: auto;
-    margin-top: 20px;
+    margin-top: 5px;
     padding: 3px 10px;
     border-radius: 5px;
     opacity: 0.8;
@@ -369,19 +369,35 @@ button:hover {
 
 .cards, .charts1, .charts2, .charts3 {
     width: 100%;
-    padding: 20px; 
+    padding: 10px; 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
 }
 
-.cards .card, .charts1 .chart1, .charts2 .chart2, .charts3 .chart3 {
-    padding: 50px;
+.cards .card{
+    padding: 20px;
     background: #fff;
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.charts1 .chart1, .charts2 .chart2, .charts3 .chart3 {
+    padding: 30px;
+    background: #fff;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.charts1 .chart1 canvas,
+.charts2 .chart2 canvas,
+.charts3 .chart3 canvas {
+    width: 100% !important;  /* membuat konten canvas penuh */
+    height: 100% !important;
 }
 
 /* ======atur footernyanya dari sini======= */
@@ -398,7 +414,7 @@ footer {
 
 /* ======atur responsifnya dari sini======= */
 
-
+/* membuat responsif untuk layar berukuran lebar */
 @media screen and (max-width: 1200px) {
     .content, .cards{
         grid-template-columns: repeat(4, 1fr);
@@ -422,9 +438,10 @@ footer {
     }
 }
 
+/* membuat responsif untuk layar berukuran tablet */
 @media screen and (max-width: 768px) {
     .content, .cards{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .charts1, .charts2, .charts3 {
@@ -434,48 +451,7 @@ footer {
     button {
         margin-top: 10px;
     }
-}
 
-@media screen and (max-width: 576px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
-        grid-template-columns: 1fr; 
-        margin-right: 0; 
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
-        grid-template-columns: 1fr; 
-        margin-right: 0; 
-    }
-}
-
-@media(max-width: 1600px) {
-    footer {
-        width: 100%;
-    }
-}
-
-@media(max-width: 574px) {
-    footer {
-        width: 100%;
-    }
-}
-
-@media(max-width: 2700px) {
-    footer {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 1200px){
-    main{
-        margin-right: 5%;
-    }
-}
-
-
-@media screen and (max-width: 768px) {
     main {
         grid-template-columns: 1fr; 
     }
@@ -494,5 +470,75 @@ footer {
 
     button {
         margin-top: 10px; 
+    }
+}
+
+/* membuat responsif untuk layar berukuran kecil */
+@media screen and (max-width: 576px) {
+    .content, .cards, .charts1, .charts2, .charts3 {
+        grid-template-columns: 1fr; 
+        margin-right: 0; 
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .content, .cards, .charts1, .charts2, .charts3 {
+        grid-template-columns: 1fr; 
+        margin-right: 0; 
+    }
+}
+
+/* membuat responsif untuk footer dengan ukuran layar spesifik */
+@media(max-width: 1600px) {
+    footer {
+        width: 100%;
+    }
+}
+
+@media(max-width: 574px) {
+    footer {
+        width: 100%;
+    }
+}
+
+@media(max-width: 2700px) {
+    footer {
+        width: 100%;
+    }
+}
+
+/* membuat responsif untuk filter dan sidebaar close dengan ukuran layar spesifik */
+@media screen and (max-width: 760px) {
+    main {
+        grid-template-columns: 1fr; 
+    }
+
+    .filters-container {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 12px;
+    }
+
+    .filters {
+        flex-direction: column; 
+        align-items: flex-end; 
+        gap: 3px; 
+    }
+
+    button {
+        margin-top: 10px; 
+    }
+
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+    
+    .sidebar.close .image {
+        display: none;
+    }
+    
+    .main{
+        padding-left: 20px;
     }
 }
