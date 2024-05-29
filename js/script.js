@@ -1,139 +1,139 @@
 // load data json
 fetch("./json/vm_cleaned.json")
-  .then((response) => response.json())
-  .then(function (json) {
-    // mengambil nilai revenue
-    const revenue = json.map(function (item) {
-      return parseFloat(item.LineTotal);
+    .then((response) => response.json())
+    .then(function (json) {
+        // mengambil nilai revenue
+        const revenue = json.map(function (item) {
+            return parseFloat(item.LineTotal);
+        });
+
+        const eledatarev = document.getElementById("totalRevenue");
+        // untuk menghitung total nilai dari LineTotal
+        const totalRevenue = revenue.reduce((acc, curr) => acc + curr, 0);
+        // untuk membulatkan hasilnya
+        const roundedTotalRevenue = Math.round(totalRevenue);
+        eledatarev.innerHTML = roundedTotalRevenue.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+        });
+
+        // mengambil nilai location
+        const loc = json.map(function (item) {
+            return item.Location;
+        });
+
+        const eledataloc = document.getElementById("dataloc");
+        eledataloc.innerHTML = new Set(loc).size;
+
+        // mengambil nilai machine
+        const mach = json.map(function (item) {
+            return item.Device_ID;
+        });
+
+        const eledatamach = document.getElementById("datamach");
+        eledatamach.innerHTML = new Set(mach).size;
+
+        //mengambil nilai category
+        const catgry = json.map(function (item) {
+            return item.Category;
+        });
+
+        const eledatacatgry = document.getElementById("datacatgry");
+        eledatacatgry.innerHTML = new Set(catgry).size;
     });
-
-    const eledatarev = document.getElementById("totalRevenue");
-    // untuk menghitung total nilai dari LineTotal
-    const totalRevenue = revenue.reduce((acc, curr) => acc + curr, 0);
-    // untuk membulatkan hasilnya
-    const roundedTotalRevenue = Math.round(totalRevenue);
-    eledatarev.innerHTML = roundedTotalRevenue.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
-
-    // mengambil nilai location
-    const loc = json.map(function (item) {
-      return item.Location;
-    });
-
-    const eledataloc = document.getElementById("dataloc");
-    eledataloc.innerHTML = new Set(loc).size;
-
-    // mengambil nilai machine
-    const mach = json.map(function (item) {
-      return item.Device_ID;
-    });
-
-    const eledatamach = document.getElementById("datamach");
-    eledatamach.innerHTML = new Set(mach).size;
-
-    //mengambil nilai category
-    const catgry = json.map(function (item) {
-      return item.Category;
-    });
-
-    const eledatacatgry = document.getElementById("datacatgry");
-    eledatacatgry.innerHTML = new Set(catgry).size;
-  });
 
 //filter data
 document.addEventListener("DOMContentLoaded", (event) => {
-  // Fungsi untuk mengambil nilai filter dan memproses data
-  async function processFilters() {
-    // Ambil nilai yang dipilih dari setiap filter
-    const month = document.querySelector("#month select").value;
-    const location = document.querySelector("#location select").value;
-    const machine = document.querySelector("#machine select").value;
-    const category = document.querySelector("#category select").value;
+    // Fungsi untuk mengambil nilai filter dan memproses data
+    async function processFilters() {
+        // Ambil nilai yang dipilih dari setiap filter
+        const month = document.querySelector("#month select").value;
+        const location = document.querySelector("#location select").value;
+        const machine = document.querySelector("#machine select").value;
+        const category = document.querySelector("#category select").value;
 
-    // menampilkan nilai yang dipilih di console
-    console.log("Selected Month:", month);
-    console.log("Selected Location:", location);
-    console.log("Selected Machine:", machine);
-    console.log("Selected Category:", category);
+        // menampilkan nilai yang dipilih di console
+        console.log("Selected Month:", month);
+        console.log("Selected Location:", location);
+        console.log("Selected Machine:", machine);
+        console.log("Selected Category:", category);
 
-    // Ambil data dari file JSON
-    const data = await fetchData();
+        // Ambil data dari file JSON
+        const data = await fetchData();
 
-    // pemrosesan data berdasarkan nilai yang dipilih
-    filterData(data, month, location, machine, category);
-  }
-
-  // Fungsi untuk mengambil data dari file JSON
-  async function fetchData() {
-    try {
-      const response = await fetch("./json/vm_cleaned.json");
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(
-        "There has been a problem with your fetch operation:",
-        error
-      );
+        // pemrosesan data berdasarkan nilai yang dipilih
+        filterData(data, month, location, machine, category);
     }
-  }
 
-  // Fungsi untuk memfilter data
-  function filterData(data, month, location, machine, category) {
-    const filteredData = data.filter((item) => {
-      const itemMonth = new Date(item.TransDate).toLocaleString("default", {
-        month: "long",
-      });
-      return (
-        (month === itemMonth || month == "") &&
-        (location === item.Location || location === "") &&
-        (machine === item.Device_ID || machine === "") &&
-        (category === item.Category || category === "")
-      );
-    });
+    // Fungsi untuk mengambil data dari file JSON
+    async function fetchData() {
+        try {
+            const response = await fetch("./json/vm_cleaned.json");
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText);
+            }
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error(
+                "There has been a problem with your fetch operation:",
+                error
+            );
+        }
+    }
 
-    //menampilkan di console
-    console.log("Filtered Data:", filteredData);
-  }
+    // Fungsi untuk memfilter data
+    function filterData(data, month, location, machine, category) {
+        const filteredData = data.filter((item) => {
+            const itemMonth = new Date(item.TransDate).toLocaleString("default", {
+                month: "long",
+            });
+            return (
+                (month === itemMonth || month == "") &&
+                (location === item.Location || location === "") &&
+                (machine === item.Device_ID || machine === "") &&
+                (category === item.Category || category === "")
+            );
+        });
 
-  // event listener untuk tombol submit
-  document
-    .querySelector(".button button")
-    .addEventListener("click", (event) => {
-      event.preventDefault();
-      alert("Button clicked!"); // Menampilkan alert
-      processFilters();
-    });
+        //menampilkan di console
+        console.log("Filtered Data:", filteredData);
+    }
+
+    // event listener untuk tombol submit
+    document
+        .querySelector(".button button")
+        .addEventListener("click", (event) => {
+            event.preventDefault();
+            alert("Button clicked!"); // Menampilkan alert
+            processFilters();
+        });
 });
 
 // sidebar
 const body = document.querySelector("body"),
-  sidebar = body.querySelector("nav"),
-  toggle = body.querySelector(".toggle"),
-  searchBtn = body.querySelector(".search-box"),
-  modeSwitch = body.querySelector(".toggle-switch"),
-  modeText = body.querySelector(".mode-text");
+    sidebar = body.querySelector("nav"),
+    toggle = body.querySelector(".toggle"),
+    searchBtn = body.querySelector(".search-box"),
+    modeSwitch = body.querySelector(".toggle-switch"),
+    modeText = body.querySelector(".mode-text");
 
 toggle.addEventListener("click", () => {
-  sidebar.classList.toggle("close");
+    sidebar.classList.toggle("close");
 });
 
 searchBtn.addEventListener("click", () => {
-  sidebar.classList.remove("close");
+    sidebar.classList.remove("close");
 });
 
 modeSwitch.addEventListener("click", () => {
-  body.classList.toggle("dark");
+    body.classList.toggle("dark");
 
-  if (body.classList.contains("dark")) {
-    modeText.innerText = "Light mode";
-  } else {
-    modeText.innerText = "Dark mode";
-  }
+    if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+    } else {
+        modeText.innerText = "Dark mode";
+    }
 });
 
 fetch("./json/vm_cleaned.json");
@@ -228,7 +228,10 @@ fetch('./json/vm_cleaned.json')
             const quantitySold = parseInt(item.RQty); // Mengubah RQty menjadi integer
 
             if (!acc[monthYear]) {
-                acc[monthYear] = { revenue: 0, quantity: 0 };
+                acc[monthYear] = {
+                    revenue: 0,
+                    quantity: 0
+                };
             }
             acc[monthYear].revenue += lineTotal; // Menjumlahkan revenue bulanan
             acc[monthYear].quantity += quantitySold; // Menjumlahkan quantity sold bulanan
@@ -251,8 +254,7 @@ function createLineChart(labels, revenueData, quantityData) {
         type: 'line', // Tipe chart
         data: {
             labels: labels,
-            datasets: [
-                {
+            datasets: [{
                     label: 'Total Revenue',
                     data: revenueData,
                     backgroundColor: 'rgba(75, 192, 192, 0.2)', // Warna background untuk revenue
@@ -281,7 +283,7 @@ function createLineChart(labels, revenueData, quantityData) {
                     type: 'linear',
                     position: 'left', // Posisi sumbu y di sebelah kiri
                     ticks: {
-                        callback: function(value) {
+                        callback: function (value) {
                             return `$${value.toFixed(2)}`; // Format ticks dengan $ dan 2 desimal
                         }
                     },
@@ -298,7 +300,7 @@ function createLineChart(labels, revenueData, quantityData) {
                         drawOnChartArea: false, // Hapus garis grid pada sumbu y1
                     },
                     ticks: {
-                        callback: function(value) {
+                        callback: function (value) {
                             return `${value}`; // Format ticks untuk quantity
                         }
                     },
@@ -311,7 +313,7 @@ function createLineChart(labels, revenueData, quantityData) {
             plugins: {
                 tooltip: {
                     callbacks: {
-                        label: function(context) {
+                        label: function (context) {
                             let label = context.dataset.label || '';
                             if (context.datasetIndex === 0) {
                                 label += `: $${context.raw.toFixed(2)}`; // Format tooltip untuk revenue
@@ -378,7 +380,7 @@ function createmachineBarChart(labels, data) {
                 y: {
                     beginAtZero: true, // Mulai sumbu y dari 0
                     ticks: {
-                        callback: function(value) {
+                        callback: function (value) {
                             return `$${value.toFixed(2)}`; // Format ticks dengan $ dan 2 desimal
                         }
                     }
@@ -403,7 +405,10 @@ fetch('./json/vm_cleaned.json')
             const revenue = parseFloat(item.LineTotal);
 
             if (!acc[product]) {
-                acc[product] = { quantity: 0, revenue: 0 };
+                acc[product] = {
+                    quantity: 0,
+                    revenue: 0
+                };
             }
             acc[product].quantity += quantity;
             acc[product].revenue += revenue;
@@ -413,7 +418,10 @@ fetch('./json/vm_cleaned.json')
 
         // Mengurutkan produk berdasarkan total produk terjual dan memilih 10 produk paling laris
         const sortedProducts = Object.keys(productTotals)
-            .map(product => ({ product, ...productTotals[product] }))
+            .map(product => ({
+                product,
+                ...productTotals[product]
+            }))
             .sort((a, b) => b.quantity - a.quantity)
             .slice(0, 10);
 
@@ -426,29 +434,28 @@ fetch('./json/vm_cleaned.json')
     })
     .catch(error => console.error('Error fetching JSON data:', error));
 
-    function createproductRevenueChart(labels, quantityData, revenueData) {
-      new Chart(document.getElementById('productRevenueChart').getContext('2d'), {
-          type: 'bar',
-          data: {
-              labels: labels,
-              datasets: [
-                  {
-                      label: 'Total Produk Terjual',
-                      data: quantityData,
-                      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-                      borderColor: 'rgba(255, 99, 132, 1)',
-                      borderWidth: 1
-                  },
-                  {
-                      label: 'Revenue',
-                      data: revenueData,
-                      backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                      borderColor: 'rgba(54, 162, 235, 1)',
-                      borderWidth: 1
-                  }
-              ]
-          },
-          options: {
+function createproductRevenueChart(labels, quantityData, revenueData) {
+    new Chart(document.getElementById('productRevenueChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                    label: 'Total Produk Terjual',
+                    data: quantityData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Revenue',
+                    data: revenueData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
             indexAxis: 'y', // Mengubah sumbu index menjadi horizontal
             responsive: true,
             scales: {
@@ -456,7 +463,7 @@ fetch('./json/vm_cleaned.json')
                     beginAtZero: true,
                     stacked: true,
                     ticks: {
-                        callback: function(value) {
+                        callback: function (value) {
                             return `$${value.toFixed(2)}`;
                         }
                     }
@@ -469,7 +476,7 @@ fetch('./json/vm_cleaned.json')
             plugins: {
                 tooltip: {
                     callbacks: {
-                        label: function(context) {
+                        label: function (context) {
                             let label = context.dataset.label || '';
                             if (context.datasetIndex === 0) {
                                 label += `: ${context.raw}`;
@@ -483,5 +490,148 @@ fetch('./json/vm_cleaned.json')
             }
         }
     });
-  }
-  
+}
+
+// Fetch data JSON untuk membuat bar chart berdasarkan kategori
+fetch('./json/vm_cleaned.json')
+    .then(response => response.json())
+    .then(data => {
+        // Hitung total revenue dan quantity sold untuk setiap kategori
+        const categoryTotals = data.reduce((acc, item) => {
+            const category = item.Category;
+            const quantity = parseInt(item.RQty);
+            const revenue = parseFloat(item.LineTotal);
+
+            if (!acc[category]) {
+                acc[category] = { revenue: 0, quantity: 0 };
+            }
+            acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
+            acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
+            return acc;
+        }, {});
+
+        // Data untuk chart
+        const categoryLabels = Object.keys(categoryTotals);
+        const revenueData = categoryLabels.map(category => categoryTotals[category].revenue);
+        const quantityData = categoryLabels.map(category => categoryTotals[category].quantity);
+
+        // Buat bar chart
+        createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
+    })
+    .catch(error => console.error('Error fetching JSON data:', error));
+
+// Fungsi untuk membuat bar chart horizontal dengan bar bertumpuk
+function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
+    new Chart(document.getElementById('categoryChart').getContext('2d'), {
+        type: 'bar', // Tipe chart
+        data: {
+            labels: labels, // Kategori sebagai label di sumbu y
+            datasets: [
+                {
+                    label: 'Quantity Sold',
+                    data: quantityData,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)', // Warna background merah
+                    borderColor: 'rgba(255, 99, 132, 1)', // Warna border merah
+                    borderWidth: 1
+                },
+                {
+                    label: 'Total Revenue',
+                    data: revenueData,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Warna background biru
+                    borderColor: 'rgba(54, 162, 235, 1)', // Warna border biru
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            indexAxis: 'y', // Mengatur sumbu x dan y untuk membuat bar horizontal
+            scales: {
+                x: {
+                    stacked: true, // Aktifkan bar bertumpuk pada sumbu x
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return `${value}`; // Format ticks untuk penjualan dan revenue
+                        }
+                    }
+                },
+                y: {
+                    stacked: true, // Aktifkan bar bertumpuk pada sumbu y
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false // Pastikan semua label kategori ditampilkan
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (context.datasetIndex === 0) {
+                                label += `: ${context.raw}`; // Format tooltip untuk quantity sold
+                            } else if (context.datasetIndex === 1) {
+                                label += `: $${context.raw.toFixed(2)}`; // Format tooltip untuk revenue
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+// Fetch data dari file JSON
+fetch('./json/vm_cleaned.json')
+.then(response => response.json())
+    .then(data => {
+        // Menghitung total produk terjual dan total revenue per produk
+        const productTotals = data.reduce((acc, item) => {
+            const productKey = `${item.Location}-${item.Category}-${item.Product}`; // Membuat kunci unik untuk setiap produk
+            const quantity = parseInt(item.RQty);
+            const revenue = parseFloat(item.LineTotal);
+
+            if (!acc[productKey]) {
+                acc[productKey] = {
+                    Location: item.Location,
+                    Category: item.Category,
+                    Product: item.Product,
+                    QuantitySold: quantity,
+                    Revenue: revenue
+                };
+            } else {
+                acc[productKey].QuantitySold += quantity;
+                acc[productKey].Revenue += revenue;
+            }
+
+            return acc;
+        }, {});
+
+        // Ubah objek menjadi array untuk digunakan oleh Tabulator
+        const tableData = Object.values(productTotals);
+
+        // Buat Tabulator setelah data berhasil diambil dan dihitung
+        var table = new Tabulator("#example-table", {
+            height:205,
+            data:tableData,
+            layout:"fitColumns",
+            columns:[
+                {title:"Location", field:"Location"},
+                {title:"Category", field:"Category"},
+                {title:"Product", field:"Product"},
+                {title:"Quantity Sold", field:"QuantitySold", sorter: 'number'},
+                {title:"Total Revenue", field:"Revenue", formatter:"money", formatterParams:{symbol:"$", precision:2}}, // Format kolom revenue sebagai mata uang
+            ],
+            initialSort:[ // Urutkan data secara default berdasarkan Quantity Sold (QuantitySold) secara descending (tertinggi ke terendah)
+            {column:"QuantitySold", dir:"desc"}
+        ]
+        });
+
+        // Trigger alert saat baris diklik
+        table.on("rowClick", function(e, row){ 
+            alert("Product " + row.getData().Product + " Clicked!!!!");
+        });
+    })
+    .catch(error => console.error('Error fetching JSON data:', error));
