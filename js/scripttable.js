@@ -1,32 +1,92 @@
-// Fetch data dari file JSON
-fetch('./json/vm_cleaned.json') // Ubah 'data.json' sesuai dengan lokasi file JSON Anda
-    .then(response => response.json())
-    .then(data => {
-        // Buat Tabulator setelah data berhasil diambil
-        var table = new Tabulator("#Cleaned-table", {
-            height:500,
-            data:data, // Gunakan data dari file JSON
-            layout:"fitColumns",
-            pagination:"local",       //paginate the data
-            paginationSize:100,         //allow 7 rows per page of data
-            paginationCounter:"rows", //display count of paginated rows in footer
-            columns:[
-                {title:"Device ID", field:"Device_ID"},
-                {title:"Location", field:"Location"},
-                {title:"Product", field:"Product"},
-                {title:"Category", field:"Category"},
-                {title:"Transaction", field:"Transaction"},
-                {title:"Transaction Date", field:"TransDate"},
-                {title:"Retail Price", field:"RPrice"},
-                {title:"Retail Quantity", field:"RQty"},
-                {title:"Line Total", field:"LineTotal"},
-                {title:"Transaction Total", field:"TransTotal"},
-            ],
-        });
+//   Device_ID
+//   Location
+//   Product
+//   Category
+//   Transaction
+//   TransDate
+//   RPrice
+//   RQty
+//   LineTotal
+//   TransTotal
+// sidebar func
+const body = document.querySelector("body"),
+    sidebar = body.querySelector("nav"),
+    toggle = body.querySelector(".toggle"),
+    searchBtn = body.querySelector(".search-box"),
+    modeSwitch = body.querySelector(".toggle-switch"),
+    modeText = body.querySelector(".mode-text");
 
-        // Trigger alert saat baris diklik
-        table.on("rowClick", function(e, row){ 
-            alert("Transaction ID " + row.getData().Transaction + " Clicked!!!!");
+toggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+});
+
+searchBtn.addEventListener("click", () => {
+    sidebar.classList.remove("close");
+});
+
+modeSwitch.addEventListener("click", () => {
+    body.classList.toggle("dark");
+
+    if (body.classList.contains("dark")) {
+        modeText.innerText = "Light mode";
+    } else {
+        modeText.innerText = "Dark mode";
+    }
+});
+
+// Raw-table
+$(document).ready(function() {
+    fetch("./json/vending_machine_sales.json")
+        .then(response => response.json())
+        .then(data => {
+            $('#Raw-table').DataTable({
+                data: data,
+                columns: [
+                    { data: 'Status' },
+                    { data: 'Device ID' },
+                    { data: 'Location' },
+                    { data: 'Machine' },                    
+                    { data: 'Product' },
+                    { data: 'Category' },
+                    { data: 'Transaction' },
+                    { data: 'TransDate' },
+                    { data: 'Type' },
+                    { data: 'RCoil' },                    
+                    { data: 'RPrice' },
+                    { data: 'RQty' },
+                    { data: 'MCoil' },
+                    { data: 'MPrice' },                    
+                    { data: 'MQty' },
+                    { data: 'LineTotal' },                    
+                    { data: 'TransTotal' },
+                    { data: 'Prcd Date' },
+                ],
+                scrollY: 500
+            });
         });
-    })
-    .catch(error => console.error('Error fetching JSON data:', error));
+});
+
+// Cleaned-table
+$(document).ready(function() {
+    fetch("./json/vm_cleaned.json")
+        .then(response => response.json())
+        .then(data => {
+            $('#Cleaned-table').DataTable({
+                data: data,
+                columns: [
+                    { data: 'Device_ID' },
+                    { data: 'Location' },
+                    { data: 'Product' },
+                    { data: 'Category' },
+                    { data: 'Transaction' },
+                    { data: 'TransDate' },
+                    { data: 'RPrice' },
+                    { data: 'RQty' },
+                    { data: 'LineTotal' },
+                    { data: 'TransTotal' },
+                ],
+                scrollY: 500
+            });
+        });
+});
+

@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/dataset_styles.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
- <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dataset</title>
 </head>
@@ -208,7 +209,30 @@
                     <div class="table">
                         <h3>Dataset Kotor</h3>
                         <div id="table1">
-                            <img src="assets/data.png" width="100%" height="auto">
+                            <table id='Raw-table'>
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Device ID</th>
+                                        <th>Location</th>
+                                        <th>Machine</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Transaction</th>
+                                        <th>Transaction Date</th>
+                                        <th>Type</th>
+                                        <th>RCoil</th>
+                                        <th>RPrice</th>
+                                        <th>RQty</th>
+                                        <th>MCoil</th>
+                                        <th>MPrice</th>
+                                        <th>MQty</th>
+                                        <th>Line Total</th>
+                                        <th>Transaction Total</th>
+                                        <th>Proced Date</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                         <div class="keterangan">
                             <p>
@@ -222,8 +246,23 @@
                 <section class="dataset">
                     <div class="table">
                         <h3>Dataset Bersih</h3>
-                        <div id="Cleaned-table"></div>
-                        <div id="table2">
+                        <div id="table1">
+                            <table id="Cleaned-table" class="compact display" >
+                                <thead>
+                                    <tr>
+                                        <th>Device ID</th>
+                                        <th>Location</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Transaction</th>
+                                        <th>TransDate</th>
+                                        <th>RPrice</th>
+                                        <th>RQty</th>
+                                        <th>LineTotal</th>
+                                        <th>TransTotal</th>
+                                    </tr>
+                                </thead>
+                            </table>
                         </div>
                     </div>
                 </section>
@@ -251,7 +290,8 @@
             </section>
         </aside>
     </main>
-    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="js/scripttable.js"></script>
 
 </body>

@@ -718,55 +718,51 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
     });
 }
 
-// Fetch data dari file JSON
-fetch('./json/vm_cleaned.json')
-.then(response => response.json())
-    .then(data => {
-        // Menghitung total produk terjual dan total revenue per produk
-        const productTotals = data.reduce((acc, item) => {
-            const productKey = `${item.Location}-${item.Category}-${item.Product}`; // Membuat kunci unik untuk setiap produk
-            const quantity = parseInt(item.RQty);
-            const revenue = parseFloat(item.LineTotal);
 
-            if (!acc[productKey]) {
-                acc[productKey] = {
-                    Location: item.Location,
-                    Category: item.Category,
-                    Product: item.Product,
-                    QuantitySold: quantity,
-                    Revenue: revenue
-                };
-            } else {
-                acc[productKey].QuantitySold += quantity;
-                acc[productKey].Revenue += revenue;
-            }
+// Cleaned-table
+$(document).ready(function() {
+  fetch('./json/vm_cleaned.json')
+  .then(response => response.json())
+  .then(data => {
+      // Menghitung total produk terjual dan total revenue per produk
+      const productTotals = data.reduce((acc, item) => {
+          const productKey = `${item.Location}-${item.Category}-${item.Product}`; // Membuat kunci unik untuk setiap produk
+          const quantity = parseInt(item.RQty);
+          const revenue = parseFloat(item.LineTotal);
 
-            return acc;
-        }, {});
+          if (!acc[productKey]) {
+              acc[productKey] = {
+                  Location: item.Location,
+                  Category: item.Category,
+                  Product: item.Product,
+                  QuantitySold: quantity,
+                  Revenue: revenue
+              };
+          } else {
+              acc[productKey].QuantitySold += quantity;
+              acc[productKey].Revenue += revenue;
+          }
 
-        // Ubah objek menjadi array untuk digunakan oleh Tabulator
-        const tableData = Object.values(productTotals);
+          return acc;
+      }, {});
 
-        // Buat Tabulator setelah data berhasil diambil dan dihitung
-        var table = new Tabulator("#example-table", {
-            height:205,
-            data:tableData,
-            layout:"fitColumns",
-            columns:[
-                {title:"Location", field:"Location"},
-                {title:"Category", field:"Category"},
-                {title:"Product", field:"Product"},
-                {title:"Quantity Sold", field:"QuantitySold", sorter: 'number'},
-                {title:"Total Revenue", field:"Revenue", formatter:"money", formatterParams:{symbol:"$", precision:2}}, // Format kolom revenue sebagai mata uang
-            ],
-            initialSort:[ // Urutkan data secara default berdasarkan Quantity Sold (QuantitySold) secara descending (tertinggi ke terendah)
-            {column:"QuantitySold", dir:"desc"}
-        ]
-        });
+      // Mengonversi hasil akumulasi ke dalam array untuk digunakan oleh DataTables
+      const productTotalsArray = Object.values(productTotals);
 
-        // Trigger alert saat baris diklik
-        table.on("rowClick", function(e, row){ 
-            alert("Product " + row.getData().Product + " Clicked!!!!");
-        });
-    })
-    .catch(error => console.error('Error fetching JSON data:', error));
+      // Inisialisasi DataTable
+      $('#example-table').DataTable({
+          data: productTotalsArray,
+          columns: [
+              { data: 'Location' },
+              { data: 'Category' },
+              { data: 'Product' },
+              { data: 'QuantitySold' },
+              { data: 'Revenue' }
+          ]
+      });
+  });
+});
+
+
+
+
