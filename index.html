@@ -33,43 +33,40 @@
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
                 <ul class="menu-links">
-                  <ul class="menu-links">
+                <ul class="menu-links">
                     <li class="nav-link">
                         <a href="index.html">
-                            <i class='bx bx-home-alt icon' ></i>
+                            <img class="ikon" src="assets/icon/home-abu.svg">
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="analytics.html">
-                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <img class="ikon" src="assets/icon/pie-chart-abu.svg">
                             <span class="text nav-text">Analytics</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="dataset.html">
-                            <i class='bx bx-data icon'></i>
+                            <img class="ikon" src="assets/icon/database-abu.svg">
                             <span class="text nav-text">About Dataset</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
                         <a href="us.html">
-                            <i class='bx bxs-user icon' ></i>
+                            <img class="ikon" src="assets/icon/user-abu.svg">
                             <span class="text nav-text">About Us</span>
                         </a>
                     </li>
-
                 </ul>
             </div>
+
+            <li class="search-box">
+            </li>
 
             <div class="bottom-content">
                 <li class="mode">
@@ -178,24 +175,30 @@
 
             <div class="charts1">
                 <div class="chart1">
-                    <div class="chards-content">
-                        <div class="chart-name">Pie Chart Location</div>
-                        <canvas id="pieChart"width="400" height="150"></canvas>
+                    <div class="chartPie">
+                        <div class="chards-content">
+                            <div class="chart-name">Pie Chart Location</div>
+                            <canvas id="pieChart"width="400" height="150"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="chart1">
-                    <div class="chards-content">
-                        <div class="chart-name">chart revenue bulanan</div>
-                        <canvas id="lineChart" width="450" height="300"></canvas>
+                    <div class="chartLine">
+                        <div class="chards-content">
+                            <div class="chart-name">chart revenue bulanan</div>
+                            <canvas id="lineChart" width="450" height="300"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="charts2">
                 <div class="chart2">
-                    <div class="chards-content">
-                        <div class="chart-name">chart top machine</div>
-                        <canvas id="machineBarChart" width="450" height="300"></canvas>
+                    <div clas="chartMachine">
+                        <div class="chards-content">
+                            <div class="chart-name">chart top machine</div>
+                            <canvas id="machineBarChart" width="450" height="300"></canvas>
+                        </div>
                     </div>
                 </div>
                 <div class="chart2">
@@ -238,6 +241,32 @@
     <script src="js/script.js"></script>
 </body>
 <footer>
-    <p>&copy; Team 3 Section Medan</p> 
+    <div class="footerContainer">
+        <div class="row">
+            <div class="col" id="company">
+                <img class="logo" src="assets/km-removebg-preview.png" alt="logo kampus merdeka">
+                <img class="logo" src="assets/revou-removebg-preview.png" alt="logo revou">
+                <p>Content in this dataset is provide by kaggle.com</p>
+            </div>
+
+            <div class="col" id="useful-links">
+                <h3>Links</h3>
+                <div class="links">
+                    <a href="#">Dashboard</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="dataset.html">About Dataset</a>
+                    <a href="us.html">About Us</a>
+                </div>
+            </div>
+
+            <div class="col" id="contact">
+                <h3>Contact</h3>
+                <div class="contact-details">
+                    <img class="logoContact" src="assets/icon/mail-putih.svg">
+                    <a target="_blank" href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 </html>

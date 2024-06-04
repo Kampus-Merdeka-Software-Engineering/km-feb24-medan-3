@@ -35,43 +35,40 @@
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Search...">
-                </li>
-
                 <ul class="menu-links">
-                    <ul class="menu-links">
-                        <li class="nav-link">
-                            <a href="index.html">
-                                <i class='bx bx-home-alt icon'></i>
-                                <span class="text nav-text">Dashboard</span>
-                            </a>
-                        </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="index.html">
+                            <img class="ikon" src="assets/icon/home-abu.svg">
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
 
-                        <li class="nav-link">
-                            <a href="analytics.html">
-                                <i class='bx bx-pie-chart-alt icon'></i>
-                                <span class="text nav-text">Analytics</span>
-                            </a>
-                        </li>
+                    <li class="nav-link">
+                        <a href="analytics.html">
+                            <img class="ikon" src="assets/icon/pie-chart-abu.svg">
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
 
-                        <li class="nav-link">
-                            <a href="dataset.html">
-                                <i class='bx bx-data icon'></i>
-                                <span class="text nav-text">About Dataset</span>
-                            </a>
-                        </li>
+                    <li class="nav-link">
+                        <a href="dataset.html">
+                            <img class="ikon" src="assets/icon/database-abu.svg">
+                            <span class="text nav-text">About Dataset</span>
+                        </a>
+                    </li>
 
-                        <li class="nav-link">
-                            <a href="us.html">
-                                <i class='bx bxs-user icon'></i>
-                                <span class="text nav-text">About Us</span>
-                            </a>
-                        </li>
-
-                    </ul>
+                    <li class="nav-link">
+                        <a href="us.html">
+                            <img class="ikon" src="assets/icon/user-abu.svg">
+                            <span class="text nav-text">About Us</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
+
+            <li class="search-box">
+            </li>
 
             <div class="bottom-content">
                 <li class="mode">
@@ -106,100 +103,88 @@
                             alt="gambar vending machine" />
                         <div class="keterangan">
                             <p>
-                                Dataset ini mewakili data vending machine dari berbagai lokasi di Central New Jersey.
-                                Lokasi-lokasi tersebut mencakup sebuah perpustakaan, sebuah pusat perbelanjaan, lokasi
-                                kantor, dan lokasi manufaktur. Ilmuwan data dapat menggunakan data ini untuk memahami
-                                tren, perilaku pengguna, dan preferensi keseluruhan konsumen di berbagai lokasi.
-                                <br>Data lokasi dan vending machine adalah sebagai berikut:
-                                <br>(1) Gutten Plans - Perusahaan spesialis adonan beku yang beroperasi 24/5. Vending
-                                machine yang ditugaskan adalah GuttenPlans x1367.
-                                <br>(2) EB Public Library - Perpustakaan umum dengan lalu lintas kaki yang tinggi 5-6
-                                hari seminggu. Vending machine: EB Public Library x1380.
-                                <br>(3) Brunswick Sq Mall - Pusat perbelanjaan dengan lalu lintas kaki rata-rata 7 hari
-                                seminggu. Mesin penjual: BSQ Mall x1364 - Zales & BSQ Mall x1366 - ATT.
-                                <br>(4) Earle Asphalt - Perusahaan teknik konstruksi yang beroperasi 5 hari seminggu.
-                                Vending machine: Earle Asphalt x1371.
+                                This dataset represents vending machine data from various locations in Central New Jersey. The locations include a library, a mall, office location and a manufacturing locations. Data scientists can make use of the data to understand trends, user behavior and overall preferences by consumers at different locations. 
+                                <br>The location and machine data is as follows
+                                <br>(1) Gutten Plans - Frozen dough specialist company that operates 24/5 . Vending machine assigned is GuttenPlans x1367                                
+                                <br>(2) EB Public Library - Public library that has high foot traffic 5-6 days a week. Vending machine : EB Public Library x1380
+                                <br>(3) Brunswick Sq Mall - Mall with average foot traffic 7 days a week. Vending machine(s) : BSQ Mall x1364 - Zales & BSQ Mall x1366 - ATT
+                                <br>(4) Earle Asphalt - A construction engineering firm that operates 5 days a week. Vending machine : Earle Asphalt x1371
                             </p>
                             <p class="desc">
-                                Adapun kolom yang berada pada dataset di atas adalah sebagai berikut:
+                                The columns present in the dataset above are as follows:
                             </p>
                             <table class="vertical-table">
                                 <tr>
                                     <td class="label">Status</td>
-                                    <td>Menunjukkan apakah data mesin berhasil diproses</td>
+                                    <td>Represents if the machine data is successfully processed</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Device ID</td>
-                                    <td>Pengidentifikasi elektronik unik (juga disebut ePort) untuk mesin penjual
-                                        otomatis. Setiap mesin diberikan perangkat ePrt* yang unik</td>
+                                    <td>Unique electronic identifier ( also called as ePort) for the vending machine. A machine is allocated a unique ePrt * device</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Location</td>
-                                    <td>Menunjukkan lokasi mesin penjual otomatis</td>
+                                    <td>Indicates location of the vending machine</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Machine</td>
-                                    <td>Nama mesin yang ramah pengguna</td>
+                                    <td>User-friendly machine name</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Product</td>
-                                    <td>Produk yang dijual dari mesin</td>
+                                    <td>Product vended from the machine</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Category</td>
-                                    <td>Karbonasi / Makanan / Non-karbonasi / Air</td>
+                                    <td>Carbonated / Food / Non-carbonated / Water</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Transaction</td>
-                                    <td>Pengidentifikasi unik untuk setiap transaksi</td>
+                                    <td> Unique identifier for every transaction</td>
                                 </tr>
                                 <tr>
                                     <td class="label">TransDate</td>
-                                    <td>Tanggal & waktu transaksi</td>
+                                    <td> The Date & time of transaction</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Type</td>
-                                    <td>Tipe transaksi (Tunai / Kredit)</td>
+                                    <td>Type of transaction ( Cash / Credit )</td>
                                 </tr>
                                 <tr>
                                     <td class="label">RCoil</td>
-                                    <td>Nomor #Coil yang digunakan untuk menjual produk</td>
+                                    <td> Coil # used to vend the product</td>
                                 </tr>
                                 <tr>
                                     <td class="label">RPrice</td>
-                                    <td>harga produk</td>
+                                    <td>Price of the Product</td>
                                 </tr>
                                 <tr>
                                     <td class="label">RQty</td>
-                                    <td>Jumlah yang terjual. Biasanya satu tapi mesin bisa dikonfigurasi untuk menjual
-                                        lebih banyak item dalam satu transaksi</td>
+                                    <td>Quantity sold. This is usually one but machines can be configured to sell more items in a single transaction</td>
                                 </tr>
                                 <tr>
                                     <td class="label">MCoil</td>
-                                    <td>Nomor #Coil yang dipetakan digunakan untuk menjual produk</td>
+                                    <td>Mapped coil # used to vend the product ( from toucan )</td>
                                 </tr>
                                 <tr>
                                     <td class="label">MPrice</td>
-                                    <td>Harga produk yang dipetakan</td>
+                                    <td>Mapped price of the Product</td>
                                 </tr>
                                 <tr>
                                     <td class="label">MQty</td>
-                                    <td>Jumlah yang dipetakan terjual. Biasanya satu tapi mesin bisa dikonfigurasi untuk
-                                        menjual lebih banyak item dalam satu transaksi</td>
+                                    <td>Mapped quantity sold. This is usually one but machines can be configured to sell more items in a single transaction</td>
                                 </tr>
                                 <tr>
                                     <td class="label">LineTotal</td>
-                                    <td>Total penjualan per transaksi</td>
+                                    <td>Total sale per transaction</td>
                                 </tr>
                                 <tr>
                                     <td class="label">TransTotal</td>
-                                    <td>Mewakili total dari semua transaksi yang akan muncul di Kartu Kredit. Pengguna
-                                        bisa membeli minuman seharga Rp30.000 dan snack seharga Rp15.000 sehingga
-                                        totalnya menjadi Rp45.000</td>
+                                    <td>Represents total of all transactions that will show up on the Credit Card. A user could vend a drink for $3 and a snack for $1.5 making a total of $4.50</td>
                                 </tr>
                                 <tr>
                                     <td class="label">Prcd Date</td>
-                                    <td>Tanggal saat transaksi diproses</td>
+                                    <td>Date when the transaction was processed by SeedLive ( an entity that is used to aggregate all transactions electronically )</td>
                                 </tr>
                             </table>
                         </div>
@@ -207,7 +192,7 @@
                 </section>
                 <section class="dataset">
                     <div class="table">
-                        <h3>Dataset Kotor</h3>
+                        <h3>Raw Dataset</h3>
                         <div id="table1">
                             <table id='Raw-table'>
                                 <thead>
@@ -236,9 +221,7 @@
                         </div>
                         <div class="keterangan">
                             <p>
-                                Dataset Vending Machine Sales ini memiliki data sebanyak 9.618, data tersebut belum
-                                dilakukan proses cleaning sehingga masih terdapat banyak kolom kosong dan data duplikat.
-                                Selain itu, diperlukan penyesuaian data untuk melakukan analisis.
+                                This Vending Machine Sales dataset contains 9,618 records. The data has not yet been cleaned, so there are still many empty columns and duplicate data. Additionally, data adjustments are needed for analysis.
                             </p>
                         </div>
                     </div>
@@ -271,7 +254,7 @@
 
         <aside>
             <section class="kaggle">
-                <h3>Download Data Kotor</h3>
+                <h3>Download Raw Dataset</h3>
                 <img class="gkaggle" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png"
                     alt="logo Kaggle">
                 <button id="link">
@@ -281,7 +264,7 @@
                 </button>
             </section>
             <section class="dbersih">
-                <h3>Download Data Bersih</h3>
+                <h3>Download Clean Dataset</h3>
                 <button id="link">
                     <a target="_blank"
                         href="https://docs.google.com/spreadsheets/d/1xnAGVCyDfgVWn8oVGL4kqOsqN334jmdlnH1gpOoahYQ/edit?usp=sharing">
@@ -298,7 +281,33 @@
 
 
 <footer>
-    <p>&copy; Team 3 Section Medan</p>
+    <div class="footerContainer">
+        <div class="row">
+            <div class="col" id="company">
+                <img class="logo" src="assets/km-removebg-preview.png" alt="logo kampus merdeka">
+                <img class="logo" src="assets/revou-removebg-preview.png" alt="logo revou">
+                <p>Content in this dataset is provide by kaggle.com</p>
+            </div>
+
+            <div class="col" id="useful-links">
+                <h3>Links</h3>
+                <div class="links">
+                    <a href="index.html">Dashboard</a>
+                    <a href="analytics.html">Analytics</a>
+                    <a href="#">About Dataset</a>
+                    <a href="us.html">About Us</a>
+                </div>
+            </div>
+
+            <div class="col" id="contact">
+                <h3>Contact</h3>
+                <div class="contact-details">
+                    <img class="logoContact" src="assets/icon/mail-putih.svg">
+                    <a target="_blank" href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 
 </html>
