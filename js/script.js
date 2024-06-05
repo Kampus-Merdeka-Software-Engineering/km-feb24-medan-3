@@ -643,13 +643,17 @@ fetch("./json/vm_cleaned.json")
     );
 
     // Buat bar chart
-    createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
+    window.productCategoryChart = createStackedHorizontalBarChart(
+      categoryLabels,
+      revenueData,
+      quantityData
+    );
   })
   .catch((error) => console.error("Error fetching JSON data:", error));
 
 // Fungsi untuk membuat bar chart horizontal dengan bar bertumpuk
 function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
-  new Chart(document.getElementById("categoryChart").getContext("2d"), {
+  return new Chart(document.getElementById("categoryChart").getContext("2d"), {
     type: "bar", // Tipe chart
     data: {
       labels: labels, // Kategori sebagai label di sumbu y
@@ -711,8 +715,8 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
 }
 
 // Fungsi untuk mengupdate chart berdasarkan data
-function updateBarChart(data) {
-  const categoryTotals = data.reduce((acc, item) => {
+function updateCategoryChart(filteredData) {
+  const categoryTotals = filteredData.reduce((acc, item) => {
     const category = item.Category;
     const quantity = parseInt(item.RQty);
     const revenue = parseFloat(item.LineTotal);
@@ -733,7 +737,11 @@ function updateBarChart(data) {
     (category) => categoryTotals[category].quantity
   );
 
-  createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
+  // Update chart
+  window.productCategoryChart.data.labels = categoryLabels;
+  window.productCategoryChart.data.datasets[0].data = quantityData;
+  window.productCategoryChart.data.datasets[1].data = revenueData;
+  window.productCategoryChart.update();
 }
 
 // Cleaned-table
