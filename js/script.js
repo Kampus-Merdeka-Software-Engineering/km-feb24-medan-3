@@ -471,145 +471,6 @@ function updateBarChart(filteredData) {
   window.machineBarChart.update();
 }
 
-// Fetch data JSON untuk membuat bar chart berdasarkan kategori
-fetch("./json/vm_cleaned.json")
-  .then((response) => response.json())
-  .then((data) => {
-    // Hitung total revenue dan quantity sold untuk setiap kategori
-    const categoryTotals = data.reduce((acc, item) => {
-      const category = item.Category;
-      const quantity = parseInt(item.RQty);
-      const revenue = parseFloat(item.LineTotal);
-
-      if (!acc[category]) {
-        acc[category] = { revenue: 0, quantity: 0 };
-      }
-      acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
-      acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
-      return acc;
-    }, {});
-
-    // Data untuk chart
-    const categoryLabels = Object.keys(categoryTotals);
-    const revenueData = categoryLabels.map(
-      (category) => categoryTotals[category].revenue
-    );
-    const quantityData = categoryLabels.map(
-      (category) => categoryTotals[category].quantity
-    );
-
-    // Buat bar chart
-    createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
-  })
-  .catch((error) => console.error("Error fetching JSON data:", error));
-
-// Fungsi untuk membuat bar chart horizontal dengan bar bertumpuk
-function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
-  new Chart(document.getElementById("categoryChart").getContext("2d"), {
-    type: "bar", // Tipe chart
-    data: {
-      labels: labels, // Kategori sebagai label di sumbu y
-      datasets: [
-        {
-          label: "Quantity Sold",
-          data: quantityData,
-          backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
-          borderColor: "rgba(255, 99, 132, 1)", // Warna border merah
-          borderWidth: 1,
-        },
-        {
-          label: "Total Revenue",
-          data: revenueData,
-          backgroundColor: "rgba(54, 162, 235, 0.2)", // Warna background biru
-          borderColor: "rgba(54, 162, 235, 1)", // Warna border biru
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      indexAxis: "y", // Mengatur sumbu x dan y untuk membuat bar horizontal
-      scales: {
-        x: {
-          stacked: true, // Aktifkan bar bertumpuk pada sumbu x
-          beginAtZero: true,
-          ticks: {
-            callback: function (value) {
-              return `${value}`; // Format ticks untuk penjualan dan revenue
-            },
-          },
-        },
-        y: {
-          stacked: true, // Aktifkan bar bertumpuk pada sumbu y
-          beginAtZero: true,
-          ticks: {
-            autoSkip: false, // Pastikan semua label kategori ditampilkan
-          },
-        },
-      },
-      plugins: {
-        tooltip: {
-          callbacks: {
-            label: function (context) {
-              let label = context.dataset.label || "";
-              if (context.datasetIndex === 0) {
-                label += `: ${context.raw}`; // Format tooltip untuk quantity sold
-              } else if (context.datasetIndex === 1) {
-                label += `: $${context.raw.toFixed(2)}`; // Format tooltip untuk revenue
-              }
-              return label;
-            },
-          },
-        },
-      },
-    },
-  });
-}
-
-// Cleaned-table
-$(document).ready(function () {
-  fetch("./json/vm_cleaned.json")
-    .then((response) => response.json())
-    .then((data) => {
-      // Menghitung total produk terjual dan total revenue per produk
-      const productTotals = data.reduce((acc, item) => {
-        const productKey = `${item.Location}-${item.Category}-${item.Product}`; // Membuat kunci unik untuk setiap produk
-        const quantity = parseInt(item.RQty);
-        const revenue = parseFloat(item.LineTotal);
-
-        if (!acc[productKey]) {
-          acc[productKey] = {
-            Location: item.Location,
-            Category: item.Category,
-            Product: item.Product,
-            QuantitySold: quantity,
-            Revenue: revenue,
-          };
-        } else {
-          acc[productKey].QuantitySold += quantity;
-          acc[productKey].Revenue += revenue;
-        }
-
-        return acc;
-      }, {});
-
-      // Mengonversi hasil akumulasi ke dalam array untuk digunakan oleh DataTables
-      const productTotalsArray = Object.values(productTotals);
-
-      // Inisialisasi DataTable
-      $("#example-table").DataTable({
-        data: productTotalsArray,
-        columns: [
-          { data: "Location" },
-          { data: "Category" },
-          { data: "Product" },
-          { data: "QuantitySold" },
-          { data: "Revenue" },
-        ],
-      });
-    });
-});
-
 // chart total produk dengan revenue
 fetch("./json/vm_cleaned.json")
   .then((response) => response.json())
@@ -748,3 +609,142 @@ function updateProductRevenueChart(filteredData) {
   window.productRevenueChart.data.datasets[1].data = revenueData;
   window.productRevenueChart.update();
 }
+
+// Fetch data JSON untuk membuat bar chart berdasarkan kategori
+fetch("./json/vm_cleaned.json")
+  .then((response) => response.json())
+  .then((data) => {
+    // Hitung total revenue dan quantity sold untuk setiap kategori
+    const categoryTotals = data.reduce((acc, item) => {
+      const category = item.Category;
+      const quantity = parseInt(item.RQty);
+      const revenue = parseFloat(item.LineTotal);
+
+      if (!acc[category]) {
+        acc[category] = { revenue: 0, quantity: 0 };
+      }
+      acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
+      acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
+      return acc;
+    }, {});
+
+    // Data untuk chart
+    const categoryLabels = Object.keys(categoryTotals);
+    const revenueData = categoryLabels.map(
+      (category) => categoryTotals[category].revenue
+    );
+    const quantityData = categoryLabels.map(
+      (category) => categoryTotals[category].quantity
+    );
+
+    // Buat bar chart
+    createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
+  })
+  .catch((error) => console.error("Error fetching JSON data:", error));
+
+// Fungsi untuk membuat bar chart horizontal dengan bar bertumpuk
+function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
+  new Chart(document.getElementById("categoryChart").getContext("2d"), {
+    type: "bar", // Tipe chart
+    data: {
+      labels: labels, // Kategori sebagai label di sumbu y
+      datasets: [
+        {
+          label: "Quantity Sold",
+          data: quantityData,
+          backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
+          borderColor: "rgba(255, 99, 132, 1)", // Warna border merah
+          borderWidth: 1,
+        },
+        {
+          label: "Total Revenue",
+          data: revenueData,
+          backgroundColor: "rgba(54, 162, 235, 0.2)", // Warna background biru
+          borderColor: "rgba(54, 162, 235, 1)", // Warna border biru
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      indexAxis: "y", // Mengatur sumbu x dan y untuk membuat bar horizontal
+      scales: {
+        x: {
+          stacked: true, // Aktifkan bar bertumpuk pada sumbu x
+          beginAtZero: true,
+          ticks: {
+            callback: function (value) {
+              return `${value}`; // Format ticks untuk penjualan dan revenue
+            },
+          },
+        },
+        y: {
+          stacked: true, // Aktifkan bar bertumpuk pada sumbu y
+          beginAtZero: true,
+          ticks: {
+            autoSkip: false, // Pastikan semua label kategori ditampilkan
+          },
+        },
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              let label = context.dataset.label || "";
+              if (context.datasetIndex === 0) {
+                label += `: ${context.raw}`; // Format tooltip untuk quantity sold
+              } else if (context.datasetIndex === 1) {
+                label += `: $${context.raw.toFixed(2)}`; // Format tooltip untuk revenue
+              }
+              return label;
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
+// Cleaned-table
+$(document).ready(function () {
+  fetch("./json/vm_cleaned.json")
+    .then((response) => response.json())
+    .then((data) => {
+      // Menghitung total produk terjual dan total revenue per produk
+      const productTotals = data.reduce((acc, item) => {
+        const productKey = `${item.Location}-${item.Category}-${item.Product}`; // Membuat kunci unik untuk setiap produk
+        const quantity = parseInt(item.RQty);
+        const revenue = parseFloat(item.LineTotal);
+
+        if (!acc[productKey]) {
+          acc[productKey] = {
+            Location: item.Location,
+            Category: item.Category,
+            Product: item.Product,
+            QuantitySold: quantity,
+            Revenue: revenue,
+          };
+        } else {
+          acc[productKey].QuantitySold += quantity;
+          acc[productKey].Revenue += revenue;
+        }
+
+        return acc;
+      }, {});
+
+      // Mengonversi hasil akumulasi ke dalam array untuk digunakan oleh DataTables
+      const productTotalsArray = Object.values(productTotals);
+
+      // Inisialisasi DataTable
+      $("#example-table").DataTable({
+        data: productTotalsArray,
+        columns: [
+          { data: "Location" },
+          { data: "Category" },
+          { data: "Product" },
+          { data: "QuantitySold" },
+          { data: "Revenue" },
+        ],
+      });
+    });
+});
