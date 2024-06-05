@@ -42,7 +42,6 @@ fetch("./json/vm_cleaned.json")
     eledatacatgry.innerHTML = new Set(catgry).size;
   });
 
-//filter data
 document.addEventListener("DOMContentLoaded", (event) => {
   // Fungsi untuk mengambil nilai filter dan memproses data
   async function processFilters() {
@@ -96,11 +95,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
       );
     });
 
-    // update chart berdasarkan filter
-    updateDoughnutChart(filteredData);
-    updateLineChart(filteredData);
-    updateBarChart(filteredData);
-    updateProductRevenueChart(filteredData);
+    // untuk menampilkan alert data tidak ditemukan
+    if (filteredData.length === 0) {
+      alert("No data found for the selected filters!");
+    } else {
+      // update chart berdasarkan filter
+      updateDoughnutChart(filteredData);
+      updateLineChart(filteredData);
+      updateBarChart(filteredData);
+      updateProductRevenueChart(filteredData);
+      updateCategoryChart(filteredData);
+    }
 
     //menampilkan di console
     console.log("Filtered Data:", filteredData);
@@ -703,6 +708,32 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
       },
     },
   });
+}
+
+// Fungsi untuk mengupdate chart berdasarkan data
+function updateBarChart(data) {
+  const categoryTotals = data.reduce((acc, item) => {
+    const category = item.Category;
+    const quantity = parseInt(item.RQty);
+    const revenue = parseFloat(item.LineTotal);
+
+    if (!acc[category]) {
+      acc[category] = { revenue: 0, quantity: 0 };
+    }
+    acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
+    acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
+    return acc;
+  }, {});
+
+  const categoryLabels = Object.keys(categoryTotals);
+  const revenueData = categoryLabels.map(
+    (category) => categoryTotals[category].revenue
+  );
+  const quantityData = categoryLabels.map(
+    (category) => categoryTotals[category].quantity
+  );
+
+  createStackedHorizontalBarChart(categoryLabels, revenueData, quantityData);
 }
 
 // Cleaned-table
