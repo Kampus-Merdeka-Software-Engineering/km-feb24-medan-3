@@ -745,6 +745,7 @@ $(document).ready(function () {
           { data: "QuantitySold" },
           { data: "Revenue" },
         ],
+        order: [[3, 'desc']],
       });
     });
 });
