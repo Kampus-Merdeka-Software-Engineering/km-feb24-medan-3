@@ -368,6 +368,8 @@ p{
     margin-top: 7px;
 }
 
+/* =mengatur table pada desc dataset= */
+
 .tableDesc, table {
     width: 100%;
     border-collapse: collapse;
@@ -387,6 +389,7 @@ p{
     background-color: #f2f2f2;
 }
 
+/* =mengatur table raw dataset & cleaned dataset= */
 th, td {
     border: 1px solid #dddddd;
     text-align: left;
@@ -396,6 +399,8 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+/* =aside= */
 
 aside {
     margin-top: 45px;
