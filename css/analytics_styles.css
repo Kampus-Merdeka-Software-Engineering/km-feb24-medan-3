@@ -1087,6 +1087,22 @@ footer{
     .insight .insights {
         display: grid;
     }
+
+    .top1, .top2, .tops1 {
+        width: 100%;
+        overflow-x: auto; /* Menambahkan scroll horizontal */
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse; /* Menghilangkan jarak antara border sel */
+    }
+
+    th, td {
+        padding: 8px 12px;
+        text-align: left; /* Menyesuaikan teks di dalam sel */
+    }
+
 }
 
 /* membuat responsif untuk footer*/
