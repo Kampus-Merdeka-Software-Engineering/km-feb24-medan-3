@@ -8,7 +8,7 @@
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
     <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
- <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title> 
 </head>
@@ -171,66 +171,65 @@
             </div>
 
             <div class="charts1">
-                <div class="chart1">
+                <div class="charts11">
                     <div class="chartPie">
                         <div class="chards-content">
-                            <div class="chart-name">Pie Chart Location</div>
-                            <canvas id="pieChart"width="400" height="150"></canvas>
+                            <div class="chart-name">Percentage Sales From Each Location</div>
+                            <canvas id="pieChart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="chart1">
+                <div class="charts12">
                     <div class="chartLine">
                         <div class="chards-content">
-                            <div class="chart-name">chart revenue bulanan</div>
-                            <canvas id="lineChart" width="450" height="300"></canvas>
+                            <div class="chart-name">Monthly Sales</div>
+                            <canvas id="lineChart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="charts2">
-                <div class="chart2">
+                <div class="charts21">
                     <div clas="chartMachine">
                         <div class="chards-content">
-                            <div class="chart-name">chart top machine</div>
-                            <canvas id="machineBarChart" width="450" height="300"></canvas>
+                            <div class="chart-name">Total Revenue From Each Machine</div>
+                            <canvas id="machineBarChart"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="chart2">
+                <div class="charts22">
                     <div class="chards-content">
-                        <div class="chart-name">chart top category and product</div>
-                        <table id="example-table" data-page-length="5">
-                            <thead>
-                                <tr>
-                                    <td>Location</td>
-                                    <td>Category</td>
-                                    <td>Product</td>
-                                    <td>Quantity Sold</td>
-                                    <td>Revenue</td>
-                                </tr>
-                            </thead>
-                        </table>
+                        <div class="chart-name">Top Category</div>
+                        <canvas id="categoryChart"></canvas>
                     </div>
                 </div>
             </div>
 
         <div class="charts3">
-            <div class="chart3">
+            <div class="charts31">
                 <div class="chards-content">
-                    <div class="chart-name">chart top category</div>
-                    <canvas id="categoryChart" width="450" height="300"></canvas>
+                    <div class="chart-name">Top Product</div>
+                    <canvas id="productRevenueChart"></canvas>
                 </div>
             </div>
-            <div class="chart3">
+            <div class="charts32">
                 <div class="chards-content">
-                    <div class="chart-name">chart top product</div>
-                    <canvas id="productRevenueChart" width="450" height="300"></canvas>
+                    <div class="chart-name">Top Product and Category from Each Location</div>
+                    <table id="example-table" data-page-length="5">
+                        <thead>
+                            <tr>
+                                <td>Location</td>
+                                <td>Category</td>
+                                <td>Product</td>
+                                <td>Quantity Sold</td>
+                                <td>Revenue</td>
+                            </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
-
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
