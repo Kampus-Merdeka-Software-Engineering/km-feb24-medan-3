@@ -319,12 +319,15 @@ html, body{
     gap: 20px; 
     margin-top: 20px;
     flex: 1;
+    width: 100%;
+    max-width: 1200px; /* Batas maksimal lebar container */
 }
 
 .main {
     background-color: var(--body-color);
     transition: var(--tran-05);
     padding-left: 120px;
+    width: 1250px;
     max-width: 100vw;
 }
 
@@ -342,7 +345,9 @@ html, body{
     display: flex;
     align-items: center; 
     gap: 20px; 
-    flex-direction: row; 
+    flex-direction: row;
+    max-width: 800px;
+    width: 100%;
 }
 
 .gambar {
@@ -368,7 +373,9 @@ p{
     margin-top: 7px;
 }
 
-table {
+/* =mengatur table pada desc dataset= */
+
+.tableDesc, table {
     width: 100%;
     border-collapse: collapse;
 }
@@ -377,6 +384,17 @@ table {
     font-weight: 900;
 }
 
+.tableDesc th, .tableDesc td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tableDesc th {
+    background-color: #f2f2f2;
+}
+
+/* =mengatur table raw dataset & cleaned dataset= */
 th, td {
     border: 1px solid #dddddd;
     text-align: left;
@@ -387,6 +405,7 @@ th {
     background-color: #f2f2f2;
 }
 
+/* =aside= */
 
 aside {
     margin-top: 45px;
@@ -566,6 +585,18 @@ footer{
 
 /* ======atur responsifnya dari sini======= */
 
+@media (max-width: 1300px) {
+    .main{
+        width: 990px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .main{
+        width: 1200px;
+    }
+}
+
 @media (max-width: 1120px) {
     .container{
         grid-template-columns: 1fr;
@@ -591,18 +622,18 @@ footer{
         padding-right: 20px;
     }
 
-    table{
+    .tableDesc{
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    tr{
+    .tableDesc tr{
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid #dddddd;
         padding: 8px 0;
     }
-    td{
+    .tableDesc td{
         padding: 8px 0;
     }
 
