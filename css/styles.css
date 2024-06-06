@@ -669,10 +669,6 @@ footer{
 
 /* membuat responsif untuk layar berukuran kecil */
 @media screen and (max-width: 576px) {
-    .cards {
-        grid-template-columns: 1; 
-    }
-
     .charts1, .charts2, .charts3 {
         display: grid;
         grid-template-columns: 1;
@@ -681,13 +677,19 @@ footer{
 
 @media screen and (max-width: 320px) {
     .cards {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .charts1, .charts2, .charts3 {
         display: grid;
         grid-template-columns: 1;
     }
+}
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar antara 480px dan 760px */
+    }
+    margin-right: 10px;
 }
 
 /* membuat responsif untuk filter dan sidebaar close dengan ukuran layar spesifik */
