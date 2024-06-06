@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">  
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
     <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
@@ -27,7 +26,9 @@
                 </div>
             </div>
 
-            <i class='bx bx-chevron-right toggle'></i>
+            <i class='toggle'>
+                <img src="./assets/icon/chevron.png" style="width: 20px;"  alt="">
+            </i>
         </header>
 
         <div class="menu-bar">
@@ -68,19 +69,22 @@
             <div class="bottom-content">
                 <li class="mode">
                     <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
+                        <i class='icon moon'>
+                            <img src="./assets/icon/moon.svg" alt="">
+                        </i>
+                        <i class='icon sun'>
+                            <img src="./assets/icon/sun.svg" alt="">
+                        </i>
                     </div>
                     <span class="mode-text text">Dark mode</span>
 
                     <div class="toggle-switch">
-                        <span class="switch"></span>
+                        <button type="button"  class="switch"></button>
                     </div>
                 </li>
                 
             </div>
         </div>
-
     </nav>
     <!-- ini akhir sidebar  -->
 
@@ -216,7 +220,9 @@
             <div class="charts32">
                 <div class="chards-content">
                     <div class="chart-name">Top Product and Category from Each Location</div>
-                    <table id="example-table" data-page-length="5">
+                    <div class="table" style="padding-inline: 30px;">
+                        
+                        <table id="example-table" data-page-length="5" class="display dt-head-body-left">
                         <thead>
                             <tr>
                                 <td>Location</td>
@@ -227,6 +233,7 @@
                             </tr>
                         </thead>
                     </table>
+                </div>
                 </div>
             </div>
         </div>
