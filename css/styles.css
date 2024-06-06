@@ -483,53 +483,6 @@ table tbody td {
     text-align: left;
 }
 
-
-/* mengatur ukuran chart 
-.chartPie{
-    width: 450px;  
-    height: 300px;  
-    padding: 30px;
-    background: #fff;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-
-.chartLine{
-    width: 450px;  
-    height: 300px;  
-    padding: 30px;
-    background: #fff;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-
-.chartMachine{
-    width: 450px;  
-    height: 300px;  
-    padding: 30px;
-    background: #fff;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-
-.chartMchine{
-    width: 450px;  
-    height: 200px;  
-    padding: 30px;
-    background: #fff;
-    border-radius: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}*/
-
-
 /* ======atur footernyanya dari sini======= */
 
 footer{
@@ -722,7 +675,7 @@ footer{
 
     .charts1, .charts2, .charts3 {
         display: grid;
-        grid-template-column: 1;
+        grid-template-columns: 1;
     }
 }
 
