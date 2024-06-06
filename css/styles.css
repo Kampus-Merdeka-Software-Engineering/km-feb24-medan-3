@@ -316,17 +316,15 @@ html, body{
 }
 
 main{
-    display: grid;
-    grid-template-columns: 1fr 20px; 
     gap: 20px; 
     margin-top: 20px;
-    flex: 1;
 }
 
 .main {
     background-color: var(--body-color);
     transition: var(--tran-05);
     padding-left: 120px;
+    padding-right: 30px;
     margin-bottom: 100px;
     max-width: 100vw;
 }
@@ -342,7 +340,6 @@ select{
     opacity: 0.8;
     border-color: #7ea8db;
     background-color: #ffffff;
-
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
 }
@@ -362,7 +359,6 @@ button{
     opacity: 0.8;
     border-color: #7ea8db;
     background-color: #E6E6FA;
-
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s; 
 }
@@ -372,12 +368,13 @@ button:hover {
     color: #fff; 
 }
 
-.cards, .charts1, .charts2, .charts3 {
+.cards {
     width: 100%;
     padding: 10px; 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 20px;
+    padding-bottom: 20px;
 }
 
 .cards .card{
@@ -389,15 +386,103 @@ button:hover {
     justify-content: space-between;
 }
 
-.charts1 .chart1, .charts2 .chart2, .charts3 .chart3 {
-    padding: 10px;
+.charts1, .charts2, .charts3 {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.chart-name {
+    font-size: 18;
+    font-weight: 600;
+    color: #ccc;
+    background-color: #812f2f;
+    margin-bottom: 5px;
+    line-height: 2;
+}
+
+.charts1 .charts11 {
     background: #fff;
     border-radius: 7px;
-    display: flex;
+    flex: 1;
     align-items: center;
-    justify-content: space-between;
     justify-content: center;
 }
+
+.charts3 .charts32 {
+    background: #fff;
+    border-radius: 7px;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+.charts3 .charts31 {
+    background: #fff;
+    border-radius: 7px;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+}
+
+.charts1 .charts12 {
+    background: #fff;
+    border-radius: 7px;
+    flex: 2;
+    align-items: center;
+    display: flex;
+}
+
+.charts2 .charts21 {
+    background: #fff;
+    border-radius: 7px;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.charts2 .charts22 {
+    background: #fff;
+    border-radius: 7px;
+    flex: 3.5;
+    align-items: center;
+    display: flex;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+table thead tr {
+    background-color: #f2f2f2;
+}
+
+table thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody td {
+    padding: 10px;
+    text-align: left;
+}
+
 
 /* mengatur ukuran chart 
 .chartPie{
@@ -444,12 +529,6 @@ button:hover {
     justify-content: center; 
 }*/
 
-.charts1 .chart1 canvas,
-.charts2 .chart2 canvas,
-.charts3 .chart3 canvas {
-    width: 100% !important;  /* membuat konten canvas penuh */
-    height: 100% !important;
-}
 
 /* ======atur footernyanya dari sini======= */
 
@@ -577,8 +656,9 @@ footer{
         margin-right: 0; 
     }
 
-    .charts1, .charts2, .charts3 {
-        grid-template-columns: repeat(2, 1fr);
+    .charts3 {
+        display: grid;
+        grid-template-columns: 1;
     }
     
     .filters {
@@ -588,28 +668,33 @@ footer{
 }
 
 @media screen and (max-width: 992px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
+    .cards{
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        margin-right: 0; 
+    }
+    .charts3 {
+        display: grid;
+        grid-template-columns: 1;
     }
 }
 
 /* membuat responsif untuk layar berukuran tablet */
 @media screen and (max-width: 768px) {
-    .content, .cards{
+    .cards{
         grid-template-columns: repeat(4, 1fr);
     }
 
     .charts1, .charts2, .charts3 {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+
+    .charts1 .charts11 canvas {
+        padding-left: 100px;
+        padding-right: 100px;
     }
 
     button {
         margin-top: 10px;
-    }
-
-    main {
-        grid-template-columns: 1fr; 
     }
 
     .filters-container {
@@ -631,16 +716,24 @@ footer{
 
 /* membuat responsif untuk layar berukuran kecil */
 @media screen and (max-width: 576px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
-        grid-template-columns: 1fr; 
-        margin-right: 0; 
+    .cards {
+        grid-template-columns: 1; 
+    }
+
+    .charts1, .charts2, .charts3 {
+        display: grid;
+        grid-template-column: 1;
     }
 }
 
 @media screen and (max-width: 320px) {
-    .content, .cards, .charts1, .charts2, .charts3 {
+    .cards {
         grid-template-columns: 1fr; 
-        margin-right: 0; 
+    }
+
+    .charts1, .charts2, .charts3 {
+        display: grid;
+        grid-template-columns: 1;
     }
 }
 
