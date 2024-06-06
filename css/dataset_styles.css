@@ -368,13 +368,23 @@ p{
     margin-top: 7px;
 }
 
-table {
+.tableDesc, table {
     width: 100%;
     border-collapse: collapse;
 }
 
 .label{
     font-weight: 900;
+}
+
+.tableDesc th, .tableDesc td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.tableDesc th {
+    background-color: #f2f2f2;
 }
 
 th, td {
@@ -386,7 +396,6 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
-
 
 aside {
     margin-top: 45px;
@@ -591,18 +600,18 @@ footer{
         padding-right: 20px;
     }
 
-    table{
+    .tableDesc{
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    tr{
+    .tableDesc tr{
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid #dddddd;
         padding: 8px 0;
     }
-    td{
+    .tableDesc td{
         padding: 8px 0;
     }
 
