@@ -179,7 +179,9 @@
                     <div class="chartPie">
                         <div class="chards-content">
                             <div class="chart-name">Percentage Sales From Each Location</div>
-                            <canvas id="pieChart"></canvas>
+                            <div class="displayChart">
+                                <canvas id="pieChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -187,7 +189,9 @@
                     <div class="chartLine">
                         <div class="chards-content">
                             <div class="chart-name">Monthly Sales</div>
-                            <canvas id="lineChart"></canvas>
+                            <div class="displayChart">
+                                <canvas id="lineChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -198,14 +202,18 @@
                     <div clas="chartMachine">
                         <div class="chards-content">
                             <div class="chart-name">Total Revenue From Each Machine</div>
-                            <canvas id="machineBarChart"></canvas>
+                            <div class="displayChart">
+                                <canvas id="machineBarChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="charts22">
                     <div class="chards-content">
                         <div class="chart-name">Top Category</div>
-                        <canvas id="categoryChart"></canvas>
+                        <div class="displayChart">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -214,26 +222,29 @@
             <div class="charts31">
                 <div class="chards-content">
                     <div class="chart-name">Top Product</div>
-                    <canvas id="productRevenueChart"></canvas>
+                    <div class="displayChart">
+                        <canvas id="productRevenueChart" ></canvas>
+                    </div>
                 </div>
             </div>
             <div class="charts32">
                 <div class="chards-content">
                     <div class="chart-name">Top Product and Category from Each Location</div>
                     <div class="table" style="padding-inline: 30px;">
-                        
-                        <table id="example-table" data-page-length="5" class="display dt-head-body-left">
-                        <thead>
-                            <tr>
-                                <td>Location</td>
-                                <td>Category</td>
-                                <td>Product</td>
-                                <td>Quantity Sold</td>
-                                <td>Revenue</td>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
+                        <div class="table-wrapper">
+                            <table id="example-table" data-page-length="5" class="display dt-head-body-left">
+                                <thead>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>Category</td>
+                                        <td>Product</td>
+                                        <td>Quantity Sold</td>
+                                        <td>Revenue</td>
+                                    </tr>
+                                </thead>
+                                </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

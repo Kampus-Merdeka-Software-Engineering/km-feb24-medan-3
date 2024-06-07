@@ -828,8 +828,10 @@ $(document).ready(function () {
             data: "Revenue",
           },
         ],
-        lengthChange: false,
+        lengthChange: true,
         order: [[3, "desc"]],
+        scrollX: true,
+        scrollY: true
       });
     });
 });
