@@ -1,4 +1,4 @@
-// load data json
+// function load data JSON
 fetch("./json/vm_cleaned.json")
   .then((response) => response.json())
   .then(function (json) {
@@ -43,22 +43,22 @@ fetch("./json/vm_cleaned.json")
   });
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  // Fungsi untuk mengambil nilai filter dan memproses data
+  // fungsi untuk mengambil nilai filter dan memproses data
   async function processFilters() {
-    // Ambil nilai yang dipilih dari setiap filter
+    // mengambil nilai yang dipilih dari setiap filter
     const month = document.querySelector("#month select").value;
     const location = document.querySelector("#location select").value;
     const machine = document.querySelector("#machine select").value;
     const category = document.querySelector("#category select").value;
 
-    // Ambil data dari file JSON
+    // mengambil data dari file JSON
     const data = await fetchData();
 
-    // // pemrosesan data berdasarkan nilai yang dipilih
+    // pemrosesan data berdasarkan nilai yang dipilih
     filterData(data, month, location, machine, category);
   }
 
-  // Fungsi untuk mengambil data dari file JSON
+  // function untuk mengambil data dari file JSON
   async function fetchData() {
     try {
       const response = await fetch("./json/vm_cleaned.json");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   }
 
-  // Fungsi untuk memfilter data
+  // function untuk memfilter data
   function filterData(data, month, location, machine, category) {
     const filteredData = data.filter((item) => {
       const itemMonth = new Date(item.TransDate).toLocaleString("default", {
@@ -91,16 +91,45 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     // untuk menampilkan alert data tidak ditemukan
     if (filteredData.length === 0) {
+      // situasi pada saat tidak ditemukan data pada filter yang dipilih
       alert("No data found for the selected filters!");
     } else {
       // update chart berdasarkan filter
-      updateDoughnutChart(filteredData);
-      updateLineChart(filteredData);
-      updateBarChart(filteredData);
-      updateProductRevenueChart(filteredData);
-      updateCategoryChart(filteredData);
+      updateCharts(filteredData);
     }
+  }
 
+  // function untuk update seluruh chart
+  function updateCharts(filteredData) {
+    updateDoughnutChart(filteredData);
+    updateLineChart(filteredData);
+    updateBarChart(filteredData);
+    updateProductRevenueChart(filteredData);
+    updateCategoryChart(filteredData);
+
+    // update display data
+    updateMetrics(filteredData);
+  }
+
+  // function untuk update display data
+  function updateMetrics(filteredData) {
+    const revenue = filteredData.map((item) => parseFloat(item.LineTotal));
+    const totalRevenue = revenue.reduce((acc, curr) => acc + curr, 0);
+    const roundedTotalRevenue = Math.round(totalRevenue);
+    document.getElementById("totalRevenue").innerHTML =
+      roundedTotalRevenue.toLocaleString("en-US", {
+        style: "currency",
+        currency: "USD",
+      });
+
+    const loc = filteredData.map((item) => item.Location);
+    document.getElementById("dataloc").innerHTML = new Set(loc).size;
+
+    const mach = filteredData.map((item) => item.Device_ID);
+    document.getElementById("datamach").innerHTML = new Set(mach).size;
+
+    const catgry = filteredData.map((item) => item.Category);
+    document.getElementById("datacatgry").innerHTML = new Set(catgry).size;
   }
 
   // event listener untuk tombol submit
@@ -108,11 +137,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .querySelector(".button button")
     .addEventListener("click", (event) => {
       event.preventDefault();
-      alert("Button clicked!"); // Menampilkan alert
       processFilters();
     });
 });
-
 
 // Fetch data JSON untuk membuat doughnut chart berdasarkan revenue per lokasi
 function renderDoughnutChart(labels, data) {
@@ -121,29 +148,31 @@ function renderDoughnutChart(labels, data) {
     type: "doughnut", // Chart type
     data: {
       labels: labels,
-      datasets: [{
-        label: "Total Revenue",
-        data: data,
-        backgroundColor: [
-          // Background color for each chart segment
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          // Border color for each chart segment
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      }, ],
+      datasets: [
+        {
+          label: "Total Revenue",
+          data: data,
+          backgroundColor: [
+            // Background color for each chart segment
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            // Border color for each chart segment
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       responsive: true,
@@ -258,7 +287,8 @@ function createLineChart(labels, revenueData, quantityData) {
     type: "line", // Chart type
     data: {
       labels: labels,
-      datasets: [{
+      datasets: [
+        {
           label: "Total Revenue",
           data: revenueData,
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Background color for revenue
@@ -347,7 +377,7 @@ function updateLineChart(filteredData) {
     if (!acc[monthYear]) {
       acc[monthYear] = {
         revenue: 0,
-        quantity: 0
+        quantity: 0,
       };
     }
     acc[monthYear].revenue += lineTotal; // Sum monthly revenue
@@ -409,13 +439,15 @@ function createMachineBarChart(labels, data) {
     type: "bar", // Tipe chart
     data: {
       labels: labels,
-      datasets: [{
-        label: "Top Machines by Revenue",
-        data: data,
-        backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
-        borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
-        borderWidth: 1,
-      }, ],
+      datasets: [
+        {
+          label: "Top Machines by Revenue",
+          data: data,
+          backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
+          borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       responsive: true,
@@ -512,7 +544,8 @@ function createProductRevenueChart(labels, quantityData, revenueData) {
     type: "bar",
     data: {
       labels: labels,
-      datasets: [{
+      datasets: [
+        {
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -616,7 +649,7 @@ fetch("./json/vm_cleaned.json")
       if (!acc[category]) {
         acc[category] = {
           revenue: 0,
-          quantity: 0
+          quantity: 0,
         };
       }
       acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
@@ -648,7 +681,8 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
     type: "bar", // Tipe chart
     data: {
       labels: labels, // Kategori sebagai label di sumbu y
-      datasets: [{
+      datasets: [
+        {
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
@@ -714,7 +748,7 @@ function updateCategoryChart(filteredData) {
     if (!acc[category]) {
       acc[category] = {
         revenue: 0,
-        quantity: 0
+        quantity: 0,
       };
     }
     acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
@@ -770,26 +804,25 @@ $(document).ready(function () {
       // Inisialisasi DataTable
       $("#example-table").DataTable({
         data: productTotalsArray,
-        columns: [{
-            data: "Location"
+        columns: [
+          {
+            data: "Location",
           },
           {
-            data: "Category"
+            data: "Category",
           },
           {
-            data: "Product"
+            data: "Product",
           },
           {
-            data: "QuantitySold"
+            data: "QuantitySold",
           },
           {
-            data: "Revenue"
+            data: "Revenue",
           },
         ],
-        "lengthChange": false,
-        order: [
-          [3, 'desc']
-        ],
+        lengthChange: false,
+        order: [[3, "desc"]],
       });
     });
 });
