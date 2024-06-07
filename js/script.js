@@ -113,8 +113,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   // function untuk update display data
   function updateMetrics(filteredData) {
+    // mengambil nilai revenue berdasarkan filter
     const revenue = filteredData.map((item) => parseFloat(item.LineTotal));
+    // menghitung revenue total berdasarkan filter
     const totalRevenue = revenue.reduce((acc, curr) => acc + curr, 0);
+    // menghitung hasil pembulatan revenue total berdasarkan filter
     const roundedTotalRevenue = Math.round(totalRevenue);
     document.getElementById("totalRevenue").innerHTML =
       roundedTotalRevenue.toLocaleString("en-US", {
@@ -122,12 +125,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
         currency: "USD",
       });
 
+    // mengambil nilai location berdasarkan filter
     const loc = filteredData.map((item) => item.Location);
     document.getElementById("dataloc").innerHTML = new Set(loc).size;
 
+    // mengambil nilai machine berdasarkan filter
     const mach = filteredData.map((item) => item.Device_ID);
     document.getElementById("datamach").innerHTML = new Set(mach).size;
 
+    // mengambil nilai category berdasarkan filter
     const catgry = filteredData.map((item) => item.Category);
     document.getElementById("datacatgry").innerHTML = new Set(catgry).size;
   }
@@ -137,6 +143,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .querySelector(".button button")
     .addEventListener("click", (event) => {
       event.preventDefault();
+      alert("Button clicked!"); // menampilkan alert
       processFilters();
     });
 });
