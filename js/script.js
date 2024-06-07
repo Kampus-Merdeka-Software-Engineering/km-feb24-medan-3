@@ -51,16 +51,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const machine = document.querySelector("#machine select").value;
     const category = document.querySelector("#category select").value;
 
-    // menampilkan nilai yang dipilih di console
-    console.log("Selected Month:", month);
-    console.log("Selected Location:", location);
-    console.log("Selected Machine:", machine);
-    console.log("Selected Category:", category);
-
     // Ambil data dari file JSON
     const data = await fetchData();
 
-    // pemrosesan data berdasarkan nilai yang dipilih
+    // // pemrosesan data berdasarkan nilai yang dipilih
     filterData(data, month, location, machine, category);
   }
 
@@ -107,8 +101,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       updateCategoryChart(filteredData);
     }
 
-    //menampilkan di console
-    console.log("Filtered Data:", filteredData);
   }
 
   // event listener untuk tombol submit
@@ -121,40 +113,37 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
 });
 
-fetch("./json/vm_cleaned.json");
 
 // Fetch data JSON untuk membuat doughnut chart berdasarkan revenue per lokasi
-function createDoughnutChart(labels, data) {
-  const ctx = document.getElementById("pieChart").getContext("2d");
-  doughnutChart = new Chart(ctx, {
+function renderDoughnutChart(labels, data) {
+  const donatChart = document.getElementById("pieChart").getContext("2d");
+  doughnutChart = new Chart(donatChart, {
     type: "doughnut", // Chart type
     data: {
       labels: labels,
-      datasets: [
-        {
-          label: "Total Revenue",
-          data: data,
-          backgroundColor: [
-            // Background color for each chart segment
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-          ],
-          borderColor: [
-            // Border color for each chart segment
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
-          ],
-          borderWidth: 1,
-        },
-      ],
+      datasets: [{
+        label: "Total Revenue",
+        data: data,
+        backgroundColor: [
+          // Background color for each chart segment
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          // Border color for each chart segment
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      }, ],
     },
     options: {
       responsive: true,
@@ -200,7 +189,7 @@ fetch("./json/vm_cleaned.json")
   })
   .then((data) => {
     // Calculate initial total revenue per location
-    const totals = data.reduce((acc, item) => {
+    const totalRevenue = data.reduce((acc, item) => {
       const location = item.Location;
       const lineTotal = parseFloat(item.LineTotal); // Convert LineTotal to float
 
@@ -212,11 +201,11 @@ fetch("./json/vm_cleaned.json")
     }, {});
 
     // Separate labels and data for chart
-    const labels = Object.keys(totals);
-    const chartData = Object.values(totals);
+    const labels = Object.keys(totalRevenue);
+    const revenueData = Object.values(totalRevenue);
 
-    // Create doughnut chart with initial data
-    createDoughnutChart(labels, chartData);
+    // render doughnut chart with initial data
+    renderDoughnutChart(labels, revenueData);
   })
   .catch((error) => console.error("Error fetching JSON data:", error));
 
@@ -269,8 +258,7 @@ function createLineChart(labels, revenueData, quantityData) {
     type: "line", // Chart type
     data: {
       labels: labels,
-      datasets: [
-        {
+      datasets: [{
           label: "Total Revenue",
           data: revenueData,
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Background color for revenue
@@ -357,7 +345,10 @@ function updateLineChart(filteredData) {
     const quantitySold = parseInt(item.RQty); // Convert RQty to integer
 
     if (!acc[monthYear]) {
-      acc[monthYear] = { revenue: 0, quantity: 0 };
+      acc[monthYear] = {
+        revenue: 0,
+        quantity: 0
+      };
     }
     acc[monthYear].revenue += lineTotal; // Sum monthly revenue
     acc[monthYear].quantity += quantitySold; // Sum monthly quantity sold
@@ -418,15 +409,13 @@ function createMachineBarChart(labels, data) {
     type: "bar", // Tipe chart
     data: {
       labels: labels,
-      datasets: [
-        {
-          label: "Top Machines by Revenue",
-          data: data,
-          backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
-          borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
-          borderWidth: 1,
-        },
-      ],
+      datasets: [{
+        label: "Top Machines by Revenue",
+        data: data,
+        backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
+        borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
+        borderWidth: 1,
+      }, ],
     },
     options: {
       responsive: true,
@@ -523,9 +512,8 @@ function createProductRevenueChart(labels, quantityData, revenueData) {
     type: "bar",
     data: {
       labels: labels,
-      datasets: [
-        {
-          label: "Total Produk Terjual",
+      datasets: [{
+          label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.5)",
           borderColor: "rgba(255, 99, 132, 1)",
@@ -626,7 +614,10 @@ fetch("./json/vm_cleaned.json")
       const revenue = parseFloat(item.LineTotal);
 
       if (!acc[category]) {
-        acc[category] = { revenue: 0, quantity: 0 };
+        acc[category] = {
+          revenue: 0,
+          quantity: 0
+        };
       }
       acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
       acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
@@ -657,8 +648,7 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
     type: "bar", // Tipe chart
     data: {
       labels: labels, // Kategori sebagai label di sumbu y
-      datasets: [
-        {
+      datasets: [{
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
@@ -722,7 +712,10 @@ function updateCategoryChart(filteredData) {
     const revenue = parseFloat(item.LineTotal);
 
     if (!acc[category]) {
-      acc[category] = { revenue: 0, quantity: 0 };
+      acc[category] = {
+        revenue: 0,
+        quantity: 0
+      };
     }
     acc[category].revenue += revenue; // Menjumlahkan revenue per kategori
     acc[category].quantity += quantity; // Menjumlahkan quantity sold per kategori
@@ -777,12 +770,25 @@ $(document).ready(function () {
       // Inisialisasi DataTable
       $("#example-table").DataTable({
         data: productTotalsArray,
-        columns: [
-          { data: "Location" },
-          { data: "Category" },
-          { data: "Product" },
-          { data: "QuantitySold" },
-          { data: "Revenue" },
+        columns: [{
+            data: "Location"
+          },
+          {
+            data: "Category"
+          },
+          {
+            data: "Product"
+          },
+          {
+            data: "QuantitySold"
+          },
+          {
+            data: "Revenue"
+          },
+        ],
+        "lengthChange": false,
+        order: [
+          [3, 'desc']
         ],
       });
     });

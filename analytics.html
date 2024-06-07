@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/analytics_styles.css">  
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/analytics_styles.css">
 
-    <title>Analytics</title> 
+
+    <title>Analytics</title>
 </head>
+
 <body>
     <!-- ini awal sidebar -->
     <nav class="sidebar close">
@@ -24,343 +26,353 @@
                 </div>
             </div>
 
-            <i class='bx bx-chevron-right toggle'></i>
+            <i class='toggle'>
+                <img src="./assets/icon/chevron.png" style="width: 20px;" alt="">
+            </i>
         </header>
 
         <div class="menu-bar">
             <div class="menu">
 
                 <ul class="menu-links">
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="index.html">
-                            <img class="ikon" src="assets/icon/home-abu.svg">
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="index.html">
+                                <img class="ikon" src="assets/icon/home-abu.svg">
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="analytics.html">
-                            <img class="ikon" src="assets/icon/pie-chart-abu.svg">
-                            <span class="text nav-text">Analytics</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="analytics.html">
+                                <img class="ikon" src="assets/icon/pie-chart-abu.svg">
+                                <span class="text nav-text">Analytics</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="dataset.html">
-                            <img class="ikon" src="assets/icon/database-abu.svg">
-                            <span class="text nav-text">About Dataset</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="dataset.html">
+                                <img class="ikon" src="assets/icon/database-abu.svg">
+                                <span class="text nav-text">About Dataset</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="us.html">
-                            <img class="ikon" src="assets/icon/user-abu.svg">
-                            <span class="text nav-text">About Us</span>
-                        </a>
-                    </li>
-                </ul>
+                        <li class="nav-link">
+                            <a href="us.html">
+                                <img class="ikon" src="assets/icon/user-abu.svg">
+                                <span class="text nav-text">About Us</span>
+                            </a>
+                        </li>
+                    </ul>
             </div>
-
-            <li class="search-box">
-            </li>
 
             <div class="bottom-content">
                 <li class="mode">
                     <div class="sun-moon">
-                        <i class='bx bx-moon icon moon'></i>
-                        <i class='bx bx-sun icon sun'></i>
+                        <i class='icon moon'>
+                            <img src="./assets/icon/moon.svg" alt="">
+                        </i>
+                        <i class='icon sun'>
+                            <img src="./assets/icon/sun.svg" alt="">
+                        </i>
                     </div>
                     <span class="mode-text text">Dark mode</span>
 
                     <div class="toggle-switch">
-                        <span class="switch"></span>
+                        <button type="button" class="switch"></button>
                     </div>
                 </li>
-                
+
             </div>
         </div>
-
     </nav>
     <!-- ini akhir sidebar  -->
 
     <main class="container">
-      <div class="main">
-          <div class="text">Analytics</div>
-        <section class="headtext">
-            <h1>Business Problem:</h1>
-            <p>How to increase our sales to 20% in one year?</p>
-        </section>
-          <div class="cards">
-              <div class="card">
-                  <div class="cards-content">
-                      <div class="card-name">Hypothesis</div>
-                      <ul class="hypo">
-                        <li>If we increase the number of vending machines in locations with the highest sales, then sales will increase</li>
-                        <li>If we accommodate consumer needs and preferences, then sales will increase</li>
-                        <li>If we increase the number of products that are in the most popular categories, then sales will increase</li>
-                      </ul>
-                  </div>
-              </div>
-              <div class="cardd">
-                  <div class="cards-content">
-                      <div class="card-name">Metrics</div>
-                      <ul class="metrics">
-                        <li>Sales</li>
-                        <li>Number of product transactions</li>
-                        <li>Popular categories and popular products</li>
-                      </ul>
-                  </div>
-              </div>
-        </div>
-        
-        <div class="query">
-            <div class="query1">
-                <div class="query-content">
-                    <a href="#previewSection" class="action-button1">Preview<i class="bx bx-search"></i></a>
+        <div class="main">
+            <div class="text">Analytics</div>
+            <section class="headtext">
+                <h1>Business Problem:</h1>
+                <p>How to increase our sales to 20% in one year?</p>
+            </section>
+            <div class="cards">
+                <div class="card">
+                    <div class="cards-content">
+                        <div class="card-name">Hypothesis</div>
+                        <ul class="hypo">
+                            <li>If we increase the number of vending machines in locations with the highest sales, then
+                                sales will increase</li>
+                            <li>If we accommodate consumer needs and preferences, then sales will increase</li>
+                            <li>If we increase the number of products that are in the most popular categories, then
+                                sales will increase</li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="previewSection">
-                    <p>-- revou-project-sql-416615.Vending_Machine_Cleaned<br>
-                       -- H1 If we increase the number of vending machines in locations with the highest sales, then sales will increase<br>
-                       -- Laporan penjualan bulanan<br>
-                      SELECT<br>
-                        EXTRACT(YEAR FROM TransDate) AS Year,<br>
-                        EXTRACT(MONTH FROM TransDate) AS Month,<br>
-                        SUM(RQty) AS MonthlySales<br>
-                      FROM<br>
-                        revou-project-sql-416615.Vending_Machine_Cleaned.Sales<br>
-                      GROUP BY<br>
-                        Year, Month<br>
-                      ORDER BY Year, Month;<br>
-                      <br>
-                      -- laporan penjualan harian<br>...</p>
-                    <a href="#" class="closeButton">Tutup Preview</a>
-                  </div>
-            </div>
-            <div class="query1_space">
-                <div class="query-content">
-                    <div class="query-name">Query Data with Structured Query Language</div>
+                <div class="cardd">
+                    <div class="cards-content">
+                        <div class="card-name">Metrics</div>
+                        <ul class="metrics">
+                            <li>Sales</li>
+                            <li>Number of product transactions</li>
+                            <li>Popular categories and popular products</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="query1">
-                <div class="query-content">
-                    <a href="assets\Query Data With SQL.pdf" download>
-                        <button class="action-button2">Download<i class="bx bx-chevron-right"></i></button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <section class="hasil">
-            <h3>REPORT</h3>
-        </section>
 
-          <div class="top">
-              <div class="top1">
-                  <div class="chards-content">
-                      <div class="chart-name">Top 3 Machines with The Highest Sales</div>
-                      <table>
-                        <tr>
-                          <th>Device ID</th>
-                          <th>Quantity Sold</th>
-                          <th>Total Revenue</th>
-                          <th>Total Transactions</th>
-                        </tr>
-                        <tr>
-                          <td>VJ300320609</td>
-                          <td>3627</td>
-                          <td>$6904.25</td>
-                          <td>$3598</td>
-                        </tr>
-                        <tr>
-                          <td>VJ300320692</td>
-                          <td>3098</td>
-                          <td>$6347.75</td>
-                          <td>$3056</td>
-                        </tr>
-                        <tr>
-                          <td>VJ300320686</td>
-                          <td>1030</td>
-                          <td>$1808.75</td>
-                          <td>$1024</td>
-                        </tr>
-                      </table>
-                  </div>
-              </div>
-              <div class="top2">
-                  <div class="chards-content">
-                      <div class="chart-name">Top 10 Best Selling Products</div>
-                      <table>
-                        <tr>
-                          <th>Product</th>
-                          <th>Quantity Sold</th>
-                          <th>Total Revenue</th>
-                        </tr>
-                        <tr>
-                          <td>Coca Cola - Zero Sugar</td>
-                          <td>661</td>
-                          <td>$987.0</td>
-                        </tr>
-                        <tr>
-                          <td>Monster Energy Original</td>
-                          <td>516</td>
-                          <td>$1552.0</td>
-                        </tr>
-                        <tr>
-                          <td>Poland Springs Water</td>
-                          <td>457</td>
-                          <td>$702.5</td>
-                        </tr>
-                        <tr>
-                          <td>Coca Cola - Regular</td>
-                          <td>353</td>
-                          <td>$550.5</td>
-                        </tr>
-                        <tr>
-                          <td>Sunkist Soda - Orange</td>
-                          <td>290</td>
-                          <td>$381.5</td>
-                        </tr>
-                        <tr>
-                          <td>KitKat - Crisp Wafers</td>
-                          <td>274</td>
-                          <td>$590.5</td>
-                        </tr>
-                        <tr>
-                          <td>Red Bull - Original</td>
-                          <td>239</td>
-                          <td>$812.0</td>
-                        </tr>
-                        <tr>
-                          <td>SunChips Multigrain - Harvest
-                            Cheddar</td>
-                          <td>235</td>
-                          <td>$352.5</td>
-                        </tr>
-                        <tr>
-                          <td>CheezIt - Original</td>
-                          <td>205</td>
-                          <td>$319.25</td>
-                        </tr>
-                        <tr>
-                          <td>SunChips Multigrain - Salsa</td>
-                          <td>205</td>
-                          <td>$307.5</td>
-                        </tr>
-                      </table>
-                  </div>
-              </div>
-          </div>
+            <div class="query">
+                <div class="query1">
+                    <div class="query-content">
+                        <a href="#previewSection" class="action-button1">Preview<i class="bx bx-search"></i></a>
+                    </div>
+                    <div id="previewSection">
+                        <p>-- revou-project-sql-416615.Vending_Machine_Cleaned<br>
+                            -- H1 If we increase the number of vending machines in locations with the highest sales,
+                            then sales will increase<br>
+                            -- Laporan penjualan bulanan<br>
+                            SELECT<br>
+                            EXTRACT(YEAR FROM TransDate) AS Year,<br>
+                            EXTRACT(MONTH FROM TransDate) AS Month,<br>
+                            SUM(RQty) AS MonthlySales<br>
+                            FROM<br>
+                            revou-project-sql-416615.Vending_Machine_Cleaned.Sales<br>
+                            GROUP BY<br>
+                            Year, Month<br>
+                            ORDER BY Year, Month;<br>
+                            <br>
+                            -- laporan penjualan harian<br>...
+                        </p>
+                        <a href="#" class="closeButton">Tutup Preview</a>
+                    </div>
+                </div>
+                <div class="query1_space">
+                    <div class="query-content">
+                        <div class="query-name">Query Data with Structured Query Language</div>
+                    </div>
+                </div>
+                <div class="query1">
+                    <div class="query-content">
+                        <a href="assets\Query Data With SQL.pdf" download>
+                            <button class="action-button2">Download<i class="bx bx-chevron-right"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <section class="hasil">
+                <h3>REPORT</h3>
+            </section>
 
-          <div class="tops">
-              <div class="tops1">
-                  <div class="chards-content">
-                      <div class="chart-name">Top 5 Best Selling Products Based on Popular Category for Each Location</div>
-                      <table>
-                        <tr>
-                          <th>Location</th>
-                          <th>Category</th>
-                          <th>Product</th>
-                          <th>Quantity Sold</th>
-                        </tr>
-                        <tr>
-                          <td>GuttenPlans</td>
-                          <td>Carbonated</td>
-                          <td>Monster Energy Original</td>
-                          <td>420</td>
-                        </tr>
-                        <tr>
-                          <td>EB Public Library</td>
-                          <td>Carbonated</td>
-                          <td>Coca Cola - Zero Sugar</td>
-                          <td>287</td>
-                        </tr>
-                        <tr>
-                          <td>Earle Asphalt</td>
-                          <td>Food</td>
-                          <td>Robert Irvine's - Fit Crunch - Chocolate Pea</td>
-                          <td>102</td>
-                        </tr>
-                        <tr>
-                          <td>Brunswick Sq Mall</td>
-                          <td>Carbonated</td>
-                          <td>Coca Cola - Zero Sugar</td>
-                          <td>77</td>
-                        </tr>
-                        <tr>
-                          <td>Brunswick Sq Mall</td>
-                          <td>Water</td>
-                          <td>S. Pellegrino Sparkling Mineral Water</td>
-                          <td>44</td>
-                        </tr>
-                      </table>
-                  </div>
-              </div>
-              <div class="tops2"></div>
-            </div>
-        <article class="insight">
-            <div class="insights">
-                <img src="assets/pngtree-cartoon-glowing-yellow-light-bulb-vector-illustration-png-image_8537134.png" alt="">
-                <p>CONCLUSION</p>
-                <ul class="concl">
-                    <li>Locations with the highest sales were GuttenPlans and the EB Public Library</li>
-                    <li>The product with the highest sales was Coca Cola - Zero Sugar and the product with the highest total revenue was Monster Energy Original</li>
-                    <li>The highest sales and total revenue occurred in July at $2126.3</li>
-                    <li>Monster Energy Original products have the highest sales based on popular category for each location</li>
-                </ul>
-            </div>
-        </article>
-        <div class="recom">
-            <div class="recom1">
-                <div class="recom-content">
-                    <div class="recom-name">We Recommend Several Things</div>
-                </div>
-            </div>
-            <aside class="recom2">
-                <div class="recom-content">
-                    <div class="recom-name">1</div>
-                </div>
-            </aside>
-            <aside class="recom3">
-                <div class="recom-content">
-                    <div class="recom-name">
-                        <P>Increase the number of vending machine in location with highest sales</P>
+            <div class="top">
+                <div class="top1">
+                    <div class="chards-content">
+                        <div class="chart-name">Top 3 Machines with The Highest Sales</div>
+                        <table>
+                            <tr>
+                                <th>Device ID</th>
+                                <th>Quantity Sold</th>
+                                <th>Total Revenue</th>
+                                <th>Total Transactions</th>
+                            </tr>
+                            <tr>
+                                <td>VJ300320609</td>
+                                <td>3627</td>
+                                <td>$6904.25</td>
+                                <td>$3598</td>
+                            </tr>
+                            <tr>
+                                <td>VJ300320692</td>
+                                <td>3098</td>
+                                <td>$6347.75</td>
+                                <td>$3056</td>
+                            </tr>
+                            <tr>
+                                <td>VJ300320686</td>
+                                <td>1030</td>
+                                <td>$1808.75</td>
+                                <td>$1024</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </aside>
-        </div>
-        <div class="recoms">
-            <div class="recoms1"></div>
-            <aside class="recoms2">
-                <div class="recom-content">
-                    <div class="recom-name">
-                        <P>Increase the number of products with highest sales and highest revenue</P>
+                <div class="top2">
+                    <div class="chards-content">
+                        <div class="chart-name">Top 10 Best Selling Products</div>
+                        <table>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity Sold</th>
+                                <th>Total Revenue</th>
+                            </tr>
+                            <tr>
+                                <td>Coca Cola - Zero Sugar</td>
+                                <td>661</td>
+                                <td>$987.0</td>
+                            </tr>
+                            <tr>
+                                <td>Monster Energy Original</td>
+                                <td>516</td>
+                                <td>$1552.0</td>
+                            </tr>
+                            <tr>
+                                <td>Poland Springs Water</td>
+                                <td>457</td>
+                                <td>$702.5</td>
+                            </tr>
+                            <tr>
+                                <td>Coca Cola - Regular</td>
+                                <td>353</td>
+                                <td>$550.5</td>
+                            </tr>
+                            <tr>
+                                <td>Sunkist Soda - Orange</td>
+                                <td>290</td>
+                                <td>$381.5</td>
+                            </tr>
+                            <tr>
+                                <td>KitKat - Crisp Wafers</td>
+                                <td>274</td>
+                                <td>$590.5</td>
+                            </tr>
+                            <tr>
+                                <td>Red Bull - Original</td>
+                                <td>239</td>
+                                <td>$812.0</td>
+                            </tr>
+                            <tr>
+                                <td>SunChips Multigrain - Harvest
+                                    Cheddar</td>
+                                <td>235</td>
+                                <td>$352.5</td>
+                            </tr>
+                            <tr>
+                                <td>CheezIt - Original</td>
+                                <td>205</td>
+                                <td>$319.25</td>
+                            </tr>
+                            <tr>
+                                <td>SunChips Multigrain - Salsa</td>
+                                <td>205</td>
+                                <td>$307.5</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </aside>
-            <aside class="recoms3">
-                <div class="recom-content">
-                    <div class="recom-name">2</div>
-                </div>
-            </aside>
-        </div>
-        <div class="recomm">
-            <div class="recomm1"></div>
-            <aside class="recomm2">
-                <div class="recom-content">
-                    <div class="recom-name">3</div>
-                </div>
-            </aside>
-            <aside class="recomm3">
-                <div class="recom-content">
-                    <div class="recom-name">
-                        <p>Increase the number of products included in the most popular category in each machine</p>
+            </div>
+
+            <div class="tops">
+                <div class="tops1">
+                    <div class="chards-content">
+                        <div class="chart-name">Top 5 Best Selling Products Based on Popular Category for Each Location
+                        </div>
+                        <table>
+                            <tr>
+                                <th>Location</th>
+                                <th>Category</th>
+                                <th>Product</th>
+                                <th>Quantity Sold</th>
+                            </tr>
+                            <tr>
+                                <td>GuttenPlans</td>
+                                <td>Carbonated</td>
+                                <td>Monster Energy Original</td>
+                                <td>420</td>
+                            </tr>
+                            <tr>
+                                <td>EB Public Library</td>
+                                <td>Carbonated</td>
+                                <td>Coca Cola - Zero Sugar</td>
+                                <td>287</td>
+                            </tr>
+                            <tr>
+                                <td>Earle Asphalt</td>
+                                <td>Food</td>
+                                <td>Robert Irvine's - Fit Crunch - Chocolate Pea</td>
+                                <td>102</td>
+                            </tr>
+                            <tr>
+                                <td>Brunswick Sq Mall</td>
+                                <td>Carbonated</td>
+                                <td>Coca Cola - Zero Sugar</td>
+                                <td>77</td>
+                            </tr>
+                            <tr>
+                                <td>Brunswick Sq Mall</td>
+                                <td>Water</td>
+                                <td>S. Pellegrino Sparkling Mineral Water</td>
+                                <td>44</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-            </aside>
+                <div class="tops2"></div>
+            </div>
+            <article class="insight">
+                <div class="insights">
+                    <img src="assets/pngtree-cartoon-glowing-yellow-light-bulb-vector-illustration-png-image_8537134.png"
+                        alt="">
+                    <p>CONCLUSION</p>
+                    <ul class="concl">
+                        <li>Locations with the highest sales were GuttenPlans and the EB Public Library</li>
+                        <li>The product with the highest sales was Coca Cola - Zero Sugar and the product with the
+                            highest total revenue was Monster Energy Original</li>
+                        <li>The highest sales and total revenue occurred in July at $2126.3</li>
+                        <li>Monster Energy Original products have the highest sales based on popular category for each
+                            location</li>
+                    </ul>
+                </div>
+            </article>
+            <div class="recom">
+                <div class="recom1">
+                    <div class="recom-content">
+                        <div class="recom-name">We Recommend Several Things</div>
+                    </div>
+                </div>
+                <aside class="recom2">
+                    <div class="recom-content">
+                        <div class="recom-name">1</div>
+                    </div>
+                </aside>
+                <aside class="recom3">
+                    <div class="recom-content">
+                        <div class="recom-name">
+                            <P>Increase the number of vending machine in location with highest sales</P>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <div class="recoms">
+                <div class="recoms1"></div>
+                <aside class="recoms2">
+                    <div class="recom-content">
+                        <div class="recom-name">
+                            <P>Increase the number of products with highest sales and highest revenue</P>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="recoms3">
+                    <div class="recom-content">
+                        <div class="recom-name">2</div>
+                    </div>
+                </aside>
+            </div>
+            <div class="recomm">
+                <div class="recomm1"></div>
+                <aside class="recomm2">
+                    <div class="recom-content">
+                        <div class="recom-name">3</div>
+                    </div>
+                </aside>
+                <aside class="recomm3">
+                    <div class="recom-content">
+                        <div class="recom-name">
+                            <p>Increase the number of products included in the most popular category in each machine</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
         </div>
-      </div>
-  </main>
-  <script src="js/sidebar.js"></script>
+    </main>
+    <script src="js/sidebar.js"></script>
 </body>
 <footer>
     <div class="footerContainer">
@@ -385,10 +397,12 @@
                 <h3>Contact</h3>
                 <div class="contact-details">
                     <img class="logoContact" src="assets/icon/mail-putih.svg">
-                    <a target="_blank" href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
+                    <a target="_blank"
+                        href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
 </html>

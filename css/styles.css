@@ -634,7 +634,7 @@ footer{
 /* membuat responsif untuk layar berukuran tablet */
 @media screen and (max-width: 768px) {
     .cards{
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .charts1, .charts2, .charts3 {
@@ -669,8 +669,8 @@ footer{
 
 /* membuat responsif untuk layar berukuran kecil */
 @media screen and (max-width: 576px) {
-    .cards {
-        grid-template-columns: 1; 
+    .cards{
+        grid-template-columns: 1fr;
     }
 
     .charts1, .charts2, .charts3 {
@@ -681,7 +681,7 @@ footer{
 
 @media screen and (max-width: 320px) {
     .cards {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 
     .charts1, .charts2, .charts3 {
