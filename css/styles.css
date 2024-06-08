@@ -9,10 +9,8 @@
 
 :root{
     /* ===== Colors ===== */
-    --body-color: #E4E9F7;
     --sidebar-color: #FFF;
     --primary-color: #f44718;
-    --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
     --text-color: #707070;
 
@@ -25,7 +23,7 @@
 
 body{
     min-height: 100vh;
-    background-color: var(--body-color);
+    background-color: #fff;
     transition: var(--tran-05);
 }
 
@@ -57,6 +55,9 @@ body.dark{
 }
 .sidebar.close{
     width: 88px;
+    border: solid;
+    border-color: rgb(153, 170, 178);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== Reusable code - Here ===== */
@@ -294,7 +295,7 @@ body.dark .switch::before{
     color: var(--text-color);
 }
 
-main.dark .home .text{
+.main.dark .home .text{
     color: var(--text-color);
 }
 
@@ -321,7 +322,7 @@ main{
 }
 
 .main {
-    background-color: var(--body-color);
+    background-color: #fff;
     transition: var(--tran-05);
     padding-left: 120px;
     padding-right: 30px;
@@ -338,10 +339,13 @@ main{
 select{
     border-radius: 5px;
     opacity: 0.8;
-    border-color: #7ea8db;
-    background-color: #ffffff;
+    border-color: #9B4444;
+    background-color: #d1acac;
     cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration-color: #fff;
+    
+    padding: 0.5rem 1rem;
 }
 
 .filters section {
@@ -357,7 +361,7 @@ button{
     padding: 3px 10px;
     border-radius: 5px;
     opacity: 0.8;
-    border-color: #7ea8db;
+    border-color: #9B4444;
     background-color: #812f2f;
     cursor: pointer; 
     transition: background-color 0.3s, color 0.3s;
@@ -385,6 +389,8 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border: solid;
+    border-color: #9B4444;
 }
 
 .charts1, .charts2, .charts3 {
@@ -396,6 +402,11 @@ button:hover {
     width: 100%;
     flex-wrap: wrap;
     text-align: center;
+}
+
+.charts11, .charts12, .charts21, .charts22, .charts23, .charts31, .charts32{
+    border: solid;
+    border-color: #9B4444;
 }
 
 .chart-name {
@@ -777,4 +788,134 @@ footer{
     .footerContainer {
         padding: 0; /* Kurangi padding container pada layar sangat kecil */
     }
+}
+
+
+
+
+
+/* membuat mode gelap terang*/
+/* Saat Dark Mode */
+body.dark {
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --text-color2: #fff;
+}
+
+/* Sidebar */
+body.dark .sidebar {
+    background: var(--sidebar-color);
+    color: var(--text-color);
+}
+
+/* Sidebar header */
+body.dark .sidebar header {
+    color: var(--text-color);
+}
+
+body.dark .sidebar header .logo-text .name,
+body.dark .sidebar header .logo-text .profession {
+    color: var(--text-color);
+}
+
+body.dark .sidebar header .image img {
+    border-color: var(--text-color);
+}
+
+/* Sidebar menu links */
+body.dark .sidebar .menu-links li a {
+    color: var(--text-color);
+}
+
+body.dark .sidebar .menu-links li a:hover {
+    background-color: var(--primary-color);
+}
+
+body.dark .sidebar .menu-links li a:hover .icon,
+body.dark .sidebar .menu-links li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+/* Sidebar toggle */
+body.dark .sidebar header .toggle {
+    color: var(--text-color);
+}
+
+/* Dark Mode Toggle */
+body.dark .menu-bar .mode {
+    background-color: var(--primary-color-light);
+}
+
+body.dark .menu-bar .mode .sun-moon i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode .sun-moon i.moon {
+    opacity: 0;
+}
+
+/* Toggle Switch */
+body.dark .toggle-switch .switch {
+    background-color: var(--toggle-color);
+}
+
+body.dark .toggle-switch .switch::before {
+    background-color: var(--sidebar-color);
+    left: 20px;
+}
+
+/* Main Content */
+body.dark .main .text {
+    color: var(--text-color);
+}
+
+/* Cards */
+body.dark .cards .card {
+    background: var(--primary-color-light);
+    color: var(--text-color);
+}
+
+body.dark .main, main, body{
+    background: var(--primary-color-light);
+    color: var(--text-color);
+}
+
+body.dark .chards-content, .charts1, .charts2, .charts3, .charts11, .charts12, .charts21, .charts22, .charts31, .charts32{
+    background: var(--primary-color-light);
+    color: var(--text-color2);
+}
+
+body.dark canvas{
+    background: var(--primary-color-light);
+    color: var(--text-color);
+}
+
+body.dark .cards .card .cards-content .card-name {
+    color: var(--toggle-color);
+}
+
+/* Charts */
+body.dark .charts1, 
+body.dark .charts2, 
+body.dark .charts3 {
+    background: var(--primary-color-light);
+    color: var(--toggle-color);
+}
+
+body.dark .chart-name {
+    color: var(--text-color);
+}
+
+/* Footer */
+body.dark footer {
+    background: var(--body-color);
+    color: var(--text-color);
+}
+
+body.dark footer a {
+    color: var(--text-color);
 }
