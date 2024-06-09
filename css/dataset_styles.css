@@ -165,10 +165,6 @@ body.dark .sidebar header .toggle{
     transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu{
-    margin-top: 60px;
-}
-
 .sidebar li.search-box{
     border-radius: 6px;
     cursor: pointer;
@@ -613,12 +609,12 @@ footer{
     }
 
     aside {
-        margin-left: 35px;
+        margin-left: 135px;
         margin-bottom: 25px;
     }
 
     .main {
-        padding-left: 20px;
+        padding-left: 120px;
         padding-right: 20px;
     }
 
@@ -636,7 +632,9 @@ footer{
     .tableDesc td{
         padding: 8px 0;
     }
+}
 
+@media (max-width: 768px) {
     .sidebar.close {
         width: 0;
         padding: 0;
@@ -649,31 +647,36 @@ footer{
     .main{
         padding-left: 20px;
     }
+
+    aside {
+        margin-left: 35px;
+        margin-bottom: 25px;
+    }
 }
 
 /* membuat responsif untuk footer*/
 @media (min-width: 1200px){
     .row {
-        margin-left: 90px; /* Pusatkan kolom */
+        margin-left: 90px; 
     }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
     .row {
-        margin-left: 90px; /* Pusatkan kolom */
+        margin-left: 90px; 
     }
 }
 
 @media (max-width: 768px) {
     .row {
-        flex-direction: column; /* Tumpuk kolom secara vertikal */
-        align-items: center; /* Pusatkan kolom */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .col {
-        padding: 1rem 0; /* Sesuaikan padding untuk layar kecil */
-        max-width: 100%; /* Pastikan kolom mengambil lebar penuh */
-        text-align: center; /* Pusatkan teks */
+        padding: 1rem 0; 
+        max-width: 100%; 
+        text-align: center; 
     }
 }
 

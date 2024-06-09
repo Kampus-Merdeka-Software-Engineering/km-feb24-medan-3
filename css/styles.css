@@ -174,10 +174,6 @@ body.dark .sidebar header .toggle{
     transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu{
-    margin-top: 60px;
-}
-
 .sidebar li a{
     list-style: none;
     height: 100%;
@@ -265,6 +261,7 @@ body.dark .sidebar li a:hover .text{
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
 }
+
 body.dark .home .text{
     color: var(--text-color);
 }
@@ -274,6 +271,13 @@ body.dark .home .text{
 html, body{
     display: flex;
     flex-direction: column;
+}
+
+.text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding-bottom: 15px;
 }
 
 main{
@@ -655,6 +659,19 @@ footer{
     button {
         margin-top: 10px; 
     }
+
+    .sidebar.close {
+        width: 0;
+        padding: 0;
+    }
+    
+    .sidebar.close .image {
+        display: none;
+    }
+    
+    .main{
+        padding-left: 30px;
+    }
 }
 
 /* membuat responsif untuk layar berukuran kecil */
@@ -681,7 +698,7 @@ footer{
 }
 
 /* membuat responsif untuk filter dan sidebaar close dengan ukuran layar spesifik */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 950px) {
     main {
         grid-template-columns: 1fr; 
     }
@@ -701,58 +718,45 @@ footer{
     button {
         margin-top: 10px; 
     }
-
-    .sidebar.close {
-        width: 0;
-        padding: 0;
-    }
-    
-    .sidebar.close .image {
-        display: none;
-    }
-    
-    .main{
-        padding-left: 20px;
-    }
 }
 
 /* membuat responsif untuk footer*/
 @media (min-width: 1200px){
     .row {
-        margin-left: 90px; /* Pusatkan kolom */
+        margin-left: 90px; 
     }
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
     .row {
-        margin-left: 90px; /* Pusatkan kolom */
+        margin-left: 90px; 
     }
 }
 
 @media (max-width: 768px) {
     .row {
-        flex-direction: column; /* Tumpuk kolom secara vertikal */
-        align-items: center; /* Pusatkan kolom */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .col {
-        padding: 1rem 0; /* Sesuaikan padding untuk layar kecil */
-        max-width: 100%; /* Pastikan kolom mengambil lebar penuh */
-        text-align: center; /* Pusatkan teks */
+        padding: 1rem 0; 
+        max-width: 100%; 
+        text-align: center; 
     }
 }
 
 @media (max-width: 480px) {
     footer {
-        padding: 1rem; /* Kurangi padding pada layar sangat kecil */
+        padding: 1rem; 
     }
 
     .col {
-        padding: 0.5rem 0; /* Kurangi padding kolom pada layar sangat kecil */
+        padding: 0.5rem 0; 
     }
 
     .footerContainer {
-        padding: 0; /* Kurangi padding container pada layar sangat kecil */
+        padding: 0; 
     }
 }
 

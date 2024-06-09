@@ -165,10 +165,6 @@ body.dark .sidebar header .toggle{
     transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu{
-    margin-top: 60px;
-}
-
 .sidebar li.search-box{
     border-radius: 6px;
     cursor: pointer;
@@ -473,7 +469,6 @@ footer{
 
 .row{
     display: flex;
-    justify-content: space-between;
 }
 
 .col{
@@ -578,19 +573,6 @@ footer{
   
   /* Aturan CSS untuk layar menengah (tablet) */
   @media screen and (min-width: 768px) and (max-width: 1200px) {
-    .sidebar.close {
-        width: 0;
-        padding: 0;
-    }
-
-    .sidebar.close .image {
-        display: none;
-    }
-    
-    .main {
-        padding-left: 20px;
-    }
-
     .revou{
         font-size: 12px;
         width: 100%;
@@ -733,6 +715,12 @@ footer{
 
 /* membuat responsif untuk footer*/
 @media (min-width: 1200px){
+    .row {
+        margin-left: 90px; /* Pusatkan kolom */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
     .row {
         margin-left: 90px; /* Pusatkan kolom */
     }

@@ -100,6 +100,7 @@ body.dark{
     white-space: nowrap;
     opacity: 1;
 }
+
 .sidebar.close .text{
     opacity: 0;
 }
@@ -166,9 +167,6 @@ body.dark .sidebar header .toggle{
     transform: translateY(-50%) rotate(0deg);
 }
 
-.sidebar .menu{
-    margin-top: 60px;
-}
 
 .sidebar li.search-box{
     border-radius: 6px;
@@ -302,7 +300,6 @@ body.dark .home .text{
 /* ===== Sidebar selesai ===== */
 
 .container {
-    display: grid;
     gap: 20px; 
     margin-bottom: 90px;
     margin-right: 50px;
@@ -768,7 +765,6 @@ footer{
 
 .row{
     display: flex;
-    justify-content: space-between;
 }
 
 .col{
@@ -876,19 +872,6 @@ footer{
   
   /* Aturan CSS untuk layar menengah (tablet) */
   @media screen and (min-width: 768px) and (max-width: 1200px) {
-    .sidebar.close {
-        width: 0;
-        padding: 0;
-    }
-
-    .sidebar.close .image {
-        display: none;
-    }
-
-    .main {
-        width: 100%;
-        padding-left: 20px;
-    }
 
     .cards{
         margin-top: 20px;
@@ -967,7 +950,7 @@ footer{
     }
 
     .main {
-        width: 92%;
+        width: 100%;
         padding-left: 20px;
     }
 
