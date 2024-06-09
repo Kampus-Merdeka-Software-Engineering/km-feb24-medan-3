@@ -155,31 +155,29 @@ function renderDoughnutChart(labels, data) {
     type: "doughnut", // Chart type
     data: {
       labels: labels,
-      datasets: [
-        {
-          label: "Total Revenue",
-          data: data,
-          backgroundColor: [
-            // Background color for each chart segment
-            "rgba(255, 99, 132, 0.2)",
-            "rgba(54, 162, 235, 0.2)",
-            "rgba(255, 206, 86, 0.2)",
-            "rgba(75, 192, 192, 0.2)",
-            "rgba(153, 102, 255, 0.2)",
-            "rgba(255, 159, 64, 0.2)",
-          ],
-          borderColor: [
-            // Border color for each chart segment
-            "rgba(255, 99, 132, 1)",
-            "rgba(54, 162, 235, 1)",
-            "rgba(255, 206, 86, 1)",
-            "rgba(75, 192, 192, 1)",
-            "rgba(153, 102, 255, 1)",
-            "rgba(255, 159, 64, 1)",
-          ],
-          borderWidth: 1,
-        },
-      ],
+      datasets: [{
+        label: "Total Revenue",
+        data: data,
+        backgroundColor: [
+          // Background color for each chart segment
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+        ],
+        borderColor: [
+          // Border color for each chart segment
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderWidth: 1,
+      }, ],
     },
     options: {
       responsive: true,
@@ -239,6 +237,7 @@ fetch("./json/vm_cleaned.json")
     // Separate labels and data for chart
     const labels = Object.keys(totalRevenue);
     const revenueData = Object.values(totalRevenue);
+    // Check for dark mode and adjust Chart defaults
 
     // render doughnut chart with initial data
     renderDoughnutChart(labels, revenueData);
@@ -294,8 +293,7 @@ function createLineChart(labels, revenueData, quantityData) {
     type: "line", // Chart type
     data: {
       labels: labels,
-      datasets: [
-        {
+      datasets: [{
           label: "Total Revenue",
           data: revenueData,
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Background color for revenue
@@ -446,15 +444,13 @@ function createMachineBarChart(labels, data) {
     type: "bar", // Tipe chart
     data: {
       labels: labels,
-      datasets: [
-        {
-          label: "Top Machines by Revenue",
-          data: data,
-          backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
-          borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
-          borderWidth: 1,
-        },
-      ],
+      datasets: [{
+        label: "Top Machines by Revenue",
+        data: data,
+        backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
+        borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
+        borderWidth: 1,
+      }, ],
     },
     options: {
       responsive: true,
@@ -551,8 +547,7 @@ function createProductRevenueChart(labels, quantityData, revenueData) {
     type: "bar",
     data: {
       labels: labels,
-      datasets: [
-        {
+      datasets: [{
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -688,8 +683,7 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
     type: "bar", // Tipe chart
     data: {
       labels: labels, // Kategori sebagai label di sumbu y
-      datasets: [
-        {
+      datasets: [{
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
@@ -811,8 +805,7 @@ $(document).ready(function () {
       // Inisialisasi DataTable
       $("#example-table").DataTable({
         data: productTotalsArray,
-        columns: [
-          {
+        columns: [{
             data: "Location",
           },
           {
@@ -829,7 +822,9 @@ $(document).ready(function () {
           },
         ],
         lengthChange: true,
-        order: [[3, "desc"]],
+        order: [
+          [3, "desc"]
+        ],
         scrollX: true,
         scrollY: true
       });
