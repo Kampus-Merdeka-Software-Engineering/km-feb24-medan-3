@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">  
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css" />
     <link href="https://unpkg.com/tabulator-tables/dist/css/tabulator.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://unpkg.com/tabulator-tables/dist/js/tabulator.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Dashboard</title> 
+    <title>Dashboard</title>
 </head>
+
 <body>
     <!-- ini awal sidebar -->
     <nav class="sidebar close">
@@ -27,7 +29,7 @@
             </div>
 
             <i class='toggle'>
-                <img src="./assets/icon/chevron.png" style="width: 20px;"  alt="">
+                <img src="./assets/icon/chevron.png" style="width: 20px;" alt="">
             </i>
         </header>
 
@@ -35,35 +37,35 @@
             <div class="menu">
 
                 <ul class="menu-links">
-                <ul class="menu-links">
-                    <li class="nav-link">
-                        <a href="index.html">
-                            <img class="ikon" src="assets/icon/home-abu.svg">
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
+                    <ul class="menu-links">
+                        <li class="nav-link">
+                            <a href="index.html">
+                                <img class="ikon" src="assets/icon/home-abu.svg">
+                                <span class="text nav-text">Dashboard</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="analytics.html">
-                            <img class="ikon" src="assets/icon/pie-chart-abu.svg">
-                            <span class="text nav-text">Analytics</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="analytics.html">
+                                <img class="ikon" src="assets/icon/pie-chart-abu.svg">
+                                <span class="text nav-text">Analytics</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="dataset.html">
-                            <img class="ikon" src="assets/icon/database-abu.svg">
-                            <span class="text nav-text">About Dataset</span>
-                        </a>
-                    </li>
+                        <li class="nav-link">
+                            <a href="dataset.html">
+                                <img class="ikon" src="assets/icon/database-abu.svg">
+                                <span class="text nav-text">About Dataset</span>
+                            </a>
+                        </li>
 
-                    <li class="nav-link">
-                        <a href="us.html">
-                            <img class="ikon" src="assets/icon/user-abu.svg">
-                            <span class="text nav-text">About Us</span>
-                        </a>
-                    </li>
-                </ul>
+                        <li class="nav-link">
+                            <a href="us.html">
+                                <img class="ikon" src="assets/icon/user-abu.svg">
+                                <span class="text nav-text">About Us</span>
+                            </a>
+                        </li>
+                    </ul>
             </div>
 
             <div class="bottom-content">
@@ -79,10 +81,10 @@
                     <span class="mode-text text">Dark mode</span>
 
                     <div class="toggle-switch">
-                        <button type="button"  class="switch"></button>
+                        <button type="button" class="switch"></button>
                     </div>
                 </li>
-                
+
             </div>
         </div>
     </nav>
@@ -92,61 +94,61 @@
         <div class="main">
             <div class="text">Dashboard</div>
             <form id="formfilter">
-            <div class="filters-container">
-                <div class="filters">
-                    <section id="month">
-                        <select>
-                            <option value="">All Month</option>
-                            <option value="January">January</option>
-                            <option value="February">February</option>
-                            <option value="March">March</option>
-                            <option value="April">April</option>
-                            <option value="May">May</option>
-                            <option value="June">June</option>
-                            <option value="July">July</option>
-                            <option value="August">August</option>
-                            <option value="September">September</option>
-                            <option value="October">October</option>
-                            <option value="November">November</option>
-                            <option value="December">December</option>
-                        </select>
-                    </section>
-                    <section id="location">
-                        <select>
-                            <option value="">All Location</option>
-                            <option value="Brunswick Sq Mall">Brunswick Sq Mall</option>
-                            <option value="Earle Asphalt">Earle Asphalt</option>
-                            <option value="GuttenPlans">GuttenPlans</option>
-                            <option value="EB Public Library">EB Public Library</option>
-                        </select>
-                    </section>
-                    <section id="machine">
-                    <select>
-                        <option value="">All Machine</option>
-                        <option value="VJ300320611">BSQ Mall x1366 - ATT</option>
-                        <option value="VJ300205292">BSQ Mall x1364 - Zales</option>
-                        <option value="VJ300320686">Earle Asphalt x1371</option>
-                        <option value="VJ300320609">GuttenPlans x1367</option>
-                        <option value="VJ300320692">EB Public Library x1380</option>
-                    </select>
-                    </section>
-                    <section id="category">
-                        <select>
-                            <option value="">All Category</option>
-                            <option value="Carbonated">Carbonated</option>
-                            <option value="Food">Food</option>
-                            <option value="Non Carbonated">Non Carbonated</option>
-                            <option value="Water">Water</option>
-                        </select>
-                    </section>
+                <div class="filters-container">
+                    <div class="filters">
+                        <section id="month">
+                            <select>
+                                <option value="">All Month</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </section>
+                        <section id="location">
+                            <select>
+                                <option value="">All Location</option>
+                                <option value="Brunswick Sq Mall">Brunswick Sq Mall</option>
+                                <option value="Earle Asphalt">Earle Asphalt</option>
+                                <option value="GuttenPlans">GuttenPlans</option>
+                                <option value="EB Public Library">EB Public Library</option>
+                            </select>
+                        </section>
+                        <section id="machine">
+                            <select>
+                                <option value="">All Machine</option>
+                                <option value="VJ300320611">BSQ Mall x1366 - ATT</option>
+                                <option value="VJ300205292">BSQ Mall x1364 - Zales</option>
+                                <option value="VJ300320686">Earle Asphalt x1371</option>
+                                <option value="VJ300320609">GuttenPlans x1367</option>
+                                <option value="VJ300320692">EB Public Library x1380</option>
+                            </select>
+                        </section>
+                        <section id="category">
+                            <select>
+                                <option value="">All Category</option>
+                                <option value="Carbonated">Carbonated</option>
+                                <option value="Food">Food</option>
+                                <option value="Non Carbonated">Non Carbonated</option>
+                                <option value="Water">Water</option>
+                            </select>
+                        </section>
+                    </div>
+
+                    <div class="button">
+                        <button type="submit" onclick="return false;">Apply Filter</button>
+                    </div>
                 </div>
-    
-                <div class="button">
-                    <button type="submit" onclick="return false;">Apply Filter</button>
-                </div>
-            </div>
             </form>
-            
+
             <div class="cards">
                 <div class="card">
                     <div class="cards-content">
@@ -179,9 +181,9 @@
                     <div class="chartPie">
                         <div class="chards-content">
                             <div class="chart-name">Percentage Sales From Each Location</div>
-                            <div class="displayChart">
-                                <canvas id="pieChart"></canvas>
-                            </div>
+
+                            <canvas id="pieChart"></canvas>
+
                         </div>
                     </div>
                 </div>
@@ -189,68 +191,63 @@
                     <div class="chartLine">
                         <div class="chards-content">
                             <div class="chart-name">Monthly Sales</div>
-                            <div class="displayChart">
-                                <canvas id="lineChart"></canvas>
-                            </div>
+
+                            <canvas id="lineChart"></canvas>
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="charts2">
                 <div class="charts21">
                     <div clas="chartMachine">
                         <div class="chards-content">
                             <div class="chart-name">Total Revenue From Each Machine</div>
-                            <div class="displayChart">
-                                <canvas id="machineBarChart"></canvas>
-                            </div>
+                            <canvas id="machineBarChart"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="charts22">
                     <div class="chards-content">
                         <div class="chart-name">Top Category</div>
-                        <div class="displayChart">
-                            <canvas id="categoryChart"></canvas>
-                        </div>
+                        <canvas id="categoryChart"></canvas>
                     </div>
                 </div>
             </div>
 
-        <div class="charts3">
-            <div class="charts31">
-                <div class="chards-content">
-                    <div class="chart-name">Top Product</div>
-                    <div class="displayChart">
-                        <canvas id="productRevenueChart" ></canvas>
+            <div class="charts3">
+                <div class="charts31">
+                    <div class="chards-content">
+                        <div class="chart-name">Top Product</div>
+                        <canvas id="productRevenueChart"></canvas>
                     </div>
                 </div>
-            </div>
-            <div class="charts32">
-                <div class="chards-content">
-                    <div class="chart-name">Top Product and Category from Each Location</div>
-                    <div class="table" style="padding-inline: 30px;">
-                        <div class="table-wrapper">
-                            <table id="example-table" data-page-length="5" class="display dt-head-body-left">
-                                <thead>
-                                    <tr>
-                                        <td>Location</td>
-                                        <td>Category</td>
-                                        <td>Product</td>
-                                        <td>Quantity Sold</td>
-                                        <td>Revenue</td>
-                                    </tr>
-                                </thead>
+                <div class="charts32">
+                    <div class="chards-content">
+                        <div class="chart-name">Top Product and Category from Each Location</div>
+                        <div class="table" style="padding-inline: 30px;">
+                            <div class="table-wrapper">
+                                <table id="example-table" data-page-length="5" class="display dt-head-body-left">
+                                    <thead>
+                                        <tr>
+                                            <td>Location</td>
+                                            <td>Category</td>
+                                            <td>Product</td>
+                                            <td>Quantity Sold</td>
+                                            <td>Revenue</td>
+                                        </tr>
+                                    </thead>
                                 </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
     <script src="js/sidebar.js"></script>
     <script src="js/script.js"></script>
@@ -279,10 +276,12 @@
                 <h3>Contact</h3>
                 <div class="contact-details">
                     <img class="logoContact" src="assets/icon/mail-putih.svg">
-                    <a target="_blank" href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
+                    <a target="_blank"
+                        href="mailto:medan.team3.tarevou@gmail.com?subject=Inquiry&body=Hello%20Team%203,">Team 3</a>
                 </div>
             </div>
         </div>
     </div>
 </footer>
+
 </html>
