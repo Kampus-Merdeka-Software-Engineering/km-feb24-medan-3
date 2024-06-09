@@ -216,7 +216,9 @@ body.dark .sidebar li a:hover .text{
     position: relative;
     transition: var(--tran-05);
 }
-
+.menu-bar .bottom-content .mode{
+    align-items: center;
+}
 .menu-bar .mode .sun-moon{
     height: 50px;
     width: 60px;
@@ -224,7 +226,12 @@ body.dark .sidebar li a:hover .text{
 
 .mode .sun-moon i{
     position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
+
 .mode .sun-moon i.sun{
     opacity: 0;
 }
