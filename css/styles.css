@@ -51,12 +51,15 @@ body.dark{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 100;
+    border-right: solid;
+    border-color: #3a3b3c;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  
 }
 .sidebar.close{
     width: 88px;
-    border: solid;
-    border-color: rgb(153, 170, 178);
+    border-right: solid;
+    border-color: #3a3b3c;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
@@ -175,22 +178,6 @@ body.dark .sidebar header .toggle{
     margin-top: 60px;
 }
 
-.sidebar li.search-box{
-    border-radius: 6px;
-    cursor: pointer;
-    transition: var(--tran-05);
-}
-
-.sidebar li.search-box input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 6px;
-    font-size: 17px;
-    font-weight: 500;
-    transition: var(--tran-05);
-}
 .sidebar li a{
     list-style: none;
     height: 100%;
@@ -245,12 +232,6 @@ body.dark .sidebar li a:hover .text{
 .mode .sun-moon i.sun{
     opacity: 0;
 }
-body.dark .mode .sun-moon i.sun{
-    opacity: 1;
-}
-body.dark .mode .sun-moon i.moon{
-    opacity: 0;
-}
 
 .menu-bar .bottom-content .toggle-switch{
     position: absolute;
@@ -284,27 +265,6 @@ body.dark .mode .sun-moon i.moon{
     background-color: var(--sidebar-color);
     transition: var(--tran-04);
 }
-
-body.dark .switch::before{
-    left: 20px;
-}
-
-.main .text{
-    font-size: 30px;
-    font-weight: 500;
-    color: var(--text-color);
-}
-
-.main.dark .home .text{
-    color: var(--text-color);
-}
-
-.sidebar.close ~ .home{
-    left: 78px;
-    height: 100vh;
-    width: calc(100% - 78px);
-}
-
 body.dark .home .text{
     color: var(--text-color);
 }
@@ -507,6 +467,12 @@ table tbody td {
     padding-inline: 20px;
 }
 
+#lineChart, #pieChart, #machineBarChart, #categoryChart, #productRevenueChart {
+    padding-inline: 30px;
+    width: 100%;
+    height: 100%;
+}
+
 /* ======atur footernyanya dari sini======= */
 
 footer{
@@ -539,7 +505,7 @@ footer{
     margin-bottom:25px;
 }
 .col h3{
-    color:#ff014fff;
+    color:#9B4444;
     margin-bottom: 20px;
     position: relative;
     cursor: pointer;
@@ -549,7 +515,7 @@ footer{
     content: '';
     height:3px;
     width:0px;
-    background-color: #ff014fff;
+    background-color: #9B4444;
     position: absolute;
     bottom: 0;
     left:0;
@@ -560,7 +526,7 @@ footer{
     width:30px
 }
 .col .social a {
-    color:#ff014fff;
+    color:#9B4444;
     margin-top:2rem;
     margin-right: 5px;
     transition: 0.3s ease;
@@ -585,7 +551,7 @@ footer{
     position: absolute;
     top:5px;
     left:-10px;
-    background-color: #ff014fff;
+    background-color: #9B4444;
     transition: 0.5s ease;
     opacity: 0;
 }
@@ -594,7 +560,7 @@ footer{
 }
 .col .links a:hover{
     transform: translateX(-8px);
-    color:#ff014fff;
+    color:#9B4444;
 }
 .col .contact-details{
     display: inline-flex;
@@ -619,7 +585,7 @@ footer{
     position: absolute;
     top:5px;
     left:-10px;
-    background-color: #ff014fff;
+    background-color: #9B4444;
     transition: 0.5s ease;
     opacity: 0;
 }
@@ -918,4 +884,27 @@ body.dark footer {
 
 body.dark footer a {
     color: var(--text-color);
+}
+
+.dark .charts1 .charts11, 
+.dark .charts2 .charts21,
+.dark .charts3 .charts31{
+    background: unset;
+}
+
+
+.dark .charts1 .charts12, 
+.dark .charts2 .charts22,
+.dark .charts3 .charts32{
+    background: unset;
+}
+
+.dark table thead tr {
+    background-color: #582323;
+}
+
+.dark .sidebar.close{
+    border-right: solid;
+    border-color: #3a3b3c;
+    box-shadow: 0 0 15px rgba(53, 48, 48, 0.5);
 }
