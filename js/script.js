@@ -244,6 +244,12 @@ fetch("./json/vm_cleaned.json")
   })
   .catch((error) => console.error("Error fetching JSON data:", error));
 
+// Fungsi untuk mengubah angka bulan menjadi nama bulan singkat
+function getMonthName(monthNumber) {
+  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  return monthNames[monthNumber - 1];
+}
+
 // Fetch data JSON untuk membuat line chart berdasarkan revenue bulanan
 fetch("./json/vm_cleaned.json")
   .then((response) => {
@@ -278,11 +284,16 @@ fetch("./json/vm_cleaned.json")
     const labels = Object.keys(monthlyTotals).sort(
       (a, b) => new Date(a) - new Date(b)
     );
+    const formattedLabels = labels.map((label) => {
+      const [year, month] = label.split("-");
+      return `${year}-${getMonthName(parseInt(month))}`; // Format YYYY-MMM
+    });
+
     const revenueData = labels.map((label) => monthlyTotals[label].revenue);
     const quantityData = labels.map((label) => monthlyTotals[label].quantity);
 
     // Membuat line chart dengan data yang telah diproses
-    createLineChart(labels, revenueData, quantityData);
+    createLineChart(formattedLabels, revenueData, quantityData);
   })
   .catch((error) => console.error("Error fetching JSON data:", error));
 
@@ -394,11 +405,16 @@ function updateLineChart(filteredData) {
   const labels = Object.keys(monthlyTotals).sort(
     (a, b) => new Date(a) - new Date(b)
   );
+  const formattedLabels = labels.map((label) => {
+    const [year, month] = label.split("-");
+    return `${year}-${getMonthName(parseInt(month))}`; // Format YYYY-MMM
+  });
+
   const revenueData = labels.map((label) => monthlyTotals[label].revenue);
   const quantityData = labels.map((label) => monthlyTotals[label].quantity);
 
   // Update chart data
-  lineChart.data.labels = labels;
+  lineChart.data.labels = formattedLabels;
   lineChart.data.datasets[0].data = revenueData;
   lineChart.data.datasets[1].data = quantityData;
   lineChart.update();
