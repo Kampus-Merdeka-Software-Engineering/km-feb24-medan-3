@@ -860,7 +860,7 @@ $(document).ready(function () {
             data: "Revenue",
           },
         ],
-        lengthChange: true,
+        lengthChange: false,
         order: [[3, "desc"]],
         scrollX: true,
         scrollY: true,
