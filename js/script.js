@@ -42,23 +42,32 @@ fetch("./json/vm_cleaned.json")
     eledatacatgry.innerHTML = new Set(catgry).size;
   });
 
+// // fungsi untuk mengambil nilai filter dan memproses data
 document.addEventListener("DOMContentLoaded", (event) => {
-  // fungsi untuk mengambil nilai filter dan memproses data
   async function processFilters() {
-    // mengambil nilai yang dipilih dari setiap filter
     const month = document.querySelector("#month select").value;
     const location = document.querySelector("#location select").value;
     const machine = document.querySelector("#machine select").value;
     const category = document.querySelector("#category select").value;
 
-    // mengambil data dari file JSON
-    const data = await fetchData();
+    // menampilkan data filtering pada console
+    console.log(
+      "Selected Filters - Month:",
+      month,
+      "Location:",
+      location,
+      "Machine:",
+      machine,
+      "Category:",
+      category
+    );
 
-    // pemrosesan data berdasarkan nilai yang dipilih
+    // mengambil data dari json
+    const data = await fetchData();
     filterData(data, month, location, machine, category);
   }
 
-  // function untuk mengambil data dari file JSON
+  // fungsi untuk mengambil data dari json
   async function fetchData() {
     try {
       const response = await fetch("./json/vm_cleaned.json");
@@ -75,49 +84,56 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
   }
 
-  // function untuk memfilter data
+  // fungsi untuk filter data
   function filterData(data, month, location, machine, category) {
+    console.log(
+      "Filtering data with Month:",
+      month,
+      "Location:",
+      location,
+      "Machine:",
+      machine,
+      "Category:",
+      category
+    );
+
     const filteredData = data.filter((item) => {
       const itemMonth = new Date(item.TransDate).toLocaleString("default", {
         month: "long",
       });
+      console.log("Item Date:", item.TransDate, "Item Month:", itemMonth);
+
       return (
-        (month === itemMonth || month == "") &&
+        (month === itemMonth || month === "") &&
         (location === item.Location || location === "") &&
         (machine === item.Device_ID || machine === "") &&
         (category === item.Category || category === "")
       );
     });
 
-    // untuk menampilkan alert data tidak ditemukan
+    // fungsi untuk data tidak ditemukan
     if (filteredData.length === 0) {
-      // situasi pada saat tidak ditemukan data pada filter yang dipilih
       alert("No data found for the selected filters!");
     } else {
-      // update chart berdasarkan filter
       updateCharts(filteredData);
     }
   }
 
-  // function untuk update seluruh chart
+  // fungsi untuk update seluruh chart berdasarkan filter
   function updateCharts(filteredData) {
     updateDoughnutChart(filteredData);
     updateLineChart(filteredData);
     updateBarChart(filteredData);
     updateProductRevenueChart(filteredData);
     updateCategoryChart(filteredData);
-
-    // update display data
     updateMetrics(filteredData);
   }
 
-  // function untuk update display data
+  // fungsi untuk update display data
   function updateMetrics(filteredData) {
-    // mengambil nilai revenue berdasarkan filter
+    // update nilai revenue
     const revenue = filteredData.map((item) => parseFloat(item.LineTotal));
-    // menghitung revenue total berdasarkan filter
     const totalRevenue = revenue.reduce((acc, curr) => acc + curr, 0);
-    // menghitung hasil pembulatan revenue total berdasarkan filter
     const roundedTotalRevenue = Math.round(totalRevenue);
     document.getElementById("totalRevenue").innerHTML =
       roundedTotalRevenue.toLocaleString("en-US", {
@@ -125,20 +141,19 @@ document.addEventListener("DOMContentLoaded", (event) => {
         currency: "USD",
       });
 
-    // mengambil nilai location berdasarkan filter
+    // update nilai location
     const loc = filteredData.map((item) => item.Location);
     document.getElementById("dataloc").innerHTML = new Set(loc).size;
 
-    // mengambil nilai machine berdasarkan filter
+    // update nilai machine
     const mach = filteredData.map((item) => item.Device_ID);
     document.getElementById("datamach").innerHTML = new Set(mach).size;
 
-    // mengambil nilai category berdasarkan filter
+    // update nilai category
     const catgry = filteredData.map((item) => item.Category);
     document.getElementById("datacatgry").innerHTML = new Set(catgry).size;
   }
 
-  // event listener untuk tombol submit
   document
     .querySelector(".button button")
     .addEventListener("click", (event) => {
@@ -155,29 +170,31 @@ function renderDoughnutChart(labels, data) {
     type: "doughnut", // Chart type
     data: {
       labels: labels,
-      datasets: [{
-        label: "Total Revenue",
-        data: data,
-        backgroundColor: [
-          // Background color for each chart segment
-          "rgba(255, 99, 132, 0.2)",
-          "rgba(54, 162, 235, 0.2)",
-          "rgba(255, 206, 86, 0.2)",
-          "rgba(75, 192, 192, 0.2)",
-          "rgba(153, 102, 255, 0.2)",
-          "rgba(255, 159, 64, 0.2)",
-        ],
-        borderColor: [
-          // Border color for each chart segment
-          "rgba(255, 99, 132, 1)",
-          "rgba(54, 162, 235, 1)",
-          "rgba(255, 206, 86, 1)",
-          "rgba(75, 192, 192, 1)",
-          "rgba(153, 102, 255, 1)",
-          "rgba(255, 159, 64, 1)",
-        ],
-        borderWidth: 1,
-      }, ],
+      datasets: [
+        {
+          label: "Total Revenue",
+          data: data,
+          backgroundColor: [
+            // Background color for each chart segment
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            // Border color for each chart segment
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
+          ],
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       responsive: true,
@@ -293,7 +310,8 @@ function createLineChart(labels, revenueData, quantityData) {
     type: "line", // Chart type
     data: {
       labels: labels,
-      datasets: [{
+      datasets: [
+        {
           label: "Total Revenue",
           data: revenueData,
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Background color for revenue
@@ -444,13 +462,15 @@ function createMachineBarChart(labels, data) {
     type: "bar", // Tipe chart
     data: {
       labels: labels,
-      datasets: [{
-        label: "Top Machines by Revenue",
-        data: data,
-        backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
-        borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
-        borderWidth: 1,
-      }, ],
+      datasets: [
+        {
+          label: "Top Machines by Revenue",
+          data: data,
+          backgroundColor: "rgba(75, 192, 192, 0.2)", // Warna background untuk bar chart
+          borderColor: "rgba(75, 192, 192, 1)", // Warna border untuk bar chart
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
       responsive: true,
@@ -547,7 +567,8 @@ function createProductRevenueChart(labels, quantityData, revenueData) {
     type: "bar",
     data: {
       labels: labels,
-      datasets: [{
+      datasets: [
+        {
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.5)",
@@ -683,7 +704,8 @@ function createStackedHorizontalBarChart(labels, revenueData, quantityData) {
     type: "bar", // Tipe chart
     data: {
       labels: labels, // Kategori sebagai label di sumbu y
-      datasets: [{
+      datasets: [
+        {
           label: "Quantity Sold",
           data: quantityData,
           backgroundColor: "rgba(255, 99, 132, 0.2)", // Warna background merah
@@ -805,7 +827,8 @@ $(document).ready(function () {
       // Inisialisasi DataTable
       $("#example-table").DataTable({
         data: productTotalsArray,
-        columns: [{
+        columns: [
+          {
             data: "Location",
           },
           {
@@ -822,11 +845,9 @@ $(document).ready(function () {
           },
         ],
         lengthChange: true,
-        order: [
-          [3, "desc"]
-        ],
+        order: [[3, "desc"]],
         scrollX: true,
-        scrollY: true
+        scrollY: true,
       });
     });
 });
